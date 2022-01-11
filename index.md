@@ -1,8 +1,10 @@
 ---
 layout: default
 ---
+See my:
 
-[LinkedIn](https://www.linkedin.com/in/alexander-izydorczyk-86390759).
+[LinkedIn](https://www.linkedin.com/in/alexander-izydorczyk-86390759) 
+
 [Twitter](https://mobile.twitter.com/aleksizy)
 
 
