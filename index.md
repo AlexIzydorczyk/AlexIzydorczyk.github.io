@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-See my:     [LinkedIn](https://www.linkedin.com/in/alexander-izydorczyk-86390759)  \|   [Twitter](https://mobile.twitter.com/aleksizy)  \|   [Crunchbase](https://www.crunchbase.com/person/alexander-izydorczyk)
+See my:     [LinkedIn](https://www.linkedin.com/in/alexander-izydorczyk-86390759)  \|   [Twitter](https://mobile.twitter.com/aleksizy)  \|   [Crunchbase](https://www.crunchbase.com/person/alexander-izydorczyk)  \|   [Substack](https://magis.substack.com/p/coming-soon?showWelcome=true)
 
 I am interested in data and data systems that can aid in practical decision making. 
 
