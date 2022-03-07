@@ -9,3 +9,6 @@ I've spoken publicly at a few events, including [here](https://www.youtube.com/w
 
 Recent writing:
 - [Datanomics](https://magis.substack.com/p/datanomics?showWelcome=false&r=39xiq)
+
+Recent talls:
+- [Battlefin Miami 2022: From Instant Alpha to Sustainable Alpha](https://t.co/hcFqjdsuhU)
