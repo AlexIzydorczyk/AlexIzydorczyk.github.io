@@ -11,4 +11,5 @@ Recent writing:
 - [Datanomics](https://magis.substack.com/p/datanomics?showWelcome=false&r=39xiq)
 
 Recent talls:
+- [Neudata 2022: External Data in the Wild](https://www.youtube.com/watch?v=c4YWU1IhMaA)
 - [Battlefin Miami 2022: From Instant Alpha to Sustainable Alpha](https://t.co/hcFqjdsuhU)
