@@ -9,6 +9,7 @@ I've spoken publicly at a few events, including [here](https://www.youtube.com/w
 
 Recent writing:
 - [Datanomics](https://magis.substack.com/p/datanomics?showWelcome=false&r=39xiq)
+- [Project Cybersyn](https://magis.substack.com/p/project-cybersyn?s=w)
 
 Recent talls:
 - [Neudata 2022: External Data in the Wild](https://www.youtube.com/watch?v=c4YWU1IhMaA)
