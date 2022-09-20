@@ -13,7 +13,8 @@ Recent writing:
 - [An Observation on Dashboard Speed](https://magis.substack.com/p/an-observation-on-dashboard-speed)
 - [How we could see job elimination but low unemployment](https://magis.substack.com/p/a-coming-contradiction)
 - [Faster Company Disclosures to Improve Wall Street Forecasts?](https://magis.substack.com/p/faster-company-disclosures-to-improve)
+- [What Makes Alternative Data Scientists Alternative?](https://magis.substack.com/p/what-makes-alternative-data-scientists)
 
-Recent talls:
+Recent talks:
 - [Neudata 2022: External Data in the Wild](https://www.youtube.com/watch?v=c4YWU1IhMaA)
 - [Battlefin Miami 2022: From Instant Alpha to Sustainable Alpha](https://t.co/hcFqjdsuhU)
