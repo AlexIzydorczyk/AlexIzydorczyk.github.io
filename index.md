@@ -17,6 +17,7 @@ Recent writing:
 - [Some Data on Data Companies](https://magis.substack.com/p/some-data-on-data-companies)
 - [Simple, Fast, Transparent Data Sales](https://magis.substack.com/p/simple-fast-and-transparent-data)
 - [Creating Impossible Data](https://magis.substack.com/p/creating-impossible-data)
+- [Dumb Questions on Artificial Intelligence](https://magis.substack.com/p/dumb-questions-about-artificial-intelligence)
 
 Recent talks:
 - [Neudata 2022: External Data in the Wild](https://www.youtube.com/watch?v=c4YWU1IhMaA)
