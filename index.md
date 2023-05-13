@@ -3,7 +3,7 @@ layout: default
 ---
 See my:     [LinkedIn](https://www.linkedin.com/in/alexander-izydorczyk-86390759)  \|   [Twitter](https://mobile.twitter.com/aleksizy)  \|   [Crunchbase](https://www.crunchbase.com/person/alexander-izydorczyk)  \|   [Substack](https://magis.substack.com/p/coming-soon?showWelcome=true)   \|   [Youtube](https://www.youtube.com/channel/UCoATmeMSUlbBu7dN6VsnWKg)   \|   [Stack Overflow](https://stackoverflow.com/users/1189959/alexizydorczyk)
 
-I am interested in data and data systems that can aid in practical decision making and have been recently working on [this](https://magis.substack.com/p/simcity-and-data-commons). You can also watch a video interview about Cybersyn, [on Youtube](https://www.youtube.com/watch?v=p4sa7F6aPxM).
+I am interested in data and data systems that can aid in practical decision making and have been recently working on [this](https://magis.substack.com/p/simcity-and-data-commons). Watch a video interview about Cybersyn, [on Youtube](https://www.youtube.com/watch?v=p4sa7F6aPxM).
 
 Find out more about [Cybersyn](https://cybersyn.com)
 
