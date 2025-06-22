@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: AI for Hedge Funds Startup Tracker
 ---
 
