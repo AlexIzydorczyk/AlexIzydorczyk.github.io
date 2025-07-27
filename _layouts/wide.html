@@ -23,6 +23,11 @@
         {% endif %}
         {{ content }}
 
+        {% if page.url != "/" %}
+        <nav class="breadcrumbs bottom-breadcrumbs">
+          <a href="{{ "/" | relative_url }}">Home</a> &gt; {{ page.title }}
+        </nav>
+        {% endif %}
       </section>
       <footer class="wide-footer">
         {% if site.github.is_project_page %}

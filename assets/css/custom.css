@@ -32,6 +32,16 @@ section {
     width: 610px; /* Was 590px */
 }
 
+/* Make default links in the content less prominent */
+section a {
+    color: #5694c2; /* Lighter, less saturated blue */
+}
+
+/* Style for the highlighted project link */
+.highlight-link a {
+    font-weight: bold;
+}
+
 footer {
     width: 200px; /* Was 220px */
 }
@@ -59,6 +69,12 @@ footer {
 
 .breadcrumbs a:hover {
   text-decoration: underline;
+}
+
+.bottom-breadcrumbs {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
 }
 
 /* Profile picture styles */
