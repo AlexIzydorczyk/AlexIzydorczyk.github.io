@@ -1,0 +1,99 @@
+/* For the wide layout */
+.wide-content {
+    width: 100%;
+    float: none;
+}
+
+.wide-footer {
+    width: 100%;
+    float: none;
+    position: static;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Narrow the sidebar and expand the content */
+header {
+    width: 200px; /* Was 220px */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.3em; /* Reduce font size */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+header p {
+    text-align: left;
+}
+
+section {
+    width: 610px; /* Was 590px */
+}
+
+footer {
+    width: 200px; /* Was 220px */
+}
+
+.page-footer-credit {
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    font-size: 0.8em; /* Smaller font */
+    color: #bbb; /* Lighter grey */
+    font-style: italic; /* Italicized */
+}
+
+/* Breadcrumbs styles */
+.breadcrumbs {
+  margin-bottom: 25px;
+  font-size: 0.9em;
+  color: #888;
+}
+
+.breadcrumbs a {
+  color: #007EBB; /* A nice blue for links */
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Profile picture styles */
+.profile-picture {
+    width: 120px;
+    height: auto;
+    border-radius: 50%; /* Makes the image circular */
+    filter: grayscale(100%);
+    margin: 15px auto;
+    display: block;
+}
+
+/* Social media icon styles */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    border: none;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    filter: grayscale(0%);
+}
+
+.social-icon.magis-icon {
+    border-radius: 5px; /* Optional: to round the corners of the Magis png */
+}

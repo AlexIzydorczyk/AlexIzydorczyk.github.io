@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: wide
 title: AI for Hedge Funds Startup Tracker
 ---
 
@@ -7,4 +7,4 @@ title: AI for Hedge Funds Startup Tracker
 
 This page will track startups in the AI for Hedge Funds space. I originally published this[here](https://magis.substack.com/p/genai-for-hedge-funds-startups) and have moved to this page for updates.
 
-<iframe title="AI Startups for Hedge Fund Investors" aria-label="Table" id="datawrapper-chart-6OdWG" src="https://datawrapper.dwcdn.net/6OdWG/1/" scrolling="no" frameborder="0" style="border: none;" width="600" height="2711" data-external="1"></iframe>
+<div style="min-height:3160px" id="datawrapper-vis-6OdWG"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/6OdWG/embed.js" charset="utf-8" data-target="#datawrapper-vis-6OdWG"></script><noscript><img src="https://datawrapper.dwcdn.net/6OdWG/full.png" alt="" /></noscript></div>

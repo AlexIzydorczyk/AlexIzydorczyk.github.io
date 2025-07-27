@@ -6,7 +6,7 @@ layout: default
 I am interested in data, finance, and systems that can aid in practical decision making. I previously led the data science team at Coatue and then started Cybersyn, a data-as-a-service company, with Snowflake. 
 
 #### Projects
-- [AI for Hedge Funds Startup Tracker](ai-for-hedge-funds.md)
+- [AI for Hedge Funds Startup Tracker]({% link ai-for-hedge-funds.md %}) 
 
 #### Writing 
 - [Datanomics](https://magis.substack.com/p/datanomics?showWelcome=false&r=39xiq)
