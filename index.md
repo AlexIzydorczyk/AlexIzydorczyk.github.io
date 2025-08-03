@@ -6,7 +6,8 @@ layout: default
 Thanks for visiting my page. I am interested in the intersection of data, finance, and systems that can aid in practical forecasting. I previously led the data science team at Coatue and then started Cybersyn, a data-as-a-service (DaaS) company, that was funded by Snowflake, Coatue, and Sequoia. I am currently working on something new.
 
 #### Projects
-- <span class="highlight-link">[AI for Hedge Funds Startup Tracker]({% link ai-for-hedge-funds.md %})</span>. This is the new permanent home for the list first published on my [Substack](https://magis.substack.com/p/genai-for-hedge-funds-startups). You may also be intersted in my [2023 writing](https://magis.substack.com/p/ideas-for-investment-managers) on the topic.  
+- <span class="highlight-link">[AI for Hedge Funds Startup Tracker]({% link ai-for-hedge-funds.md %})</span>. This is the new permanent home for the list first published on my [Substack](https://magis.substack.com/p/genai-for-hedge-funds-startups). You may also be interested in my [2023 writing](https://magis.substack.com/p/ideas-for-investment-managers) on the topic.  
+- <span class="highlight-link">[AI Native Financial Data Providers]({% link ai-financial-data.md %})</span>. 
 
 #### Writing 
 I mostly write about AI, DaaS, and hedge funds on my blog, Magis. Below is a sample of articles I have written.
