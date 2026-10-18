@@ -72,8 +72,10 @@ section.wide-content {
     transition: border-color 0.15s, background 0.15s;
 }
 
-.wide-content .page-meta-button:hover {
+.wide-content .page-meta-button:hover,
+.wide-content .page-meta-button:focus {
     text-decoration: none;
+    font-weight: 500; /* don't let the theme's bold-on-hover widen the pill */
     background: #f3f7fc;
     border-color: #1f6fb2;
 }
@@ -325,8 +327,12 @@ section:not(.wide-content) h4 {
     transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-section a.project-card:hover {
+/* The theme bolds every hovered link (a:hover { font-weight: bold }), which re-wrapped the card's text;
+   keep the weight so hovering only highlights the border and shadow. */
+section a.project-card:hover,
+section a.project-card:focus {
     text-decoration: none;
+    font-weight: normal;
     border-color: #c8d2dd;
     box-shadow: 0 4px 14px rgba(16, 24, 40, 0.08);
 }
@@ -405,7 +411,9 @@ section:not(.wide-content) li:last-child {
     filter: grayscale(100%);
 }
 
-.site-bar-home:hover {
+.site-bar-home:hover,
+.site-bar-home:focus {
+    font-weight: 600; /* same weight as at rest, so the header doesn't shift */
     color: #1f6fb2;
     text-decoration: none;
 }
@@ -420,7 +428,9 @@ section:not(.wide-content) li:last-child {
     color: #6b7280;
 }
 
-.site-bar-links a:hover {
+.site-bar-links a:hover,
+.site-bar-links a:focus {
+    font-weight: normal;
     color: #1f2328;
 }
 
