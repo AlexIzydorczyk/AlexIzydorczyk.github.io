@@ -121,5 +121,7 @@ change.
   `tracker_link_click` (`company`, `link_type`, `link_domain`, `link_url`), `tracker_share` (`link_type`, plus
   `company` for a company link) and `tracker_browse`. `company`, `link_type`, `filter_type` and `filter_value` are
   registered as custom dimensions in GA so reports can use them.
+  Links shared in posts should carry `utm_source` / `utm_medium` / `utm_campaign` tags. The tracker only rewrites its
+  own parameters in the address, so the tags stay for GA to read (they're left out of "Copy link to this view").
 
 Preview locally with `BUNDLE_PATH=~/.cache/podgorica-bundle bundle exec jekyll serve --livereload -d .context/site`.

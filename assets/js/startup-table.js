@@ -587,9 +587,18 @@
       var type = /^[cp]t:/.test(v);
       return [p.kind + (type ? '-type' : ''), v.slice(type ? 3 : 2)];
     }
+    // The tracker only rewrites its own parameters. Anything else in the address (utm_* campaign tags, click IDs)
+    // stays put so Google Analytics can read it, but is left out of "Copy link to this view".
+    var OWN_PARAMS = ['q', 'focus', 'status', 'category', 'sort'].concat(PICK_PARAMS.map(function (p) { return p[0]; }));
+    function viewParams() {
+      var params = new URLSearchParams(location.search);
+      Array.from(new Set(params.keys())).forEach(function (k) { if (OWN_PARAMS.indexOf(k) === -1) params.delete(k); });
+      return params.toString();
+    }
     function writeUrl() {
       if (!window.history || !history.replaceState) return;
-      var params = new URLSearchParams();
+      var params = new URLSearchParams(location.search);
+      OWN_PARAMS.forEach(function (k) { params.delete(k); });
       if (search.value.trim()) params.set('q', search.value.trim());
       if (activeFocus !== '*') params.set('focus', activeFocus);
       if (activeStatus !== '*') params.set('status', activeStatus);
@@ -915,7 +924,8 @@
     });
     clearButton.addEventListener('click', resetFilters);
     shareButton.addEventListener('click', function () {
-      copyText(location.href.split('#')[0], shareButton, 'Link copied');
+      var qs = viewParams();
+      copyText(location.origin + location.pathname + (qs ? '?' + qs : ''), shareButton, 'Link copied');
       track('tracker_share', { link_type: 'view' });
     });
     focusButtons.forEach(function (button) {
