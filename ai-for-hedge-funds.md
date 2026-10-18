@@ -96,19 +96,9 @@ legend:
 
 # AI for Hedge Funds Startup Tracker
 
-<p class="page-meta">Maintained by Alex Izydorczyk <a class="page-meta-button" href="{{ page.suggest_url }}">Suggest a company or correction</a></p>
+<p class="page-meta">Maintained by Alex Izydorczyk<span class="page-meta-sep" aria-hidden="true">·</span>Updated <span class="tracker-updated">{{ site.time | date: "%b %-d, %Y" }}</span> <a class="page-meta-button" href="{{ page.suggest_url }}">Suggest a company or correction</a></p>
 
-<div class="page-head" markdown="1">
-<div class="page-intro" markdown="1">
-
-This page tracks startups in the AI for Hedge Funds space. More broadly, these are startups whose primary customers are alternative asset managers (hedge funds, private equity, venture capital, etc.) and who are using LLMs in a primary capacity. I originally published this on Magis, my blog, [here](https://magis.substack.com/p/genai-for-hedge-funds-startups). I have moved it to this page so that it can be referenced, maintained, and updated more easily.
-
-The list also includes financial data providers and web extraction tools focused on data for AI use cases; these were previously tracked on a separate page. In the future, I hope to designate public market vs. privates focuses, and so on. For now, I avoid established companies that have launched a new AI product.
-
-I welcome suggestions, questions, and corrections. Please reach out to me if you can help complete the list. Please feel free to submit additions/corrections directly [here]({{ page.suggest_url }}).
-
-</div>
-{% include tracker-stats.html rows=site.data.ai_for_hedge_funds news=site.data.ai_for_hedge_funds_news %}
-</div>
+This page tracks startups in the _AI for Hedge Funds_ space. These are startups whose primary customers are alternative asset managers (hedge funds, private equity, venture capital, etc.) and who are using LLMs in a primary capacity. I originally published this on Magis, my blog, [here](https://magis.substack.com/p/genai-for-hedge-funds-startups).
+{: .page-intro}
 
 {% include startup-table.html rows=site.data.ai_for_hedge_funds news=site.data.ai_for_hedge_funds_news customers=site.data.ai_for_hedge_funds_customers partners=site.data.ai_for_hedge_funds_partners founders=site.data.ai_for_hedge_funds_founders media=site.data.ai_for_hedge_funds_media %}

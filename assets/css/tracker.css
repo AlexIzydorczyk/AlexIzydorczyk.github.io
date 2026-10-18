@@ -303,20 +303,13 @@
     text-underline-offset: 2px;
 }
 
-/* Hint on the left; match count and "Clear filters" on the right */
+/* Status tabs on the left; match count and "Clear filters" on the right */
 .tracker-meta {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 4px 16px;
     margin: -2px 0 14px;
-}
-
-.tracker-hint {
-    flex: 1 1 100%;
-    margin: 0;
-    font-size: 12px;
-    color: var(--t-muted);
 }
 
 /* Status tabs (All / Active / Acquired / Pivot / Inactive) with live counts */
@@ -379,7 +372,8 @@
 }
 
 .tracker-table th {
-    padding: 10px 12px;
+    box-sizing: border-box;
+    padding: 10px;
     font-size: 12px;
     font-weight: 700;
     color: var(--t-text);
@@ -425,7 +419,7 @@
 }
 
 .tracker-table td {
-    padding: 12px;
+    padding: 11px 10px 9px;
     vertical-align: top;
     color: var(--t-text-2);
     border-bottom: 1px solid var(--t-border);
@@ -470,38 +464,34 @@
 }
 
 .tracker-table .col-rank {
-    width: 28px;
+    width: 32px;
     padding-right: 0;
     font-size: 12px;
     color: var(--t-muted);
     font-variant-numeric: tabular-nums;
 }
 
-.tracker-table .col-rank,
-.tracker-table td.col-company {
-    padding-top: 13px;
+/* Fixed column widths (founders take what's left), so long text is cut instead of widening a column */
+.tracker-table {
+    table-layout: fixed;
 }
 
 .col-company {
-    width: 23%;
+    width: 23.5%;
 }
 
 .col-category {
-    width: 20.5%;
-}
-
-.col-founders {
-    width: 22.5%;
+    width: 17.5%;
 }
 
 /* Wide enough for the round chip and its month on one line */
 .col-round {
-    width: 20%;
+    width: 20.5%;
 }
 
 /* Documented funding in approx. USD, right-aligned so totals compare down the column */
 .col-raised {
-    width: 64px;
+    width: 88px;
 }
 
 .tracker-table th.col-raised {
@@ -509,7 +499,6 @@
 }
 
 .tracker-table td.col-raised {
-    padding-top: 13px;
     text-align: right;
     white-space: nowrap;
 }
@@ -517,7 +506,7 @@
 .tracker-raised {
     font-size: 14px;
     font-weight: 600;
-    line-height: 22px;
+    line-height: 20px;
     color: var(--t-text);
     font-variant-numeric: tabular-nums;
 }
@@ -534,7 +523,7 @@
     color: var(--t-muted);
 }
 
-/* Category pill with the focus icon beside it */
+/* Category label with the focus icon beside it (Consumer and Both only; most companies are Institutional) */
 .tracker-category {
     display: flex;
     flex-wrap: wrap;
@@ -548,28 +537,34 @@
     cursor: help;
 }
 
-/* Status commentary (acquired, shut down, pivoted) under the company name */
-.tracker-note {
-    grid-column: 2;
-    margin-top: 1px;
-    color: var(--t-text-2);
+.tracker-category .tracker-focus-icon {
+    color: var(--t-muted);
 }
 
-/* f/k/a and status notes: one small line each so they don't make rows taller; the full text is in the tooltip */
+/* Under the company name: the status note (acquired, shut down, pivoted) and f/k/a, or else the counts */
+.tracker-sub {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 10px;
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--t-muted);
+}
+
+/* One line each; the full text is in the tooltip */
 .tracker-note,
 .tracker-fka {
+    min-width: 0;
     overflow: hidden;
-    font-size: 11px;
-    line-height: 14px;
+    color: #6b7280;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-/* Latest round: chip + month, and how many rounds in total */
-.tracker-table td.col-round {
-    padding-top: 13px;
-}
-
+/* Latest round: chip + month, then the number of rounds and the valuation */
 .tracker .col-round a.tracker-round {
     margin-right: 0;
     color: #146c43;
@@ -640,16 +635,12 @@
 }
 
 .tracker-round-count {
-    display: block;
-    margin-top: 2px;
     font-size: 12px;
     color: var(--t-muted);
 }
 
 /* Latest reported valuation (largest companies only), linked to its source */
 .tracker .tracker-valuation {
-    display: block;
-    margin-top: 2px;
     font-size: 12px;
     color: var(--t-muted);
     text-decoration: none;
@@ -693,13 +684,8 @@
     column-gap: 10px;
 }
 
-.tracker-name,
-.tracker-fka {
+.tracker-name {
     grid-column: 2;
-}
-
-.tracker-fka {
-    color: var(--t-muted);
 }
 
 .tracker-logo {
@@ -722,7 +708,12 @@
     background: hsl(var(--hue, 210) 45% 90%);
 }
 
+/* The name, then the status badge for companies that aren't active */
 .tracker-name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 6px;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -738,28 +729,26 @@
 }
 
 .tracker-badge {
-    display: inline-block;
-    margin-left: 4px;
+    flex: none;
     padding: 0 8px;
     font-size: 11px;
     font-weight: 500;
     line-height: 18px;
     color: #8a4b08;
     white-space: nowrap;
-    vertical-align: 1px;
     background: #fdf1df;
     border-radius: 999px;
 }
 
+/* News, customer, partner and media counts */
 .tracker-news-count {
     display: inline-flex;
+    flex: none;
     align-items: center;
     gap: 3px;
-    margin-left: 6px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--t-muted);
-    vertical-align: 1px;
 }
 
 .tracker-news-count svg {
@@ -767,14 +756,32 @@
     height: 13px;
 }
 
+/* Category: a quiet label (its emoji and name), described in the tooltip */
 .tracker-pill {
     display: inline-block;
-    padding: 1px 9px;
-    font-size: 12px;
-    color: #374151;
-    background: var(--t-pill);
-    border-radius: 6px;
+    font-size: 13px;
+    color: var(--t-text-2);
     text-wrap: balance;
+}
+
+/* Founder names read as text; they still link to LinkedIn */
+.tracker td.col-founders a {
+    color: var(--t-text);
+}
+
+.tracker td.col-founders a:hover {
+    color: var(--t-accent);
+}
+
+.tracker-founder-more {
+    margin-left: 4px;
+    font-size: 12px;
+    color: var(--t-muted);
+    white-space: nowrap;
+}
+
+.tracker-founder-more.is-narrow {
+    display: none;
 }
 
 .tracker-pedigrees {
@@ -798,12 +805,12 @@
 }
 
 .col-toggle {
-    width: 32px;
+    width: 36px;
     text-align: right;
 }
 
 .tracker-table td.col-toggle {
-    padding: 8px 4px 0 0;
+    padding: 7px 4px 0 0;
 }
 
 .tracker-toggle {
@@ -829,10 +836,136 @@
     transform: rotate(180deg);
 }
 
+/* Wide screens: every row is two lines (the main fact, then a detail), so all rows are the same height.
+   Text that doesn't fit is cut with "…"; it's in full in the tooltip and the expanded row. Cards (960px
+   and below) wrap instead. */
+@media screen and (min-width: 961px) {
+    .tracker-row > td {
+        box-sizing: border-box;
+        height: 64px;
+        line-height: 20px;
+    }
+
+    .tracker-company {
+        grid-template-rows: 20px 18px;
+        row-gap: 4px;
+    }
+
+    .tracker-name {
+        flex-wrap: nowrap;
+        height: 20px;
+    }
+
+    .tracker-name-text {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* A line's extra items wrap onto a hidden line, so they drop out whole instead of being cut mid-word
+       (a single long note is cut with "…") */
+    .tracker-sub {
+        height: 18px;
+        margin-top: 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /* The category has no second line, so a long one may take two */
+    .tracker-category {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        max-height: 40px;
+    }
+
+    .tracker-pill {
+        display: -webkit-box;
+        min-width: 0;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .tracker-category .tracker-focus-mini {
+        margin-top: 3px;
+    }
+
+    .tracker-founder-names {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        height: 20px;
+        white-space: nowrap;
+    }
+
+    .tracker-founder-list {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .tracker-founder-more {
+        flex: none;
+        margin-left: 0;
+    }
+
+    .tracker-row .tracker-pedigrees {
+        height: 18px;
+        overflow: hidden;
+    }
+
+    .tracker-row .tracker-pedigree {
+        line-height: 16px;
+    }
+
+    .tracker-round-line {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .tracker-round-line .tracker-round {
+        vertical-align: 0;
+    }
+
+    .tracker-round-sub {
+        display: block;
+        height: 18px;
+        margin-top: 4px;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 18px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .tracker-round-count + .tracker-valuation::before {
+        content: "\00b7";
+        margin: 0 6px;
+        color: var(--t-muted);
+    }
+}
+
+/* Small laptops: the first founder's name only, then "+N" */
+@media screen and (min-width: 961px) and (max-width: 1100px) {
+    .tracker-founder-2,
+    .tracker-founder-more.is-wide {
+        display: none;
+    }
+
+    .tracker-founder-more.is-narrow {
+        display: inline;
+    }
+}
+
 /* Expanded details */
 
 .tracker-table .tracker-details td {
-    padding: 0 12px 20px 52px;
+    padding: 0 10px 20px 42px;
     background: var(--t-surface);
 }
 
