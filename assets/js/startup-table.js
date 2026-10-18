@@ -38,6 +38,12 @@
     function plural(n) {
       return n + (n === 1 ? ' company' : ' companies');
     }
+    // GA4 events (gtag is only on production builds): searches, filters, companies opened, links followed from
+    // company rows and copied links. GA's enhanced measurement also logs outbound clicks; tracker_link_click
+    // adds the company and the kind of link.
+    function track(name, params) {
+      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+    }
 
     // Search the summary row plus the searchable parts of the details (description, customers,
     // partners, investors, news, X handles), but not the facts labels like "Website".
@@ -293,7 +299,11 @@
       return el('span', 'tracker-kind is-' + kind, KIND_LABEL[kind] || kind);
     }
     function addPick(entry) {
-      if (!isPicked(entry)) picks.push({ kind: entry.kind, value: entry.value, label: entry.label });
+      if (!isPicked(entry)) {
+        picks.push({ kind: entry.kind, value: entry.value, label: entry.label });
+        var param = pickParam(entry);
+        track('tracker_filter', { filter_type: param[0], filter_value: param[1] });
+      }
       search.value = '';
       closeSuggest();
       closeExplorer();
@@ -487,6 +497,7 @@
     // Touch screens don't get the find box focused on open, so the keyboard doesn't cover the list.
     var touchy = window.matchMedia ? window.matchMedia('(max-width: 720px), (pointer: coarse)') : { matches: false };
     function openExplorer(sectionId) {
+      if (explorer.hidden) track('tracker_browse');
       if (sectionId) explorerSection = sectionId;
       closeSuggest();
       find.value = '';
@@ -565,6 +576,17 @@
     var PICK_PARAMS = [['customer', 'customer', 'c:'], ['customer-type', 'customer', 'ct:'], ['partner', 'partner', 'p:'],
       ['partner-type', 'partner', 'pt:'], ['investor', 'investor', ''], ['founder', 'founder', ''], ['founder-group', 'founder', 'g:']];
     var currentSort = '';
+    // A pick as [URL parameter, value], e.g. ['partner', 'FactSet'], ['founder-group', 'Tech companies'], ['founder', 'any']
+    function pickParam(p) {
+      var v = p.value;
+      if (p.kind === 'investor') return ['investor', v];
+      if (p.kind === 'founder') {
+        if (v === '+') return ['founder', 'any'];
+        return v.indexOf('g:') === 0 ? ['founder-group', v.slice(2)] : ['founder', v];
+      }
+      var type = /^[cp]t:/.test(v);
+      return [p.kind + (type ? '-type' : ''), v.slice(type ? 3 : 2)];
+    }
     function writeUrl() {
       if (!window.history || !history.replaceState) return;
       var params = new URLSearchParams();
@@ -573,16 +595,8 @@
       if (activeStatus !== '*') params.set('status', activeStatus);
       if (categorySelect.value !== '*') params.set('category', categorySelect.value);
       picks.forEach(function (p) {
-        var v = p.value;
-        if (p.kind === 'investor') params.append('investor', v);
-        else if (p.kind === 'founder') {
-          if (v === '+') params.append('founder', 'any');
-          else if (v.indexOf('g:') === 0) params.append('founder-group', v.slice(2));
-          else params.append('founder', v);
-        } else {
-          var type = /^[cp]t:/.test(v);
-          params.append(p.kind + (type ? '-type' : ''), v.slice(type ? 3 : 2));
-        }
+        var param = pickParam(p);
+        params.append(param[0], param[1]);
       });
       if (currentSort) params.set('sort', currentSort);
       var qs = params.toString();
@@ -695,6 +709,7 @@
       var group = id && document.getElementById(id);
       if (!group || group.parentNode !== table) return;
       if (group.hidden) resetFilters();
+      if (!group.classList.contains('is-open')) track('tracker_company_open', { company: group.dataset.name });
       setExpanded(group, true);
       group.scrollIntoView({ block: 'start' });
       group.classList.remove('is-highlighted');
@@ -774,6 +789,7 @@
       var copy = e.target.closest('[data-copy-link]');
       if (copy) {
         copyText(location.origin + location.pathname + '#' + copy.dataset.copyLink, copy, 'Link copied');
+        track('tracker_share', { link_type: 'company', company: copy.closest('tbody').dataset.name });
         return;
       }
       var investor = e.target.closest('.tracker-investor');
@@ -785,8 +801,37 @@
       var row = e.target.closest('.tracker-row');
       if (!row || e.target.closest('a')) return;
       if (!e.target.closest('button') && String(window.getSelection())) return;
-      setExpanded(row.parentNode, !row.parentNode.classList.contains('is-open'));
+      var opening = !row.parentNode.classList.contains('is-open');
+      if (opening) track('tracker_company_open', { company: row.parentNode.dataset.name });
+      setExpanded(row.parentNode, opening);
     });
+
+    // Links followed from a company row or its source popover: which company, and what kind of link.
+    function linkType(a) {
+      var tag = a.closest('.tracker-popover') ? openTag : a.closest('.tracker-tag[data-relation]');
+      if (tag) return tag.dataset.relation.charAt(0) === 'p' ? 'partner source' : 'customer source';
+      if (a.closest('.tracker-news')) return 'news';
+      if (a.closest('.tracker-media')) return 'media';
+      if (a.closest('.tracker-round')) return 'funding';
+      if (a.closest('.tracker-valuation, .tracker-valuation-line')) return 'valuation';
+      if (a.closest('.tracker-founder-src')) return 'founder background';
+      if (a.closest('.tracker-panel-links')) return 'suggest edit';
+      if (/(^|\.)linkedin\.com$/.test(a.hostname)) return 'linkedin';
+      if (/(^|\.)(x|twitter)\.com$/.test(a.hostname)) return 'x';
+      if (a.closest('.tracker-description, .tracker-note')) return 'description';
+      return 'website';
+    }
+    function trackLink(e) {
+      if (e.type === 'auxclick' && e.button !== 1) return;
+      var a = e.target.closest('a[href]');
+      var group = a && a.closest('tbody');
+      if (!group || !/^https?:$/.test(a.protocol) || a.hostname === location.hostname) return;
+      // A plain click on a customer or partner opens its source popover instead of following the link.
+      if (e.type === 'click' && a.matches('.tracker-tag[data-source-type]') && !e.metaKey && !e.ctrlKey && !e.shiftKey) return;
+      track('tracker_link_click', { company: group.dataset.name, link_type: linkType(a), link_domain: a.hostname.replace(/^www\./, ''), link_url: a.href });
+    }
+    table.addEventListener('click', trackLink);
+    table.addEventListener('auxclick', trackLink);
     document.addEventListener('click', function (e) {
       if (openTag && !e.target.closest('.tracker-popover') && !e.target.closest('.tracker-tag[data-source-type]')) closePopover();
       // The path is fixed when the click starts, so a rail button the panel re-rendered away still counts as inside.
@@ -795,9 +840,18 @@
     });
 
     // Search box: typing filters by text right away and suggests filters; arrows + Enter pick one.
+    // A search is logged once typing pauses, so "heb", "hebb", "hebbia" count as one search for "hebbia".
+    var searchTimer;
+    var lastTerm = '';
     search.addEventListener('input', function () {
       applyFilters();
       if (!suggestOpen) openSuggest();
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(function () {
+        var term = search.value.trim().toLowerCase();
+        if (term.length > 1 && term !== lastTerm) track('view_search_results', { search_term: term });
+        lastTerm = term;
+      }, 1500);
     });
     search.addEventListener('focus', function () {
       closeExplorer();
@@ -855,16 +909,27 @@
         search.focus();
       }
     });
-    categorySelect.addEventListener('change', applyFilters);
+    categorySelect.addEventListener('change', function () {
+      if (categorySelect.value !== '*') track('tracker_filter', { filter_type: 'category', filter_value: categorySelect.value || 'Unclassified' });
+      applyFilters();
+    });
     clearButton.addEventListener('click', resetFilters);
-    shareButton.addEventListener('click', function () { copyText(location.href.split('#')[0], shareButton, 'Link copied'); });
+    shareButton.addEventListener('click', function () {
+      copyText(location.href.split('#')[0], shareButton, 'Link copied');
+      track('tracker_share', { link_type: 'view' });
+    });
     focusButtons.forEach(function (button) {
-      button.addEventListener('click', function () { setFocus(button.dataset.focus); });
+      button.addEventListener('click', function () {
+        if (button.dataset.focus !== '*') track('tracker_filter', { filter_type: 'focus', filter_value: button.dataset.focus });
+        setFocus(button.dataset.focus);
+      });
     });
     // Clicking the selected status again goes back to all statuses.
     statusButtons.forEach(function (button) {
       button.addEventListener('click', function () {
-        setStatus(button.dataset.status === activeStatus ? '*' : button.dataset.status);
+        var status = button.dataset.status === activeStatus ? '*' : button.dataset.status;
+        if (status !== '*') track('tracker_filter', { filter_type: 'status', filter_value: status });
+        setStatus(status);
       });
     });
     sortButtons.forEach(function (button) {

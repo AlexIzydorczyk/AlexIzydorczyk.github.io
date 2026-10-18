@@ -116,5 +116,10 @@ change.
   `_includes/head-custom-google-analytics.html` (which replaces the theme's old `analytics.js` snippet) loads it.
   It only renders in production builds (GitHub Pages), so local previews don't count as visits.
   Outbound link clicks come from GA4's enhanced measurement (Admin > Data streams > the web stream).
+  The tracker also sends its own events from `assets/js/startup-table.js`: `view_search_results` (`search_term`,
+  once typing pauses), `tracker_filter` (`filter_type`, `filter_value`), `tracker_company_open` (`company`),
+  `tracker_link_click` (`company`, `link_type`, `link_domain`, `link_url`), `tracker_share` (`link_type`, plus
+  `company` for a company link) and `tracker_browse`. `company`, `link_type`, `filter_type` and `filter_value` are
+  registered as custom dimensions in GA so reports can use them.
 
 Preview locally with `BUNDLE_PATH=~/.cache/podgorica-bundle bundle exec jekyll serve --livereload -d .context/site`.
