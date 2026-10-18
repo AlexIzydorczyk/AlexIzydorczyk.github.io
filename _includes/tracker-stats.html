@@ -1,0 +1,17 @@
+{%- comment %}
+  At-a-glance numbers for the top of the tracker page, computed from the data when the site is built.
+  Usage: {% include tracker-stats.html rows=site.data.ai_for_hedge_funds news=site.data.ai_for_hedge_funds_news %}
+{% endcomment -%}
+{%- assign stat_rows = include.rows -%}
+{%- assign n_active = stat_rows | where: "status", "Active" | size -%}
+{%- assign n_acquired = stat_rows | where: "status", "Acquired" | size -%}
+{%- assign documented = 0.0 -%}
+{%- assign funding_rows = include.news | where: "type", "Funding" -%}
+{%- for item in funding_rows -%}{%- assign amt = item.amount | strip -%}{%- if amt != "" -%}{%- include tracker-usd.html amount=amt -%}{%- assign documented = documented | plus: usd -%}{%- endif -%}{%- endfor %}
+<dl class="tracker-stats">
+<div><dt>Companies</dt><dd>{{ stat_rows.size }}</dd></div>
+<div><dt>Active</dt><dd>{{ n_active }}</dd></div>
+<div><dt>Acquired</dt><dd>{{ n_acquired }}</dd></div>
+<div title="The sum of every round listed on this page, in approximate US dollars"><dt>Documented funding</dt><dd>≈ {% include tracker-money.html m=documented %}</dd></div>
+<div><dt>Updated</dt><dd class="tracker-updated">{{ site.time | date: "%b %-d, %Y" }}</dd></div>
+</dl>

@@ -1,0 +1,7 @@
+{%- comment %} Prints include.m (millions of US dollars) compactly: 1234 -> $1.2B, 350 -> $350M, 4.5 -> $4.5M, 0.5 -> $500K. {% endcomment -%}
+{%- assign m = include.m | times: 1.0 -%}
+{%- if m >= 1000 %}${{ m | divided_by: 1000.0 | round: 1 | append: "" | remove: ".0" }}B
+{%- elsif m >= 10 %}${{ m | round }}M
+{%- elsif m >= 1 %}${{ m | round: 1 | append: "" | remove: ".0" }}M
+{%- elsif m > 0 %}${{ m | times: 1000 | round }}K
+{%- endif -%}

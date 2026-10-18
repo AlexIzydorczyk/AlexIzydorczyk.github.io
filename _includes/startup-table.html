@@ -1,0 +1,290 @@
+{%- comment -%}
+  Searchable, sortable startup table with expandable rows.
+  Usage: {% include startup-table.html rows=site.data.ai_for_hedge_funds news=site.data.ai_for_hedge_funds_news
+           customers=site.data.ai_for_hedge_funds_customers partners=site.data.ai_for_hedge_funds_partners %}
+  Emoji and labels for category / focus / status / source_type come from page.legend (front matter).
+  A CSV value with no legend entry is shown as plain text so typos stay visible.
+  Each company is its own <tbody> (summary row + details row) so sorting and
+  filtering move the pair together.
+  List cells (fka, investors, x_people) are separated by semicolons; x_people entries are "Name @handle".
+  Founders are comma-separated, optionally as Markdown links to LinkedIn. Founder backgrounds ("ex-Citadel")
+  come from the founders CSV (one row per founder and firm) and are matched on the exact founder name.
+  News, customers and partners are one row per item in their own CSVs, matched on the company name.
+{%- endcomment -%}
+{%- assign rows = include.rows | where_exp: "row", "row.company" | sort_natural: "company" -%}
+{%- assign legend = page.legend -%}
+{%- capture new_tab_link %}<a target="_blank" rel="noopener" href={% endcapture -%}
+{%- capture external_icon %}<svg class="tracker-ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6.5 9.5M11 9.5V13H3V5h3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endcapture -%}
+{%- assign n_both = rows | where: "focus", "Both" | size -%}
+{%- assign n_institutional = rows | where: "focus", "Institutional" | size | plus: n_both -%}
+{%- assign n_consumer = rows | where: "focus", "Consumer" | size | plus: n_both -%}
+{%- comment %} The build time in the asset URLs makes browsers fetch fresh CSS/JS after every rebuild or deploy. {% endcomment %}
+{%- assign asset_version = site.time | date: "%s" %}
+<link rel="stylesheet" href="{{ '/assets/css/tracker.css' | relative_url }}?v={{ asset_version }}">
+<div class="tracker" data-tracker>
+{%- assign unclassified = 0 %}{% for row in rows %}{% assign c = row.category | strip %}{% if c == "" %}{% assign unclassified = unclassified | plus: 1 %}{% endif %}{% endfor %}
+<div class="tracker-toolbar" data-tracker-toolbar hidden>
+{%- comment %}
+  One search box: typing filters the table by text and suggests filters (customers, partners, investors,
+  founder backgrounds) and companies; picked filters show as removable chips in data-tracker-picks.
+{% endcomment %}
+<div class="tracker-omni" data-tracker-omni>
+<label class="tracker-search">
+<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10.5 10.5 3.25 3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+<input type="search" placeholder="Search companies, customers, partners, investors…" aria-label="Search companies or add a filter" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="tracker-suggest" data-tracker-search>
+<kbd class="tracker-kbd" aria-hidden="true">/</kbd>
+</label>
+<div class="tracker-suggest" id="tracker-suggest" role="listbox" aria-label="Suggestions" data-tracker-suggest hidden></div>
+</div>
+<div class="tracker-segment" role="group" aria-label="Filter by focus">
+<button type="button" aria-pressed="true" data-focus="*">All</button>
+<button type="button" aria-pressed="false" data-focus="Institutional" data-label="Institutional: built for investment firms, banks and other businesses (includes companies that serve both)" title="Institutional ({{ n_institutional }})"><span class="tracker-focus-icon is-institutional" aria-hidden="true"></span><span class="tracker-segment-label">Institutional</span></button>
+<button type="button" aria-pressed="false" data-focus="Consumer" data-label="Consumer: built for individual investors and traders (includes companies that serve both)" title="Consumer ({{ n_consumer }})"><span class="tracker-focus-icon is-consumer" aria-hidden="true"></span><span class="tracker-segment-label">Consumer</span></button>
+</div>
+<label class="tracker-select">
+<span class="visually-hidden">Category</span>
+<select data-tracker-category>
+<option value="*" data-label="All categories">All categories ({{ rows.size }})</option>
+{%- for item in legend.category %}
+{%- assign n = rows | where: "category", item.name | size %}
+{%- if n > 0 %}
+<option value="{{ item.name | escape }}" data-label="{{ item.emoji }} {{ item.name | escape }}">{{ item.emoji }} {{ item.name | escape }} ({{ n }})</option>
+{%- endif %}
+{%- endfor %}
+{%- if unclassified > 0 %}
+<option value="" data-label="Unclassified">Unclassified ({{ unclassified }})</option>
+{%- endif %}
+</select>
+</label>
+{%- comment %} Browse panel for every customer, partner, investor and founder background; built by startup-table.js. {% endcomment %}
+<button type="button" class="tracker-browse" aria-expanded="false" aria-controls="tracker-explorer" data-tracker-browse><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.5h4v4h-4zM9.5 3.5h4v4h-4zM2.5 10.5h4v2.5h-4zM9.5 10.5h4v2.5h-4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Browse</button>
+<div class="tracker-picks" aria-label="Active filters" data-tracker-picks hidden></div>
+<div class="tracker-explorer" id="tracker-explorer" role="dialog" aria-label="Browse customers, partners, investors and founder backgrounds" data-tracker-explorer data-groups="{{ legend.founder_firms | jsonify | escape }}" hidden></div>
+</div>
+<div class="tracker-meta" data-tracker-meta hidden>
+{%- comment %} Status tabs; startup-table.js keeps each count in step with the other filters. {% endcomment %}
+<div class="tracker-statuses" role="group" aria-label="Filter by status">
+<button type="button" aria-pressed="true" data-status="*">All <span class="tracker-status-n" data-n>{{ rows.size }}</span></button>
+{%- for item in legend.status %}
+{%- assign n = rows | where: "status", item.name | size %}
+{%- if n > 0 %}
+<button type="button" aria-pressed="false" data-status="{{ item.name | escape }}"><span aria-hidden="true">{{ item.emoji }}</span> {{ item.name | escape }} <span class="tracker-status-n" data-n>{{ n }}</span></button>
+{%- endif %}
+{%- endfor %}
+</div>
+<p class="tracker-status"><span class="tracker-count" data-tracker-count aria-live="polite"></span><button type="button" class="tracker-clear" data-tracker-share hidden>Copy link to this view</button><button type="button" class="tracker-clear" data-tracker-clear hidden>Clear filters</button></p>
+<p class="tracker-hint">Click a company for its description, customers, partners, investors, and news. Click a customer or partner to see where it comes from.</p>
+</div>
+<table class="tracker-table">
+<thead>
+<tr>
+<th class="col-rank" scope="col"><span class="visually-hidden">Rank</span></th>
+<th class="col-company" scope="col" aria-sort="ascending"><button type="button" data-sort>Company</button></th>
+<th class="col-category" scope="col"><button type="button" data-sort>Category</button></th>
+<th class="col-founders" scope="col"><button type="button" data-sort>Founders</button></th>
+<th class="col-round" scope="col"><button type="button" data-sort data-sort-first="descending" title="Sort by the date of the latest round (newest first)">Latest round</button></th>
+<th class="col-raised" scope="col"><button type="button" data-sort data-sort-first="descending" title="Total documented funding: the sum of the rounds listed for a company, in approximate US dollars. It's a floor; a + means some amounts weren't disclosed. Sort largest first.">Total raised</button></th>
+<th class="col-toggle" scope="col"><span class="visually-hidden">Details</span></th>
+</tr>
+</thead>
+{%- for row in rows %}
+{%- comment %}
+  Empty CSV cells arrive as nil. `strip` turns them into "", which matters because
+  `where` with a nil value returns every item (and `!= blank` is always true here).
+{% endcomment %}
+{%- assign slug = row.company | slugify %}
+{%- assign website = row.website | strip %}
+{%- assign domain = website | remove_first: "https://" | remove_first: "http://" | split: "/" | first | remove_first: "www." %}
+{%- assign linkedin = row.company_linkedin | strip %}
+{%- assign fka = row.fka | strip | replace: ";", "," %}
+{%- assign x_company = row.x_company | strip | remove_first: "@" %}
+{%- assign x_people = row.x_people | strip | split: ";" %}
+{%- assign investors = row.investors | strip | split: ";" %}
+{%- assign backgrounds = include.founders | where: "company", row.company %}
+{%- assign bg_firms = backgrounds | map: "firm" | uniq %}
+{%- assign description = row.description | strip %}
+{%- assign category_name = row.category | strip %}
+{%- assign focus_name = row.focus | strip %}
+{%- assign status_name = row.status | strip %}
+{%- assign category = legend.category | where: "name", category_name | first %}
+{%- assign focus = legend.focus | where: "name", focus_name | first %}
+{%- assign status = legend.status | where: "name", status_name | first %}
+{%- assign news = include.news | where: "company", row.company | sort: "date", "first" | reverse %}
+{%- assign customers = include.customers | where: "company", row.company %}
+{%- assign partners = include.partners | where: "company", row.company %}
+{%- assign media = include.media | where: "company", row.company | sort: "date", "first" | reverse %}
+<tbody id="{{ slug }}" data-name="{{ row.company | escape }}" data-category="{{ category_name | escape }}" data-focus="{{ focus_name | escape }}" data-status="{{ status_name | escape }}" data-founders="{{ bg_firms | join: '|' | escape }}" data-investors="{{ investors | join: '|' | strip | escape }}" data-customers="{% for c in customers %}{{ c.customer | escape }}~{{ c.customer_type | escape }}|{% endfor %}" data-partners="{% for p in partners %}{{ p.partner | escape }}~{{ p.partner_type | escape }}|{% endfor %}">
+<tr class="tracker-row">
+<td class="col-rank"></td>
+<td class="col-company"><div class="tracker-company{% if fka != "" %} has-fka{% endif %}">
+{%- assign initial = row.company | strip | slice: 0 | upcase %}
+{%- if domain != "" %}<img class="tracker-logo" src="https://www.google.com/s2/favicons?domain={{ domain }}&amp;sz=64" alt="" width="20" height="20" loading="lazy" data-initial="{{ initial | escape }}">{% else %}<span class="tracker-logo tracker-monogram" aria-hidden="true">{{ initial | escape }}</span>{% endif -%}
+<span class="tracker-name">{% if website != "" %}<a href="{{ website }}" target="_blank" rel="noopener">{{ row.company | escape }}</a>{% else %}{{ row.company | escape }}{% endif %}
+{%- if status and status.badge != false %} <span class="tracker-badge">{{ status.emoji }} {{ status.name }}</span>{% elsif status == nil and status_name != "" %} <span class="tracker-badge">{{ status_name | escape }}</span>{% endif -%}
+{%- if news.size > 0 %} <span class="tracker-news-count" title="{{ news.size }} news {% if news.size == 1 %}link{% else %}links{% endif %}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.5h9v9h-8a1 1 0 0 1-1-1zM11.5 6h2v5.5a1 1 0 0 1-2 0M4.5 6h5M4.5 8.5h5M4.5 11h3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ news.size }}</span>{% endif -%}
+{%- if customers.size > 0 %} <span class="tracker-news-count" title="{{ customers.size }} named {% if customers.size == 1 %}customer{% else %}customers{% endif %}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 7.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2zM2 13.2c0-2.3 1.8-4 4-4s4 1.7 4 4M10.8 7.1a1.8 1.8 0 1 0 0-3.6M11.7 9.4c1.4.4 2.3 1.9 2.3 3.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ customers.size }}</span>{% endif -%}
+{%- if partners.size > 0 %} <span class="tracker-news-count" title="{{ partners.size }} key {% if partners.size == 1 %}partner{% else %}partners{% endif %}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5 9.5 6.5M7 4.5l1.3-1.3a2.6 2.6 0 0 1 3.6 3.6L10.5 8.2M9 11.5l-1.3 1.3a2.6 2.6 0 0 1-3.6-3.6L5.5 7.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ partners.size }}</span>{% endif -%}
+{%- if media.size > 0 %} <span class="tracker-news-count" title="{{ media.size }} {% if media.size == 1 %}podcast, talk or video{% else %}podcasts, talks and videos{% endif %}"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6.9 6.1v3.8L10 8z" fill="currentColor"/></svg>{{ media.size }}</span>{% endif -%}
+</span>
+{%- if fka != "" %}<span class="tracker-fka" title="Formerly known as {{ fka | escape }}">f/k/a {{ fka | escape }}</span>{% endif -%}
+{%- assign note = row.comment | strip %}{% if note != "" %}<span class="tracker-note" title="{{ note | markdownify | strip_html | strip | escape }}">{{ note | markdownify | remove: "<p>" | remove: "</p>" | strip | replace: "<a href=", new_tab_link }}</span>{% endif -%}
+</div></td>
+<td class="col-category" data-sort="{{ category_name | escape }}"><div class="tracker-category">{% if category %}<span class="tracker-pill" title="{{ category.description | escape }}">{{ category.emoji }} {{ category.name }}</span>{% elsif category_name != "" %}<span class="tracker-pill">{{ category_name | escape }}</span>{% endif %}
+{%- if focus_name != "" %}<span class="tracker-focus-mini" role="img" aria-label="Focus: {{ focus_name | escape }}" title="{{ focus_name | escape }}{% if focus %}: {{ focus.description | escape }}{% endif %}">{% if focus_name == "Both" %}<span class="tracker-focus-icon is-institutional"></span><span class="tracker-focus-icon is-consumer"></span>{% else %}<span class="tracker-focus-icon is-{{ focus_name | slugify }}"></span>{% endif %}</span>{% endif %}</div></td>
+<td class="col-founders" data-label="Founders">{{ row.founders | markdownify | remove: "<p>" | remove: "</p>" | strip | replace: "<a href=", new_tab_link }}
+{%- if bg_firms.size > 0 %}<span class="tracker-pedigrees">{% for firm in bg_firms limit: 2 %}{% assign who = backgrounds | where: "firm", firm | map: "founder" | join: ", " %}<span class="tracker-pedigree" title="{{ who | escape }}">ex-{{ firm | escape }}</span>{% endfor %}
+{%- if bg_firms.size > 2 %}{% capture more_firms %}{% for firm in bg_firms offset: 2 %}ex-{{ firm }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}<span class="tracker-pedigree is-more" title="{{ more_firms | escape }}">+{{ bg_firms.size | minus: 2 }}</span>{% endif %}</span>{% endif %}</td>
+{%- assign latest = news | where: "type", "Funding" | first %}
+{%- assign n_rounds = news | where: "type", "Funding" | size %}
+<td class="col-round" data-label="Latest round" data-sort="{{ latest.date | strip }}">{% if latest %}{% assign lround = latest.round | strip %}{% assign lamount = latest.amount | strip %}{% assign ldate = latest.date | strip %}<a class="tracker-round" href="{{ latest.url }}" target="_blank" rel="noopener" title="{{ latest.title | escape }}">{{ lround | default: "Funding" | escape }}{% if lamount != "" %} · {{ lamount | escape }}{% endif %}</a>{% assign fresh = false %}{% if ldate.size == 10 %}{% assign age = site.time | date: "%s" | minus: 0 %}{% assign then = ldate | date: "%s" | minus: 0 %}{% assign age = age | minus: then %}{% if age >= 0 and age <= 2592000 %}{% assign fresh = true %}{% endif %}{% endif %}{% if ldate != "" %}<span class="tracker-round-date{% if fresh %} is-fresh{% endif %}"{% if fresh %} title="Announced in the 30 days before this page was last updated"{% endif %}>{% include tracker-date.html date=ldate %}</span>{% endif %}{% if n_rounds > 1 %}<span class="tracker-round-count">{{ n_rounds }} rounds</span>{% endif %}{% endif %}{% assign valuation = row.valuation | strip %}{% if valuation != "" %}{% assign vsource = row.valuation_source | strip %}<a class="tracker-valuation" href="{{ row.valuation_url }}" target="_blank" rel="noopener" title="{{ row.valuation_basis | strip | capitalize | default: "Reported" }} valuation{% if vsource != "" %} ({{ vsource | escape }}{% if row.valuation_date != "" %}, {{ row.valuation_date | strip }}{% endif %}){% endif %}">{{ valuation | escape }} valuation</a>{% endif %}</td>
+{%- comment %} Documented funding: the sum of the listed rounds' amounts in millions of USD (rough exchange rates). {% endcomment %}
+{%- assign raised = 0.0 %}{% assign n_open = 0 %}
+{%- assign funding_rows = news | where: "type", "Funding" %}
+{%- for item in funding_rows %}{% assign amt = item.amount | strip %}
+{%- if amt == "" %}{% assign n_open = n_open | plus: 1 %}{% else %}{% include tracker-usd.html amount=amt %}{% if usd > 0 %}{% assign raised = raised | plus: usd %}{% else %}{% assign n_open = n_open | plus: 1 %}{% endif %}{% endif %}
+{%- endfor %}
+{%- capture raised_text %}{% if raised > 0 %}{% include tracker-money.html m=raised %}{% endif %}{% endcapture %}
+{%- capture raised_note %}{% if raised > 0 %}≈ {{ raised_text }} documented across {{ n_rounds }} round{% if n_rounds != 1 %}s{% endif %}{% if n_open > 0 %}; {{ n_open }} without a disclosed amount{% endif %} (approx. USD){% elsif n_rounds > 0 %}{{ n_rounds }} round{% if n_rounds != 1 %}s{% endif %}, no amounts disclosed{% endif %}{% endcapture %}
+<td class="col-raised" data-label="Total raised" data-sort="{% if raised > 0 %}{{ raised | times: 1000 | round }}{% endif %}"{% if raised_note != "" %} title="{{ raised_note | strip | escape }}"{% endif %}>{% if raised > 0 %}<span class="tracker-raised">{{ raised_text }}{% if n_open > 0 %}<span class="tracker-raised-plus">+</span>{% endif %}</span>{% elsif n_rounds > 0 %}<span class="tracker-raised is-undisclosed">Undisclosed</span>{% endif %}</td>
+<td class="col-toggle"><button type="button" class="tracker-toggle" aria-expanded="false" aria-controls="{{ slug }}-details" aria-label="Details for {{ row.company | escape }}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+</tr>
+<tr class="tracker-details" id="{{ slug }}-details" hidden>
+{%- assign founder_items = row.founders | strip | split: ", " %}
+{%- assign founder_keys = "|" %}
+{%- assign funding = news | where: "type", "Funding" | sort: "date", "last" %}
+{%- assign stories = news | where_exp: "item", "item.type != 'Funding'" %}
+<td colspan="7"><div class="tracker-panel">
+{%- if description != "" %}
+<div class="tracker-description" data-searchable>{{ description | markdownify | replace: "<a href=", new_tab_link }}</div>
+{%- endif %}
+{%- comment %} A compact sheet: one labelled row per kind of fact, so long profiles stay scannable. {% endcomment %}
+<dl class="tracker-sheet">
+{%- if founder_items.size > 0 %}
+<div class="tracker-sheet-row"><dt>Founders</dt><dd data-searchable>
+<ul class="tracker-founders">
+{%- for item in founder_items %}
+{%- assign item = item | strip %}
+{%- if item contains "](" %}{% assign fname = item | split: "](" | first | remove_first: "[" %}{% assign flink = item | split: "](" | last | remove: ")" %}{% else %}{% assign fname = item %}{% assign flink = "" %}{% endif %}
+{%- assign founder_keys = founder_keys | append: fname | append: "|" %}
+{%- assign fbg = backgrounds | where: "founder", fname %}
+{%- assign fx = "" %}{% for person in x_people %}{% assign parts = person | split: "@" %}{% assign pname = parts.first | strip %}{% if parts.size > 1 and pname == fname %}{% assign fx = parts.last | strip %}{% endif %}{% endfor %}
+{%- capture founder_head %}<span class="tracker-founder-name">{{ fname | escape }}</span>
+{%- for b in fbg %}<span class="tracker-pedigree">ex-{{ b.firm | escape }}</span>{% endfor %}
+{%- if flink != "" %}<a class="tracker-founder-link" href="{{ flink }}" target="_blank" rel="noopener" title="LinkedIn" aria-label="{{ fname | escape }} on LinkedIn"><span class="tracker-icon is-linkedin" aria-hidden="true"></span></a>{% endif %}
+{%- if fx != "" %}<a class="tracker-founder-link" href="https://x.com/{{ fx }}" target="_blank" rel="noopener" title="@{{ fx }}" aria-label="{{ fname | escape }} on X"><span class="tracker-icon is-x" aria-hidden="true"></span></a>{% endif %}{% endcapture %}
+{%- if fbg.size > 0 %}
+<li class="tracker-founder"><details><summary>{{ founder_head }}</summary>
+<ul class="tracker-founder-bg">
+{%- for b in fbg %}{% assign role = b.role | strip %}{% assign years = b.years | strip %}
+<li><span class="tracker-founder-firm">{{ b.firm | escape }}</span>{% if role != "" %}<span class="tracker-founder-role">{{ role | escape }}</span>{% endif %}{% if years != "" %}<span class="tracker-founder-years">{{ years | escape }}</span>{% endif %}<a class="tracker-founder-src" href="{{ b.source }}" target="_blank" rel="noopener">Source{{ external_icon }}</a></li>
+{%- endfor %}
+</ul>
+</details></li>
+{%- else %}
+<li class="tracker-founder is-plain"><div class="tracker-founder-head">{{ founder_head }}</div></li>
+{%- endif %}
+{%- endfor %}
+</ul>
+</dd></div>
+{%- endif %}
+{%- if customers.size > 0 %}
+<div class="tracker-sheet-row"><dt>Customers</dt><dd data-searchable>
+<ul class="tracker-tags">
+{%- for c in customers %}
+{%- assign source_type = legend.source_type | where: "name", c.source_type | first %}
+{%- assign source_label = source_type.label | default: c.source_type %}
+{%- assign source = c.source | strip %}
+<li><a class="tracker-tag" href="{{ c.url }}" target="_blank" rel="noopener" data-relation="c:{{ c.customer | escape }}" data-source-type="{{ c.source_type | slugify }}" data-source-label="{{ source_label | escape }}" data-source="{{ source | escape }}" data-date="{{ c.date | strip }}" title="Source: {{ source_label | escape }}{% if source != "" %} ({{ source | escape }}){% endif %}" aria-label="{{ c.customer | escape }}, source: {{ source_label | escape }}"><span class="tracker-src" aria-hidden="true"></span>{{ c.customer | escape }}</a></li>
+{%- endfor %}
+</ul>
+</dd></div>
+{%- endif %}
+{%- if partners.size > 0 %}
+<div class="tracker-sheet-row"><dt>Partners</dt><dd data-searchable>
+<ul class="tracker-partners">
+{%- for p in partners %}
+{%- assign source_type = legend.source_type | where: "name", p.source_type | first %}
+{%- assign source_label = source_type.label | default: p.source_type %}
+{%- assign source = p.source | strip %}
+<li><a class="tracker-tag" href="{{ p.url }}" target="_blank" rel="noopener" data-relation="p:{{ p.partner | escape }}" data-source-type="{{ p.source_type | slugify }}" data-source-label="{{ source_label | escape }}" data-source="{{ source | escape }}" data-date="{{ p.date | strip }}" title="Source: {{ source_label | escape }}{% if source != "" %} ({{ source | escape }}){% endif %}" aria-label="{{ p.partner | escape }}, source: {{ source_label | escape }}"><span class="tracker-src" aria-hidden="true"></span>{{ p.partner | escape }}</a>{% assign what = p.what | strip %}{% if what != "" %}<span class="tracker-partner-what">{{ what | escape }}</span>{% endif %}</li>
+{%- endfor %}
+</ul>
+</dd></div>
+{%- endif %}
+{%- if funding.size > 0 %}
+<div class="tracker-sheet-row"><dt>Funding</dt><dd data-searchable>
+<ol class="tracker-funding">
+{%- for item in funding %}
+{%- assign round = item.round | strip %}{% assign amount = item.amount | strip %}{% assign date = item.date | strip %}{% assign source = item.source | strip %}
+<li><a class="tracker-round" href="{{ item.url }}" target="_blank" rel="noopener" title="{{ item.title | escape }}{% if source != "" %} ({{ source | escape }}){% endif %}">{{ round | default: "Funding" | escape }}{% if amount != "" %} · {{ amount | escape }}{% endif %}</a>{% if date != "" %}<span class="tracker-funding-date">{% include tracker-date.html date=date %}</span>{% endif %}</li>
+{%- endfor %}
+</ol>
+{%- if raised > 0 %}
+<p class="tracker-raised-line">≈ <b>{{ raised_text }}</b> documented across {{ n_rounds }} round{% if n_rounds != 1 %}s{% endif %}{% if n_open > 0 %} · {{ n_open }} undisclosed{% endif %}<span class="tracker-funding-date">approx. USD; a floor, not a full total</span></p>
+{%- endif %}
+{%- assign valuation = row.valuation | strip %}
+{%- if valuation != "" %}{% assign vsource = row.valuation_source | strip %}{% assign vbasis = row.valuation_basis | strip %}{% assign vdate = row.valuation_date | strip %}
+<p class="tracker-valuation-line">Latest valuation: <a href="{{ row.valuation_url }}" target="_blank" rel="noopener">{{ valuation | escape }}</a><span class="tracker-funding-date">{% if vbasis != "" %}{{ vbasis | escape }}{% endif %}{% if vsource != "" %}{% if vbasis != "" %} · {% endif %}{{ vsource | escape }}{% endif %}{% if vdate != "" %} · {% include tracker-date.html date=vdate %}{% endif %}</span></p>
+{%- endif %}
+</dd></div>
+{%- endif %}
+{%- if investors.size > 0 %}
+<div class="tracker-sheet-row"><dt>Investors</dt><dd data-searchable>
+<ul class="tracker-investors">
+{%- for investor in investors %}{% assign i = investor | strip %}{% if i != "" %}
+<li><button type="button" class="tracker-investor" data-investor="{{ i | escape }}" title="Show companies backed by {{ i | escape }}">{{ i | escape }}</button></li>
+{%- endif %}{% endfor %}
+</ul>
+</dd></div>
+{%- endif %}
+{%- if stories.size > 0 %}
+<div class="tracker-sheet-row"><dt>News</dt><dd data-searchable>
+<ul class="tracker-news">
+{%- for item in stories %}
+{%- assign source = item.source | strip %}
+{%- assign date = item.date | strip %}
+{%- if source == "" %}{% assign source = item.url | remove_first: "https://" | remove_first: "http://" | split: "/" | first | remove_first: "www." %}{% endif %}
+{%- assign type = item.type | strip %}
+<li><span class="tracker-news-date">{% include tracker-date.html date=date %}</span><span class="tracker-news-type is-{{ type | slugify }}">{{ type | escape }}</span><span class="tracker-news-body"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title | default: item.url | escape }}</a> <span class="tracker-news-source">{{ source | escape }}</span></span></li>
+{%- endfor %}
+</ul>
+{%- if stories.size > 6 %}
+<button type="button" class="tracker-more" data-tracker-more hidden>Show all {{ stories.size }}</button>
+{%- endif %}
+</dd></div>
+{%- endif %}
+{%- if media.size > 0 %}
+<div class="tracker-sheet-row"><dt>Media</dt><dd data-searchable>
+<ul class="tracker-media">
+{%- for item in media %}
+{%- assign mtype = item.type | strip %}{% assign show = item.show | strip %}{% assign people = item.people | strip %}
+<li><span class="tracker-news-date">{% include tracker-date.html date=item.date %}</span><span class="tracker-news-type is-{{ mtype | slugify }}">{{ mtype | escape }}</span><span class="tracker-news-body"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title | escape }}</a> <span class="tracker-news-source">{{ show | escape }}</span>{% if people != "" %} <span class="tracker-media-people">{{ people | escape }}</span>{% endif %}</span></li>
+{%- endfor %}
+</ul>
+{%- if media.size > 6 %}
+<button type="button" class="tracker-more" data-tracker-more hidden>Show all {{ media.size }}</button>
+{%- endif %}
+</dd></div>
+{%- endif %}
+{%- assign x_others = 0 %}{% for person in x_people %}{% assign parts = person | split: "@" %}{% capture key %}|{{ parts.first | strip }}|{% endcapture %}{% if parts.size > 1 %}{% unless founder_keys contains key %}{% assign x_others = x_others | plus: 1 %}{% endunless %}{% endif %}{% endfor %}
+<div class="tracker-sheet-row"><dt>Links</dt><dd class="tracker-links" data-searchable>
+{%- if website != "" %}<a href="{{ website }}" target="_blank" rel="noopener">{{ domain }}{{ external_icon }}</a>{% endif %}
+{%- if linkedin != "" %}<a href="{{ linkedin }}" target="_blank" rel="noopener"><span class="tracker-icon is-linkedin" aria-hidden="true"></span>LinkedIn</a>{% endif %}
+{%- if x_company != "" %}<a href="https://x.com/{{ x_company }}" target="_blank" rel="noopener"><span class="tracker-icon is-x" aria-hidden="true"></span>@{{ x_company }}</a>{% endif %}
+{%- for person in x_people %}{% assign parts = person | split: "@" %}{% assign handle = parts.last | strip %}{% assign name = parts.first | strip %}{% capture key %}|{{ name }}|{% endcapture %}{% if handle != "" and parts.size > 1 %}{% unless founder_keys contains key %}
+<span class="tracker-x-person">{% if name != "" %}{{ name | escape }} {% endif %}<a href="https://x.com/{{ handle }}" target="_blank" rel="noopener">@{{ handle }}</a></span>
+{%- endunless %}{% endif %}{% endfor %}
+<button type="button" class="tracker-copy" data-copy-link="{{ slug }}" title="Copy a link that opens this company"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5 9.5 6.5M7 4.5l1.3-1.3a2.6 2.6 0 0 1 3.6 3.6L10.5 8.2M9 11.5l-1.3 1.3a2.6 2.6 0 0 1-3.6-3.6L5.5 7.8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Copy link</button>
+</dd></div>
+</dl>
+<p class="tracker-panel-links"><a href="#{{ slug }}">Link to {{ row.company | escape }}</a>{% if page.suggest_url %} · <a href="{{ page.suggest_url }}" target="_blank" rel="noopener">Suggest an edit</a>{% endif %}</p>
+</div></td>
+</tr>
+</tbody>
+{%- endfor %}
+</table>
+<p class="tracker-empty" data-tracker-empty hidden>No companies match your search. <button type="button" data-tracker-reset>Clear filters</button></p>
+{%- comment %} Phones: once the toolbar scrolls away, this brings it back. {% endcomment %}
+<button type="button" class="tracker-fab" data-tracker-fab hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12l-4.5 5.5V13l-3-1.5V8.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Filters<span class="tracker-fab-n" data-tracker-fab-n></span></button>
+</div>
+<script src="{{ '/assets/js/startup-table.js' | relative_url }}?v={{ asset_version }}" defer></script>
