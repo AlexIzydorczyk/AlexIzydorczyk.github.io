@@ -1,20 +1,164 @@
+/* Page gutters (the theme's 50px is a lot on small screens) */
+body {
+    --page-gutter: 50px;
+    padding: var(--page-gutter);
+}
+
+@media screen and (max-width: 960px) {
+    body {
+        --page-gutter: 32px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        --page-gutter: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        --page-gutter: 16px;
+    }
+}
+
 /* For the wide layout */
+.wide-wrapper {
+    width: auto;
+    max-width: 1120px;
+}
+
 .wide-content {
     width: 100%;
     float: none;
+}
+
+/* The theme adds a border and padding to <section> on small screens */
+section.wide-content {
+    margin: 0;
+    padding: 0 0 20px;
+    border: 0;
+}
+
+/* Keep running text at a readable line length; tables can use the full width */
+.wide-content > p,
+.wide-content > ul,
+.wide-content > ol {
+    max-width: 760px;
+}
+
+.wide-content > h1 {
+    margin-bottom: 10px;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+}
+
+.wide-content .page-meta {
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: #8b939d;
+}
+
+/* "Suggest a company or correction" reads as an action */
+.wide-content .page-meta-button {
+    display: inline-block;
+    margin: 4px 0 0 8px;
+    padding: 2px 11px;
+    font-weight: 500;
+    color: #1f6fb2;
+    text-decoration: none;
+    border: 1px solid #c8d2dd;
+    border-radius: 999px;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.wide-content .page-meta-button:hover {
+    text-decoration: none;
+    background: #f3f7fc;
+    border-color: #1f6fb2;
+}
+
+/* Tracker page: the numbers at a glance, under the title */
+.tracker-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 40px;
+    margin: 0 0 28px;
+    padding: 14px 0;
+    border-top: 1px solid #e6e8eb;
+    border-bottom: 1px solid #e6e8eb;
+}
+
+.tracker-stats > div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end; /* numbers line up at the top even when a label wraps */
+}
+
+.tracker-stats dt {
+    margin: 2px 0 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #8b939d;
+}
+
+.tracker-stats dd {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #1f2328;
+    font-variant-numeric: tabular-nums;
+}
+
+@media screen and (max-width: 720px) {
+    /* Three tidy columns on phones */
+    .tracker-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px 16px;
+    }
+
+    .tracker-stats dd {
+        font-size: 18px;
+    }
+
+    .wide-content .page-meta-button {
+        margin-left: 0;
+    }
 }
 
 .wide-footer {
     width: 100%;
     float: none;
     position: static;
-    text-align: center;
-    padding: 20px 0;
+    margin-top: 24px;
+    padding: 18px 0 20px;
+    color: #8b939d;
+    border-top: 1px solid #eef0f2;
 }
 
-/* Narrow the sidebar and expand the content */
+.wide-footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 24px;
+}
+
+.wide-footer-home {
+    font-size: 14px;
+}
+
+.wide-disclaimer {
+    max-width: 760px;
+    margin: 10px 0 0;
+}
+
+/* Narrow the sidebar and expand the content (desktop only; the theme
+   stacks header and content below 960px) */
 header {
-    width: 200px; /* Was 220px */
     text-align: center;
 }
 
@@ -28,13 +172,63 @@ header p {
     text-align: left;
 }
 
-section {
-    width: 610px; /* Was 590px */
+@media screen and (min-width: 961px) {
+    header {
+        width: 200px; /* Was 220px */
+    }
+
+    section {
+        width: 610px; /* Was 590px */
+    }
+
+    footer {
+        width: 200px; /* Was 220px */
+    }
 }
 
-/* Make default links in the content less prominent */
+@media screen and (max-width: 960px) {
+    header {
+        padding-right: 0; /* theme reserves 320px here for its download links */
+    }
+
+    header p {
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .profile-picture {
+        width: 96px;
+    }
+
+    .social-icons {
+        margin-bottom: 16px;
+    }
+
+    /* The theme boxes the stacked content with rules; the one under the footer is just noise */
+    section:not(.wide-content) {
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .wide-content > h1 {
+        font-size: 28px;
+    }
+}
+
+/* One accent blue across the site (readable on white) and darker body text than the theme's grey */
+body {
+    color: #4b5563;
+}
+
+a,
 section a {
-    color: #5694c2; /* Lighter, less saturated blue */
+    color: #1f6fb2;
+}
+
+header h1 a {
+    color: #1f2328;
 }
 
 /* Style for the highlighted project link */
@@ -42,16 +236,12 @@ section a {
     font-weight: bold;
 }
 
-footer {
-    width: 200px; /* Was 220px */
-}
-
 .page-footer-credit {
     margin-top: 40px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #eef0f2;
     padding-top: 20px;
     font-size: 0.8em; /* Smaller font */
-    color: #bbb; /* Lighter grey */
+    color: #8b939d; /* Muted grey that's still legible */
     font-style: italic; /* Italicized */
 }
 
@@ -63,7 +253,7 @@ footer {
 }
 
 .breadcrumbs a {
-  color: #007EBB; /* A nice blue for links */
+  color: #1f6fb2;
   text-decoration: none;
 }
 
@@ -94,7 +284,7 @@ footer {
 
 .social-icons a {
     display: inline-block;
-    margin-right: 10px;
+    margin: 0 5px; /* symmetric so the icon row stays centered */
     border: none;
 }
 
@@ -112,4 +302,188 @@ footer {
 
 .social-icon.magis-icon {
     border-radius: 5px; /* Optional: to round the corners of the Magis png */
+}
+
+/* Homepage: quieter section labels, and the tracker as a featured card */
+section:not(.wide-content) h4 {
+    margin: 36px 0 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8b939d;
+}
+
+.project-card {
+    display: block;
+    margin: 0 0 12px;
+    padding: 14px 16px;
+    text-decoration: none;
+    background: #fafbfc;
+    border: 1px solid #e3e6ea;
+    border-radius: 12px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+section a.project-card:hover {
+    text-decoration: none;
+    border-color: #c8d2dd;
+    box-shadow: 0 4px 14px rgba(16, 24, 40, 0.08);
+}
+
+.project-card-title {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1f2328;
+}
+
+.project-card-title::after {
+    content: "\00a0\2192"; /* non-breaking, so the arrow never wraps alone */
+    color: #1f6fb2;
+}
+
+.project-card-meta {
+    display: block;
+    margin-top: 3px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Homepage: comfortable reading size, lists as clean rows, notes under talk titles */
+section:not(.wide-content) {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+section:not(.wide-content) ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+section:not(.wide-content) li {
+    padding: 7px 0;
+    border-bottom: 1px solid #f0f2f4;
+}
+
+section:not(.wide-content) li:last-child {
+    border-bottom: 0;
+}
+
+.list-note {
+    display: block;
+    font-size: 13px;
+    color: #8b939d;
+}
+
+/* Tracker and other wide pages: a slim bar that ties the page back to the site */
+.site-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 20px;
+    margin: 0 0 36px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eef0f2;
+}
+
+.site-bar-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2328;
+    text-decoration: none;
+}
+
+.site-bar-home img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+}
+
+.site-bar-home:hover {
+    color: #1f6fb2;
+    text-decoration: none;
+}
+
+.site-bar-links {
+    display: flex;
+    gap: 18px;
+    font-size: 14px;
+}
+
+.site-bar-links a {
+    color: #6b7280;
+}
+
+.site-bar-links a:hover {
+    color: #1f2328;
+}
+
+/* Tracker page header: the intro on the left, the numbers on the right */
+.page-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 56px;
+    align-items: start;
+    margin: 0 0 36px;
+}
+
+.page-intro > p {
+    max-width: 720px;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.page-intro > p:last-child {
+    margin-bottom: 0;
+}
+
+.page-head .tracker-stats {
+    flex-direction: column;
+    gap: 16px;
+    margin: 4px 0 0;
+    padding: 2px 0 2px 28px;
+    border: 0;
+    border-left: 1px solid #e6e8eb;
+}
+
+@media screen and (max-width: 960px) {
+    .page-head {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .page-head .tracker-stats {
+        order: -1;
+        flex-direction: row;
+        gap: 12px 36px;
+        padding: 14px 0;
+        border-left: 0;
+        border-top: 1px solid #e6e8eb;
+        border-bottom: 1px solid #e6e8eb;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .page-head .tracker-stats {
+        gap: 12px 16px;
+    }
+
+    .site-bar {
+        margin-bottom: 24px;
+    }
+}
+
+/* 404 */
+.not-found {
+    padding: 40px 0 24px;
+}
+
+.not-found-links a {
+    margin-right: 20px;
 }

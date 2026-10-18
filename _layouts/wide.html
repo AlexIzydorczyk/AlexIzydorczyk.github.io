@@ -12,30 +12,33 @@
     <![endif]-->
     {% include head-custom.html %}
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="icon" href="{{ '/assets/images/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper wide-wrapper">
       <section class="wide-content">
-        {% if page.url != "/" %}
-        <nav class="breadcrumbs">
-          <a href="{{ "/" | relative_url }}">Home</a> &gt; {{ page.title }}
-        </nav>
-        {% endif %}
+        <div class="site-bar" role="banner">
+          <a class="site-bar-home" href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/sg-profile-320.jpg' | relative_url }}" alt="" width="28" height="28">Alex Izydorczyk</a>
+          <nav class="site-bar-links" aria-label="Elsewhere">
+            <a href="https://magis.substack.com" target="_blank" rel="noopener">Writing</a>
+            <a href="https://www.linkedin.com/in/alexander-izydorczyk-86390759/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://x.com/aleksizy" target="_blank" rel="noopener">X</a>
+          </nav>
+        </div>
         {{ content }}
-
-        {% if page.url != "/" %}
-        <nav class="breadcrumbs bottom-breadcrumbs">
-          <a href="{{ "/" | relative_url }}">Home</a> &gt; {{ page.title }}
-        </nav>
-        {% endif %}
       </section>
       <footer class="wide-footer">
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <div class="wide-footer-row">
+          <a class="wide-footer-home" href="{{ '/' | relative_url }}">&larr; Alex Izydorczyk</a>
+          <small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small>
+        </div>
+        <p class="wide-disclaimer"><small>Please note this is for informational purposes only (not investment advice). No mention of a company should be treated as an endorsement, and the author may or may not own securities in companies mentioned.</small></p>
       </footer>
     </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
 </html>

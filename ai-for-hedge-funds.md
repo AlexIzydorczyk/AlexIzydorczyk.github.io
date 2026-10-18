@@ -1,16 +1,114 @@
 ---
 layout: wide
 title: AI for Hedge Funds Startup Tracker
+description: "A maintained list of startups building AI for hedge funds and other investment firms, with their customers, partners, funding, investors and founders."
+image: /assets/images/ai-for-hedge-funds-card.png
+suggest_url: https://forms.gle/7xvmKY2EBwYtq3hx8
+# Rows live in _data/ai_for_hedge_funds.csv; news, customers, partners and founder backgrounds have their own CSVs in _data/.
+# The category, focus, status and source_type values are matched against the names below.
+legend:
+  # description is shown when hovering a category pill.
+  category:
+    - name: Research Copilot
+      emoji: 🧠
+      description: "AI assistants and agents for investment research: answers and memos from filings, transcripts, broker research, news and a firm's own documents, plus monitoring and idea generation. Mostly public markets; includes agent platforms deployed inside investment firms."
+    - name: Excel Copilot
+      emoji: 📊
+      description: "AI that builds, updates or manages financial models and Office deliverables (Excel, PowerPoint, Word)."
+    - name: Terminal 2.0
+      emoji: 🖥️
+      description: "AI-native market data terminals and research workspaces, positioned as alternatives to Bloomberg, Capital IQ or FactSet."
+    - name: Private Markets & Deals
+      emoji: 💼
+      description: "Built for private equity, venture capital, private credit, investment banking and fund allocators: deal sourcing, diligence, memos and portfolio monitoring."
+    - name: Expert Networks
+      emoji: 🗣️
+      description: "Expert calls and primary research, including AI-run interviews."
+    - name: Data Providers
+      emoji: 🗄️
+      description: "Sells datasets or data APIs: market data, fundamentals, alternative data and AI-ready financial data."
+    - name: Data Extraction
+      emoji: ⚙️
+      description: "Web scraping and document parsing that turn unstructured sources into structured data for investment teams."
+    - name: Quant & Trading
+      emoji: 🧮
+      description: "Tools for systematic investing and trading: quant research and backtesting, AI-driven strategies and model portfolios for asset managers, trading agents and execution infrastructure."
+    - name: Wealth Management
+      emoji: 💰
+      description: "AI for wealth managers, advisors, private banks and brokerages' client-facing tools."
+    - name: Operations & Compliance
+      emoji: 🛡️
+      description: "Back- and middle-office workflows: operations, compliance and reporting."
+    - name: AI Hedge Fund
+      emoji: 🤖
+      description: "Trades its own or investors' capital with AI (it is the trader, not a vendor), including AI trading labs that trade through a partner firm."
+    - name: Stealth
+      emoji: 🥷
+      description: "Too little public information to tell what the product is."
+    - name: Other
+      emoji: 🧩
+      description: "Doesn't fit the categories above."
+  focus:
+    - name: Institutional
+      description: Built for investment firms, banks and other businesses
+    - name: Consumer
+      description: Built for individual investors and traders
+    - name: Both
+      description: Serves both institutions and individual investors
+  status:
+    - name: Active
+      emoji: ✅
+      badge: false # don't flag active companies in the table
+    - name: Acquired
+      emoji: 🤝
+    - name: Pivot
+      emoji: 🔄
+    - name: Inactive
+      emoji: 💤
+  # Groups for the "Founder background" filter (firm names in the founders_from column).
+  # Firms not listed here still appear in the filter, under "Other".
+  founder_firms:
+    - group: Hedge funds & trading firms
+      firms: [AQR, Balyasny, Baupost, Brevan Howard, Bridgewater, Citadel, Citadel Securities, Coatue, D. E. Shaw, Davidson Kempner, DRW, Duquesne Capital, Elliott, Farallon, Five Rings, Hudson River Trading, Jane Street, Jump Trading, King Street, Lone Pine, Man Group, Marshall Wace, Maverick, Millennium, Optiver, Pershing Square, Point72, Renaissance Technologies, Schonfeld, Silver Point Capital, Soros Fund Management, Susquehanna, Third Point, Tiger Global, Tower Research, Tudor, Two Sigma, Viking Global, WorldQuant]
+    - group: Banks & investment firms
+      firms: [Andreessen Horowitz, Apollo, Bain Capital, Bank of America, Barclays, BlackRock, Blackstone, Capital Group, Carlyle, Centerview, Citi, Credit Suisse, Deutsche Bank, Evercore, Goldman Sachs, Insight Partners, J.P. Morgan, KKR, Lazard, Merrill Lynch, Moelis, Morgan Stanley, PIMCO, PJT, Qatalyst, Sequoia Capital, SoftBank Vision Fund, TPG, UBS, Warburg Pincus]
+    - group: Tech companies
+      firms: [Airbnb, Anthropic, Coinbase, Databricks, ElevenLabs, Glean, Google Brain, Google DeepMind, Instacart, Meta AI, Notion, OpenAI, Palantir, Plaid, Ramp, Reka AI, Robinhood, Scale AI, Scalapay, Snowflake, SpaceX, Stripe, Tools for Humanity, Uber]
+  # Where a customer or partner claim comes from (source_type in the customers/partners CSVs).
+  source_type:
+    - name: Customer announcement
+      label: Announced by the customer
+    - name: Partner announcement
+      label: Announced by the partner
+    - name: News
+      label: News coverage
+    - name: Press release
+      label: Press release
+    - name: Case study
+      label: Case study
+    - name: Company post
+      label: Company blog or announcement
+    - name: Testimonial
+      label: Testimonial on company website
+    - name: Logo
+      label: Logo on company website
 ---
 
 # AI for Hedge Funds Startup Tracker
 
-This page tracks startups in the AI for Hedge Funds space. More broadly, these are startups whose primary customers are alternatve asset managers (hedge funds, private equity, venture capital, etc.) and who are using LLMs in a primary capacity. I originally published this on Magis, my blog, [here](https://magis.substack.com/p/genai-for-hedge-funds-startups). I have moved it to this page so that it can be referenced, maintained, and updated more easily.
+<p class="page-meta">Maintained by Alex Izydorczyk <a class="page-meta-button" href="{{ page.suggest_url }}">Suggest a company or correction</a></p>
 
-In the future, I hope to split out the list into categories, designate public market vs. privates focuses, and so on. For now, I avoid established companies that have launched a new AI product. For web extraction or financial data companies, see this list instead: <span class="highlight-link">[AI Native Financial Data Providers]({% link ai-financial-data.md %})</span>.
+<div class="page-head" markdown="1">
+<div class="page-intro" markdown="1">
 
-📈 designates a founding team experienced as practioners in the hedge fund industry. 💻 designates a founding team with experience in AI or machine learning in Silicon Valley. Either designation is purely my own subjective opinion based on my personal relationship or reference.
+This page tracks startups in the AI for Hedge Funds space. More broadly, these are startups whose primary customers are alternative asset managers (hedge funds, private equity, venture capital, etc.) and who are using LLMs in a primary capacity. I originally published this on Magis, my blog, [here](https://magis.substack.com/p/genai-for-hedge-funds-startups). I have moved it to this page so that it can be referenced, maintained, and updated more easily.
 
-I welcome suggestions, questions, and corrections. Please reach out to me if you can help complete the list. Please feel free to submit additions/corrections directly [here](https://forms.gle/7xvmKY2EBwYtq3hx8).
+The list also includes financial data providers and web extraction tools focused on data for AI use cases; these were previously tracked on a separate page. In the future, I hope to designate public market vs. privates focuses, and so on. For now, I avoid established companies that have launched a new AI product.
 
-<div style="min-height:3160px" id="datawrapper-vis-6OdWG"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/6OdWG/embed.js" charset="utf-8" data-target="#datawrapper-vis-6OdWG"></script><noscript><img src="https://datawrapper.dwcdn.net/6OdWG/full.png" alt="" /></noscript></div>
+I welcome suggestions, questions, and corrections. Please reach out to me if you can help complete the list. Please feel free to submit additions/corrections directly [here]({{ page.suggest_url }}).
+
+</div>
+{% include tracker-stats.html rows=site.data.ai_for_hedge_funds news=site.data.ai_for_hedge_funds_news %}
+</div>
+
+{% include startup-table.html rows=site.data.ai_for_hedge_funds news=site.data.ai_for_hedge_funds_news customers=site.data.ai_for_hedge_funds_customers partners=site.data.ai_for_hedge_funds_partners founders=site.data.ai_for_hedge_funds_founders media=site.data.ai_for_hedge_funds_media %}

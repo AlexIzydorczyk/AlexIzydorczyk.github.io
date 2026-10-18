@@ -1,0 +1,32 @@
+{%- comment %}
+  Sets `usd` to the approximate value of include.amount in millions of US dollars: "$25M" -> 25,
+  "€6.2M" -> 6.82, "CHF 2M" -> 2.3, "₩4.6B" -> 3.36, "$500K" -> 0.5, "~$30M" / "RMB 100M+" read as 30 / 14.
+  Blank or unreadable amounts give 0. Exchange rates are rough and only meant for totals.
+{% endcomment -%}
+{%- assign a = include.amount | strip | remove: "~" | remove: "+" | remove: "," | remove: "≈" -%}
+{%- assign rate = 1 -%}
+{%- if a contains "C$" %}{% assign rate = 0.73 %}{% assign a = a | remove: "C$" -%}
+{%- elsif a contains "A$" %}{% assign rate = 0.66 %}{% assign a = a | remove: "A$" -%}
+{%- elsif a contains "S$" %}{% assign rate = 0.75 %}{% assign a = a | remove: "S$" -%}
+{%- elsif a contains "HK$" %}{% assign rate = 0.13 %}{% assign a = a | remove: "HK$" -%}
+{%- elsif a contains "€" %}{% assign rate = 1.1 %}{% assign a = a | remove: "€" -%}
+{%- elsif a contains "EUR" %}{% assign rate = 1.1 %}{% assign a = a | remove: "EUR" -%}
+{%- elsif a contains "£" %}{% assign rate = 1.3 %}{% assign a = a | remove: "£" -%}
+{%- elsif a contains "GBP" %}{% assign rate = 1.3 %}{% assign a = a | remove: "GBP" -%}
+{%- elsif a contains "CHF" %}{% assign rate = 1.15 %}{% assign a = a | remove: "CHF" -%}
+{%- elsif a contains "RMB" %}{% assign rate = 0.14 %}{% assign a = a | remove: "RMB" -%}
+{%- elsif a contains "CN¥" %}{% assign rate = 0.14 %}{% assign a = a | remove: "CN¥" -%}
+{%- elsif a contains "¥" %}{% assign rate = 0.0068 %}{% assign a = a | remove: "¥" -%}
+{%- elsif a contains "₩" %}{% assign rate = 0.00073 %}{% assign a = a | remove: "₩" -%}
+{%- elsif a contains "₹" %}{% assign rate = 0.012 %}{% assign a = a | remove: "₹" -%}
+{%- elsif a contains "₪" %}{% assign rate = 0.27 %}{% assign a = a | remove: "₪" -%}
+{%- elsif a contains "SEK" %}{% assign rate = 0.095 %}{% assign a = a | remove: "SEK" -%}
+{%- endif -%}
+{%- assign a = a | remove: "$" | remove: "USD" | strip -%}
+{%- assign unit = 1 -%}
+{%- if a contains "B" %}{% assign unit = 1000 %}{% assign a = a | remove: "B" -%}
+{%- elsif a contains "M" %}{% assign a = a | remove: "M" -%}
+{%- elsif a contains "K" %}{% assign unit = 0.001 %}{% assign a = a | remove: "K" -%}
+{%- elsif a contains "k" %}{% assign unit = 0.001 %}{% assign a = a | remove: "k" -%}
+{%- endif -%}
+{%- assign usd = a | strip | times: 1.0 | times: unit | times: rate -%}

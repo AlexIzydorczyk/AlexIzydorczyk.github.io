@@ -1,0 +1,4 @@
+{%- comment %} "Mon YYYY" for a YYYY-MM-DD or YYYY-MM date; a bare year (YYYY) is shown as is. {% endcomment -%}
+{%- assign d = include.date | strip -%}
+{%- assign dlen = d | size -%}
+{%- if dlen == 4 -%}{{ d }}{%- elsif dlen == 7 -%}{{ d | append: "-01" | date: "%b %Y" }}{%- elsif dlen > 0 -%}{{ d | date: "%b %Y" }}{%- endif -%}

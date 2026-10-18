@@ -1,0 +1,475 @@
+company,customer,customer_type,source_type,source,url,date
+Aiera,JAT Capital Management,Hedge fund,Logo,Aiera website (Wayback Machine),https://web.archive.org/web/20241218080802/https://www.aiera.com/,2024-12-18
+Aiera,WisdomTree,Asset manager,Testimonial,Ai4 2024 (YouTube),https://www.youtube.com/watch?v=sVbxdp9I2aM,2024-08-22
+AlphaSense,Goldman Sachs,Bank,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/10/07/3376644/0/en/alphasense-announces-most-innovative-customer-award-winners-at-alphasummit-2026.html,2026-10-07
+AlphaSense,J.P. Morgan,Bank,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/06/03/3305968/0/en/AlphaSense-Raises-350M-at-7-5B-Valuation-and-Surpasses-600M-in-Annual-Recurring-Revenue.html,2026-06-03
+AlphaSense,Morgan Stanley,Bank,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/10/06/3375733/0/en/alphasense-launches-next-generation-ai-agent-superanalyst-to-power-high-value-financial-and-strategic-workflows.html,2026-10-06
+AlphaSense,D. E. Shaw,Hedge fund,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/06/03/3305968/0/en/AlphaSense-Raises-350M-at-7-5B-Valuation-and-Surpasses-600M-in-Annual-Recurring-Revenue.html,2026-06-03
+AlphaSense,Balyasny,Hedge fund,Press release,AlphaSense (PR Newswire),https://www.prnewswire.com/news-releases/alphasense-grows-to-2-5-billion-valuation-securing-150-million-in-series-e-funding-led-by-bond-301941224.html,2023-09-28
+AlphaSense,Element Capital Management,Hedge fund,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/10/07/3376644/0/en/alphasense-announces-most-innovative-customer-award-winners-at-alphasummit-2026.html,2026-10-07
+AlphaSense,Whale Rock Capital,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/hedge-funds/,
+AlphaSense,RTW Investments,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/hedge-funds/,
+AlphaSense,Cheyne Capital,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/hedge-funds/,
+AlphaSense,Bank of America,Bank,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/10/06/3375733/0/en/alphasense-launches-next-generation-ai-agent-superanalyst-to-power-high-value-financial-and-strategic-workflows.html,2026-10-06
+AlphaSense,UBS,Bank,Company post,AlphaSense,https://www.alpha-sense.com/resources/research-articles/financial-services-ai-takeaways-alphasummit/,2025-10-24
+AlphaSense,Deutsche Bank,Bank,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/04/07/3269077/0/en/alphasense-scales-global-operations-to-meet-surging-demand-for-applied-ai.html,2026-04-07
+AlphaSense,BNP Paribas,Bank,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/asset-management/,
+AlphaSense,BNY,Bank,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/broker-research-reports/,
+AlphaSense,DBS Bank,Bank,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/04/07/3269077/0/en/alphasense-scales-global-operations-to-meet-surging-demand-for-applied-ai.html,2026-04-07
+AlphaSense,ODDO BHF,Bank,Case study,AlphaSense,https://www.alpha-sense.com/resources/case-studies/oddo-bhf/,2025-05-16
+AlphaSense,GIC,Pension/Endowment,Press release,AlphaSense (PR Newswire),https://www.prnewswire.com/apac/news-releases/alphasense-announces-strategic-investment-from-singapore-based-global-investor-edbi-adds-mark-leadercramer-to-lead-apac-expansion-302037501.html,2024-01-18
+AlphaSense,CPP Investments,Pension/Endowment,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/10/07/3376644/0/en/alphasense-announces-most-innovative-customer-award-winners-at-alphasummit-2026.html,2026-10-07
+AlphaSense,Baillie Gifford,Asset manager,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/04/07/3269077/0/en/alphasense-scales-global-operations-to-meet-surging-demand-for-applied-ai.html,2026-04-07
+AlphaSense,Aberdeen Investments,Asset manager,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/10/06/3375733/0/en/alphasense-launches-next-generation-ai-agent-superanalyst-to-power-high-value-financial-and-strategic-workflows.html,2026-10-06
+AlphaSense,Prudential Financial,Insurance,Logo,AlphaSense website,https://www.alpha-sense.com/industries/insurance/,
+AlphaSense,CVC,Private equity,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/private-equity/,
+AlphaSense,Advent International,Private equity,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/private-equity/,
+AlphaSense,Bridgepoint,Private equity,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/private-equity/,
+AlphaSense,TA Associates,Private equity,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/private-equity/,
+AlphaSense,Vitruvian Partners,Private equity,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/06/03/3305968/0/en/AlphaSense-Raises-350M-at-7-5B-Valuation-and-Surpasses-600M-in-Annual-Recurring-Revenue.html,2026-06-03
+AlphaSense,American Express,Other financial,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/06/03/3305968/0/en/AlphaSense-Raises-350M-at-7-5B-Valuation-and-Surpasses-600M-in-Annual-Recurring-Revenue.html,2026-06-03
+AlphaSense,Octahedron Capital,Hedge fund,Case study,Tegus (AlphaSense),https://web.archive.org/web/20240916160111/https://www.tegus.com/customers/octahedron-capital,2024-08-15
+AlphaSense,HMI Capital,Hedge fund,Case study,Tegus (AlphaSense),https://web.archive.org/web/20250713180351/https://www.tegus.com/customers/hmi-capital,2024-09-16
+AlphaSense,Alta Fox Capital Management,Hedge fund,Testimonial,Tegus (AlphaSense),https://web.archive.org/web/20251102132653/https://www.tegus.com/hedge-funds,2025-01-17
+AlphaSense,Papyrus Capital,Hedge fund,Case study,AlphaSense,https://www.alpha-sense.com/resources/case-studies/how-papyrus-capital-uses-alphasense/,2025-05-16
+AlphaSense,Recurve Capital,Hedge fund,Case study,AlphaSense,https://www.alpha-sense.com/resources/case-studies/recurve-capital/,2025-05-16
+AlphaSense,XN,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/hedge-funds/,
+AlphaSense,Casdin Capital,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/solutions/financial-services/hedge-funds/,
+AlphaSense,Talos Eurisko Asset Management,Hedge fund,Press release,AlphaSense (GlobeNewswire),https://www.globenewswire.com/news-release/2026/10/07/3376644/0/en/alphasense-announces-most-innovative-customer-award-winners-at-alphasummit-2026.html,2026-10-07
+AlphaSense,Verition Fund Management,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/tour/hedge-funds-product-tour/,
+AlphaSense,LMR Partners,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/tour/hedge-funds-product-tour/,
+AlphaSense,Polar Asset Management Partners,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/tour/enterprise-intelligence/,
+AlphaSense,Hawk Ridge Capital Management,Hedge fund,Logo,AlphaSense website,https://www.alpha-sense.com/tour/enterprise-intelligence/,
+AlphaSense,Adage Capital Management,Hedge fund,Logo,AlphaSense website (Wayback),https://web.archive.org/web/20240913192900/https://www.alpha-sense.com/tour/hedge-funds-product-tour/,2024-09-13
+AlphaSense,Woodline Partners,Hedge fund,Logo,AlphaSense website (Wayback),https://web.archive.org/web/20240913192900/https://www.alpha-sense.com/tour/hedge-funds-product-tour/,2024-09-13
+AlphaSense,CQS,Hedge fund,Logo,AlphaSense website (Wayback),https://web.archive.org/web/20240120092654/https://www.alpha-sense.com/solutions/financial-services/hedge-funds/,2024-01-20
+AlphaSense,Caro-Kann Capital,Hedge fund,Press release,AlphaSense,https://www.alpha-sense.com/press/alphasense-scales-workflow-automation-in-financial-firms-and-enterprises/,2026-03-24
+Auquan,UBS,Bank,Press release,Business Wire,https://www.businesswire.com/news/home/20250114426961/en/Auquan-Enters-2025-After-a-Breakthrough-Year-of-AI-Agent-Innovation-and-Customer-Impact-in-Financial-Services,2025-01-14
+Auquan,MetLife,Insurance,Press release,Business Wire,https://www.businesswire.com/news/home/20251009851225/en/Auquan-Named-a-Gartner-Cool-Vendor-for-Agentic-AI-in-Banking-and-Investment-Services,2025-10-09
+Auquan,T. Rowe Price,Asset manager,Press release,Business Wire,https://www.businesswire.com/news/home/20251009851225/en/Auquan-Named-a-Gartner-Cool-Vendor-for-Agentic-AI-in-Banking-and-Investment-Services,2025-10-09
+Auquan,Capital Group,Asset manager,Press release,Business Wire,https://www.businesswire.com/news/home/20250114426961/en/Auquan-Enters-2025-After-a-Breakthrough-Year-of-AI-Agent-Innovation-and-Customer-Impact-in-Financial-Services,2025-01-14
+Auquan,Blue Owl Capital,Private credit,Press release,Business Wire,https://www.businesswire.com/news/home/20250114426961/en/Auquan-Enters-2025-After-a-Breakthrough-Year-of-AI-Agent-Innovation-and-Customer-Impact-in-Financial-Services,2025-01-14
+Auquan,Federated Hermes,Asset manager,Press release,Business Wire,https://www.businesswire.com/news/home/20241029941794/en/Auquan-Raises-4.5M-to-Automate-Deep-Work-in-Finance-With-AI,2024-10-29
+Auquan,BC Partners,Private equity,Press release,Business Wire,https://www.businesswire.com/news/home/20251009851225/en/Auquan-Named-a-Gartner-Cool-Vendor-for-Agentic-AI-in-Banking-and-Investment-Services,2025-10-09
+Auquan,IK Partners,Private equity,Logo,Auquan website,https://www.auquan.com/,
+Auquan,Kohlberg & Company,Private equity,Logo,Auquan website,https://www.auquan.com/,
+Auquan,Albacore Capital Group,Private credit,Logo,Auquan website,https://www.auquan.com/,
+Axyon AI,SMBC Global Investment & Consulting,Bank,Testimonial,Axyon AI website,https://axyon.ai/,
+Axyon AI,Mediolanum Gestione Fondi SGR,Asset manager,Testimonial,Axyon AI website,https://axyon.ai/,
+Axyon AI,AcomeA SGR,Asset manager,Customer announcement,AcomeA SGR,https://www.acomea.it/news/un-certificato-che-sfrutta-la-ai/,2024-07-04
+Axyon AI,Banca Cambiano 1884,Bank,News,Bluerating,https://www.bluerating.com/banche-e-reti/816932/axyon-ai-e-banca-cambiano-partnership-nelle-gestioni-patrimoniali,2024-07-16
+Batonics,GAO Capital,Hedge fund,Press release,Batonics (Mynewsdesk),https://www.mynewsdesk.com/se/batonics-ab/pressreleases/swedish-ai-firm-batonics-enters-mou-with-singapores-gao-capital-to-develop-quant-research-infra-for-proprietary-trading-algorithms-3394314,2025-06-26
+Bigdata.com,RBC Capital Markets,Bank,Case study,Bigdata.com,https://bigdata.com/resources/rbc-capital-markets-builds-trusted-ai-research-solution-with-bigdata-com,2026-03-13
+Bigdata.com,Manulife,Insurance,Logo,Bigdata.com website,https://bigdata.com/,
+Bigdata.com,XA Investments,Asset manager,Customer announcement,XA Investments,https://xainvestments.com/news-firms/xa-investments-launches-custom-genai-tool-for-interval-fund-market-research/,2026-05-20
+Bigdata.com,Wolfe Research,Other financial,Logo,Bigdata.com website,https://bigdata.com/,
+Bigdata.com,Shamrock Capital,Private equity,Logo,Bigdata.com website,https://bigdata.com/,
+Bigdata.com,Empirical Research Partners,Other financial,Logo,Bigdata.com website,https://bigdata.com/,
+Bigdata.com,Lumida Wealth,Asset manager,Case study,Bigdata.com,https://bigdata.com/resources/how-lumida-wealth-cut-research-time-and-made-faster-decisions-with-bigdata-com,2025-06-05
+Bigdata.com,ADG Capital Management,Hedge fund,Logo,Bigdata.com,https://bigdata.com/,
+Blueflame AI,Lincoln International,Bank,Logo,Blueflame AI website,https://blueflame.ai/,
+Blueflame AI,Charlesbank Capital Partners,Private equity,Company post,Blueflame AI news,https://blueflame.ai/news/the-bankers-ai-stack-revealed,2025-11-26
+Blueflame AI,Siguler Guff,Private equity,Testimonial,Blueflame AI website,https://blueflame.ai/,
+Blueflame AI,Cinctive Capital,Hedge fund,Case study,Blueflame AI,https://blueflame.ai/case-studies/cinctive-capital-deploys-blueflame-ai-enterprise,
+Blueflame AI,CapVest,Private equity,Logo,Blueflame AI website,https://blueflame.ai/,
+Blueflame AI,Anchorage Capital Partners,Private equity,Testimonial,Blueflame AI website,https://blueflame.ai/case-studies,
+Blueflame AI,CFI Partners,Private credit,Logo,Blueflame AI website,https://blueflame.ai/,
+Blueflame AI,Eden Capital,Private equity,Logo,Blueflame AI website,https://blueflame.ai/,
+Blueflame AI,MEMCO (Multilateral Endowment Management Company),Pension/Endowment,Logo,Blueflame AI website,https://blueflame.ai/,
+Boosted.ai,HSBC,Bank,Logo,Boosted.ai website,https://www.boosted.ai/,
+Boosted.ai,Invesco,Asset manager,Logo,Boosted.ai website,https://www.boosted.ai/,
+Boosted.ai,BMO,Bank,Logo,Boosted.ai website,https://www.boosted.ai/,
+Boosted.ai,CIBC,Bank,Logo,Boosted.ai website,https://www.boosted.ai/,
+Boosted.ai,Questrade,Broker/Exchange,Company post,Boosted.ai (LinkedIn),https://www.linkedin.com/posts/boostedai_the-dawn-of-investing-product-releases-activity-7397745771116261376-rd6T,2025-11-21
+Boosted.ai,Liontrust,Asset manager,Press release,Business Wire,https://www.businesswire.com/news/home/20250409721336/en/Boosted.ai-Partners-With-Liontrust-to-Enhance-AI-Driven-Investment-Research,2025-04-09
+Boosted.ai,U.S. Global Investors,Asset manager,Press release,Business Wire,https://www.businesswire.com/news/home/20251027952578/en/Boosted.ai-Launches-Industry-First-Conversational-Agents-for-Investment-Management-Research-with-ElevenLabs,2025-10-27
+Boosted.ai,Lucerne Capital Management,Hedge fund,Customer announcement,Lucerne Capital Management website,https://www.lucernecap.com/post/lucerne-capital-management-launches-regenerative-u-s-farmland-platform,2026-01-20
+BridgeWise,Fidelity Investments,Asset manager,Logo,BridgeWise website,https://bridgewise.com/,
+BridgeWise,E*TRADE from Morgan Stanley,Broker/Exchange,Logo,BridgeWise website,https://bridgewise.com/,
+BridgeWise,ING,Bank,Logo,BridgeWise website,https://bridgewise.com/,
+BridgeWise,eToro,Broker/Exchange,Customer announcement,eToro (press release),https://www.etoro.com/news-and-analysis/press-releases/etoro-partners-with-bridgewise-to-launch-new-portfolio-using-ai-driven-analysis-to-pick-industry-leading-stocks/,2023-09-06
+BridgeWise,Rakuten Securities,Broker/Exchange,Customer announcement,Rakuten Securities (announcement),https://www.rakuten-sec.co.jp/web/info/info20250718-01.html,2025-07-18
+BridgeWise,Emirates NBD,Bank,Logo,BridgeWise website,https://bridgewise.com/,
+BridgeWise,Bank Hapoalim,Bank,News,Globes,https://en.globes.co.il/en/article-Financial-analysis-tech-co-BridgeWise-mulls-Tel-Aviv-IPO-1001558807,2026-10-07
+BridgeWise,Bank Leumi,Bank,News,Globes,https://en.globes.co.il/en/article-Financial-analysis-tech-co-BridgeWise-mulls-Tel-Aviv-IPO-1001558807,2026-10-07
+BridgeWise,SBI Thai Online Securities (SBITO),Broker/Exchange,Company post,BridgeWise,https://bridgewise.com/press/sbito-launches-neo-ai-powered-by-bridgewise/,2026-05-20
+BridgeWise,GMO Coin,Broker/Exchange,Company post,BridgeWise,https://bridgewise.com/press/gmo-coin-and-bridgewise-launch-ai-partnership/,2026-06-17
+Canary Data,Tiger Global,Hedge fund,News,The Wall Street Journal,https://www.wsj.com/finance/investing/the-hedge-fund-veteran-trying-to-make-his-past-self-obsolete-with-ai-714b58e4,2026-05-31
+Canary Data,Flight Deck Capital,Hedge fund,News,The Wall Street Journal,https://www.wsj.com/finance/investing/the-hedge-fund-veteran-trying-to-make-his-past-self-obsolete-with-ai-714b58e4,2026-05-31
+Captide,J.P. Morgan,Bank,Testimonial,Captide website,https://www.captide.ai/,
+Captide,Deutsche Bank,Bank,Testimonial,Captide website,https://www.captide.ai/,
+Compound,Coatue,Hedge fund,Logo,Compound website,https://getcompound.ai/,
+Compound,Octahedron Capital,Hedge fund,Logo,Compound website,https://getcompound.ai/,
+Compound,Avra,Venture capital,Logo,Compound website,https://getcompound.ai/,
+Compound,783 Capital Partners,Other financial,Logo,Compound website,https://getcompound.ai/,
+Current,Walleye Capital,Hedge fund,News,Every,https://every.to/podcast/at-this-10-billion-hedge-fund-using-ai-just-became-mandatory,2025-05-14
+Daloopa,Kultura Capital Management,Hedge fund,Case study,Daloopa website,https://daloopa.com/case-study/kultura-capital-daloopa-speed-ai-research-workflows,
+Daloopa,Parallaxes Capital,Asset manager,Testimonial,Daloopa (InDaloop podcast),https://podcasts.apple.com/us/podcast/leveraging-technology-in-tra-investments-with-andy-lee/id1747812171?i=1000656442656,2024-05-22
+Decisional,LTV Capital,Venture capital,Testimonial,Decisional website (archived finance page),http://web.archive.org/web/20251208104144/https://www.decisional.com/finance,
+DeepVest,Korhorn Financial Group,Asset manager,Testimonial,DeepVest website,https://www.deepvest.ai/,
+DeepVest,Longboard Asset Management,Asset manager,Testimonial,DeepVest website,https://www.deepvest.ai/,
+DeepVest,Arbor Capital Management,Asset manager,Testimonial,DeepVest website,https://www.deepvest.ai/,
+DeepVest,Brucker Wealth,Asset manager,Testimonial,DeepVest website,https://www.deepvest.ai/,
+DeepVest,Michael Lee Strategy,Asset manager,Testimonial,DeepVest website,https://www.deepvest.ai/,
+Desia,Sella (Sella Investment Banking),Bank,Customer announcement,Sella Investment Banking (LinkedIn),https://it.linkedin.com/posts/sellainvestmentbanking_we-are-pleased-to-announce-the-partnership-activity-7421492138682748930-cz5E,2026-01-26
+Desia,Sofina,Private equity,Logo,Desia website,https://www.desia.ai/,
+Desia,Vesper Infrastructure Partners,Private equity,Case study,Desia,https://www.desia.ai/news/how-vesper-infrastructure-is-shaping-the-future-of-infra-investing-with-desia,2025-10-03
+Desia,21 Invest,Private equity,Logo,Desia website,https://www.desia.ai/,
+Desia,Averroes Capital,Private equity,Case study,Desia,https://www.desia.ai/news/how-averroes-accelerates-day-to-day-investment-work-with-desia,2025-10-15
+Desia,Granite Capital Management,Asset manager,Logo,Desia,https://www.desia.ai/,
+Desia,Spring Creek Investment Management,Asset manager,Logo,Desia,https://www.desia.ai/,
+DocuBridge,Maverick Management,Private equity,Case study,DocuBridge website,https://www.docubridge.ai/articles/why-maverick-management-chose-docubridge-to-power-its-diligence-flow,2024-11-14
+Elastics,Everhaven Securities,Other financial,Testimonial,Elastics website,https://www.elastics.ai/,
+Endex,Moelis & Company,Bank,Logo,Endex website,https://endex.ai/,
+Endex,Centerbridge Partners,Private equity,Logo,Endex website,https://endex.ai/,
+Endex,TA Associates,Private equity,Logo,Endex website,https://endex.ai/,
+Endex,Hg,Private equity,Logo,Endex website,https://endex.ai/,
+Endex,The Raine Group,Bank,Logo,Endex website,https://endex.ai/,
+Endex,Charlesbank Capital Partners,Private equity,Logo,Endex website,https://endex.ai/,
+Endex,Haveli Investments,Private equity,Logo,Endex website,https://endex.ai/,
+Endex,Madison International Realty,Private equity,Logo,Endex website,https://endex.ai/,
+Endex,Beacon Pointe,Asset manager,Logo,Endex website,https://endex.ai/,
+Endex,RXR,Asset manager,Logo,Endex website,https://endex.ai/,
+F2,Golub Capital,Private credit,Customer announcement,Golub Capital newsroom,https://golubcapital.com/news-insights/f2-announces-strategic-partnership-and-5-million-investment-from-golub-capital/,2026-09-28
+F2,Bain Capital,Private equity,Press release,Business Wire,https://www.businesswire.com/news/home/20260610638134/en/F2-Raises-%2424M-to-Deploy-LLM-Agnostic-Operating-System-across-Private-Credit-Commercial-Banks,2026-06-10
+F2,Western Alliance Bank,Bank,Logo,F2 website,https://f2.ai/,
+F2,Live Oak Bank,Bank,Press release,Business Wire,https://www.businesswire.com/news/home/20260610638134/en/F2-Raises-%2424M-to-Deploy-LLM-Agnostic-Operating-System-across-Private-Credit-Commercial-Banks,2026-06-10
+F2,Monarch Alternative Capital,Hedge fund,Logo,F2 website,https://f2.ai/,
+F2,Siguler Guff,Private equity,Logo,F2 website,https://f2.ai/,
+F2,Decathlon Capital Partners,Private credit,Case study,F2 website,https://f2.ai/case-studies/how-decathlon-capital-streamlined-deal-diligence-with-f2,
+F2,RevTek Capital,Private credit,Press release,PR Newswire,https://www.prnewswire.com/news-releases/f2-spins-out-of-arc-with-10-million-equity-round-emerging-as-the-ai-leader-in-private-markets-302557013.html,2025-09-16
+Farsight,TresVista,Other financial,Customer announcement,TresVista website (In The News),https://www.tresvista.com/in-the-news/,2026-10-07
+Farsight,Deutsche Bank,Bank,Press release,GlobeNewswire,https://www.globenewswire.com/news-release/2026/10/13/3379732/0/en/deutsche-bank-deploys-farsight-on-premise-across-investment-banking-and-capital-markets-in-europe-and-the-americas.html,2026-10-13
+Filot,TresVista,Other financial,Customer announcement,TresVista press release,https://www.tresvista.com/ai-powered-financial-modeling-to-scale-across-investment-teams/,2026-04-06
+Filot,Seaport Research Partners,Broker/Exchange,Case study,Filot website,https://www.filot.ai/news/seaport-case-study,2026-09-21
+Finaipro,Bancolombia,Bank,Logo,Finaipro website,https://www.finaipro.com/,
+Finaipro,Palatine Asset Management,Asset manager,Customer announcement,Palatine Asset Management website (Palatine Amérique fund page),https://www.palatine-am.com/client-prive/actions/palatine-amerique-r-euro/,
+Finaipro,MyInvestor,Bank,Logo,Finaipro website,https://www.finaipro.com/,
+Finpilot,TIFF Investment Management,Asset manager,Testimonial,Finpilot website,https://www.finpilot.ai/,
+Finpilot,Seattle Children's (endowment),Pension/Endowment,Testimonial,Finpilot website,https://www.finpilot.ai/,
+Finpilot,LNW,Asset manager,Testimonial,Finpilot website,https://www.finpilot.ai/,
+Finpilot,The Clarius Group,Asset manager,Testimonial,Finpilot website,https://www.finpilot.ai/,
+Finrep,Wells Fargo,Bank,Logo,Finrep website,https://www.finrep.ai/,
+Finrep,Busey,Bank,Logo,Finrep website,https://www.finrep.ai/,
+Finrep,TWFG Insurance,Insurance,Logo,Finrep,https://www.finrep.ai/,
+Fintool,UBS,Bank,Logo,Fintool website (archived case-studies page),https://web.archive.org/web/20250616101914/https://fintool.com/case-studies,
+Fintool,Janus Henderson,Asset manager,Logo,Fintool website (archived homepage),https://web.archive.org/web/20250705195512/https://fintool.com/,
+Fintool,Raymond James,Bank,Logo,Fintool website (archived homepage),https://web.archive.org/web/20250705195512/https://fintool.com/,
+Fintool,TCW,Asset manager,Logo,Fintool website (archived homepage),https://web.archive.org/web/20250705195512/https://fintool.com/,
+Fintool,Silver Point Capital,Hedge fund,Logo,Fintool website (archived homepage),https://web.archive.org/web/20250705195512/https://fintool.com/,
+Fintool,Vaughan Nelson,Asset manager,Logo,Fintool website (archived homepage),https://web.archive.org/web/20250705195512/https://fintool.com/,
+Fintool,F/M Investments,Asset manager,Logo,Fintool website (archived homepage),https://web.archive.org/web/20250705195512/https://fintool.com/,
+Fintool,Grizzly Rock Capital,Hedge fund,Case study,Fintool (archived case study),http://web.archive.org/web/20251006200221/https://fintool.com/case-studies/grizzly-rock,2025-02-05
+Fintool,Rangeley Capital,Hedge fund,Testimonial,Fintool website (archived homepage),https://web.archive.org/web/20250705195512/https://fintool.com/,
+Fintool,Kennedy Capital Management,Asset manager,Logo,Fintool (archived homepage),https://web.archive.org/web/20260212133644/https://fintool.com/,
+Fiscal.ai,CIBC,Bank,Logo,Fiscal.ai website,https://fiscal.ai/customer-stories/,
+Fiscal.ai,VanEck,Asset manager,Logo,Fiscal.ai website,https://fiscal.ai/,
+Fiscal.ai,eToro,Broker/Exchange,Customer announcement,eToro (press release),https://www.etoro.com/news-and-analysis/press-releases/etoro-launches-club-subscription-unlocking-platinum-tier-benefits/,2025-11-03
+Fiscal.ai,Kalshi,Broker/Exchange,Press release,PR Newswire (Benzinga),https://www.prnewswire.com/news-releases/benzinga-kalshi-and-fiscalai-collaborate-to-expand-prediction-markets-with-company-kpi-data-302748724.html,2026-04-21
+Fiscal.ai,Baskin Wealth Management,Asset manager,Logo,Fiscal.ai website,https://fiscal.ai/customer-stories/,
+FIXParser,Goldman Sachs,Bank,Logo,FIXParser website,https://fixparser.dev/,
+FIXParser,UBS,Bank,Logo,FIXParser website,https://fixparser.dev/,
+FIXParser,Coinbase,Broker/Exchange,Logo,FIXParser website,https://fixparser.dev/,
+FIXParser,BCB Group,Other financial,Logo,FIXParser website,https://fixparser.dev/,
+FIXParser,DIFX,Broker/Exchange,Logo,FIXParser website,https://fixparser.dev/,
+FIXParser,Fasset,Broker/Exchange,Logo,FIXParser website,https://fixparser.dev/,
+FIXParser,AQRU,Other financial,Logo,FIXParser website,https://fixparser.dev/,
+FIXParser,Grain Finance,Other financial,Logo,FIXParser website,https://fixparser.dev/,
+Hebbia,Morgan Stanley,Bank,News,The Information,https://www.theinformation.com/newsletters/ai-agenda/rogo-hebbia-revenue-rises-claude-finance-threat-looms,2026-09-03
+Hebbia,BlackRock,Asset manager,News,New York Post,https://nypost.com/2025/06/13/business/hebbias-founder-is-helping-blackrock-kkr-and-the-air-force-embrace-ai/,2025-06-13
+Hebbia,KKR,Private equity,News,New York Post,https://nypost.com/2025/06/13/business/hebbias-founder-is-helping-blackrock-kkr-and-the-air-force-embrace-ai/,2025-06-13
+Hebbia,The Carlyle Group,Private equity,Press release,Hebbia (Business Wire),https://www.businesswire.com/news/home/20250827824893/en/Hebbia-Integrates-with-Microsoft-Azure-AI-Foundry-to-Elevate-Financial-Analysis,2025-08-27
+Hebbia,Centerview Partners,Bank,News,TechCrunch,https://techcrunch.com/2024/07/09/ai-startup-hebbia-rased-130m-at-a-700m-valuation-on-13-million-of-profitable-revenue/,2024-07-09
+Hebbia,MetLife,Insurance,News,New York Post,https://nypost.com/2025/06/13/business/hebbias-founder-is-helping-blackrock-kkr-and-the-air-force-embrace-ai/,2025-06-13
+Hebbia,Oak Hill Advisors,Private credit,Case study,Hebbia,https://www.hebbia.com/customers/oha/,
+Hebbia,New Mountain Capital,Private equity,Logo,Hebbia website,https://www.hebbia.com/,
+Hebbia,Charlesbank Capital Partners,Private equity,News,TechCrunch,https://techcrunch.com/2024/07/09/ai-startup-hebbia-rased-130m-at-a-700m-valuation-on-13-million-of-profitable-revenue/,2024-07-09
+Hebbia,26North,Asset manager,Logo,Hebbia website,https://www.hebbia.com/,
+Hudson Labs,Enhancing Capital,Asset manager,Testimonial,Hudson Labs website,https://hudson-labs.com/,
+Hudson Labs,Princeton Value Partners,Asset manager,Testimonial,Hudson Labs website,https://hudson-labs.com/,
+Inven,J.P. Morgan,Bank,Logo,Inven website,https://www.inven.ai/,
+Inven,Moelis & Company,Bank,Logo,Inven website,https://www.inven.ai/,
+Inven,Cantor Fitzgerald,Bank,Logo,Inven website,https://www.inven.ai/,
+Inven,Oaklins,Bank,Logo,Inven website,https://www.inven.ai/,
+Inven,Clearwater International,Bank,Logo,Inven website,https://www.inven.ai/,
+Inven,Axcel,Private equity,Logo,Inven website,https://www.inven.ai/,
+Inven,ARCHIMED,Private equity,Logo,Inven website,https://www.inven.ai/,
+Inven,Imbiba,Private equity,Case study,Inven website,https://www.inven.ai/case-studies/imbiba-uk-growth-capital-deal-sourcing,
+Inven,IGC Partners,Bank,Case study,Inven website,https://www.inven.ai/case-studies/igc-partners-mid-market-deal-sourcing-investment-banking,
+Inven,Lexar Partners,Private equity,Case study,Inven website,https://www.inven.ai/case-studies/lexar-partners-private-equity-sourcing,
+Keye,Sorenson Capital,Private equity,Customer announcement,Sorenson Capital (portfolio news),https://www.sorensoncapital.com/from-months-to-minutes-keye-secures-seed-funding-to-revolutionize-pe-deal-analysis/,2025-07-29
+LinqAlpha,Goldman Sachs,Bank,News,Asia Economy (아시아경제),https://www.asiae.co.kr/article/2026041516274904947,2026-04-17
+LinqAlpha,BNP Paribas,Bank,News,Asia Economy (아시아경제),https://www.asiae.co.kr/article/2026041516274904947,2026-04-17
+LinqAlpha,Fidelity International,Asset manager,News,Asia Economy (아시아경제),https://www.asiae.co.kr/article/2026041516274904947,2026-04-17
+LinqAlpha,Tiger Global,Hedge fund,News,Hankyung Magazine (한경비즈니스),https://magazine.hankyung.com/business/article/202605158450b,2026-05-15
+LinqAlpha,Schonfeld Strategic Advisors,Hedge fund,News,Money Today (머니투데이),https://www.mt.co.kr/future/2026/07/02/2026070208220738528,2026-07-02
+LinqAlpha,Causeway Capital Management,Asset manager,Press release,PR Newswire,https://www.prnewswire.com/news-releases/linqalpha-raises-22-million-to-build-the-alpha-intelligence-layer-for-global-public-markets-302816647.html,2026-07-02
+LinqAlpha,Cathay Financial Holdings,Other financial,Logo,LinqAlpha website,https://linqalpha.com/customers,
+LinqAlpha,Hanwha Insurance,Insurance,Case study,LinqAlpha website,https://linqalpha.com/customers/how-hanwha-insurance-is-rethinking-multi-asset-investing-with-ai,2026-09-22
+LinqAlpha,Arrowpoint Investment Partners,Hedge fund,Case study,LinqAlpha website,https://linqalpha.com/customers/arrowpoint-next-gen-ai-framework,
+LinqAlpha,MUST Asset Management,Asset manager,Case study,LinqAlpha website,https://linqalpha.com/customers/must-asset-management-ahead-of-market-narratives-with-linqalpha,
+LinqAlpha,Orchid Tree Investment Management,Hedge fund,Case study,LinqAlpha,https://linqalpha.com/customers/how-orchid-tree-runs-a-corporate-credit-convertibles-desk-on-linqalpha,2026-09-22
+LinqAlpha,Third Square Capital Management,Hedge fund,Case study,LinqAlpha,https://linqalpha.com/customers/third-square-capital-challenging-bias-and-scaling-contrarian-research-with-linqalpha,2025-10-29
+LinqAlpha,Turiya Capital,Hedge fund,Logo,LinqAlpha website,https://linqalpha.com/customers,
+LinqAlpha,Fourier Capital Management,Hedge fund,Logo,LinqAlpha website,https://linqalpha.com/customers,
+LinqAlpha,SILQ Capital,Hedge fund,Logo,LinqAlpha website,https://linqalpha.com/customers,
+LinqAlpha,Panvira,Hedge fund,Case study,LinqAlpha website,https://linqalpha.com/customers/how-panvira-builds-its-research-foundation-with-linqalpha,2025-11-18
+Machine Analyst,Amundi,Asset manager,Logo,Machine Analyst website,https://www.machineanalyst.com/,
+Machine Analyst,Santalucía Asset Management,Asset manager,Logo,Machine Analyst website,https://www.machineanalyst.com/,
+Machine Analyst,Quadriga Asset Managers,Asset manager,Logo,Machine Analyst website,https://www.machineanalyst.com/,
+Machine Analyst,Mindset Ventures,Venture capital,Logo,Machine Analyst website,https://www.machineanalyst.com/,
+Machine Analyst,EQV (Exit Quotient Ventures),Venture capital,Logo,Machine Analyst website,https://www.machineanalyst.com/,
+Machine Analyst,Conscious Venture Partners,Venture capital,Logo,Machine Analyst,https://www.machineanalyst.com/,
+Machine Analyst,Laconia Capital Group,Venture capital,Logo,Machine Analyst,https://www.machineanalyst.com/,
+MDOTM,Morgan Stanley,Bank,News,The Next Web,https://thenextweb.com/news/mdotm-27m-ai-wealth-management-sphere,2026-07-01
+MDOTM,Amundi,Asset manager,News,The Next Web,https://thenextweb.com/news/mdotm-27m-ai-wealth-management-sphere,2026-07-01
+MDOTM,Zurich Bank,Bank,News,The Next Web,https://thenextweb.com/news/mdotm-27m-ai-wealth-management-sphere,2026-07-01
+MDOTM,Momentum Global Investment Management,Asset manager,Customer announcement,Momentum Global Investment Management (press release PDF),https://momentum.co.uk/media/bfog5t31/mdotm-ltd-press-release_-website.pdf,2022-10-26
+MDOTM,Sella SGR,Asset manager,Customer announcement,Gruppo Sella (press release),https://www.sellagroup.eu/-/sella-sgr-partnership-con-la-fintech-mdotm-per-intelligenza-artificiale-nei-processi-di-investimento,
+MDOTM,Banca Patrimoni Sella & C.,Bank,Press release,PR Newswire,https://www.prnewswire.com/news-releases/banca-patrimoni-sella--c-launches-a-new-discretionary-mandate-powered-by-mdotm-ltds-artificial-intelligence-301736756.html,2023-02-02
+MDOTM,J.P. Morgan,Bank,Logo,MDOTM website,https://www.mdotm.ai/,
+MDOTM,UniCredit,Bank,Logo,MDOTM website,https://www.mdotm.ai/,
+MDOTM,Lazard,Bank,Logo,MDOTM website,https://www.mdotm.ai/,
+MDOTM,Barings,Asset manager,Logo,MDOTM website,https://www.mdotm.ai/,
+Metal,Clearlake Capital,Private equity,Case study,Metal blog,https://www.metal.ai/blog/clearlake-capital-and-the-shift-toward-ai-native-investing,2026-07-07
+Metal,Berkshire Partners,Private equity,Case study,Metal blog,https://www.metal.ai/blog/how-berkshire-partners-collaborative-approach-led-to-ai-adoption,2024-10-08
+Metal,Blue Wolf Capital,Private equity,Company post,Metal blog (seed announcement),https://www.metal.ai/blog/seed-fundraise-announcement,2025-09-09
+Model ML,HSBC,Bank,Company post,Model ML,https://modelml.com/articles/hsbc-rolls-out-model-ml-globally,2026-09-14
+Model ML,Santander,Bank,Logo,Model ML website,https://modelml.com/,
+Model ML,GCM Grosvenor,Asset manager,Press release,Business Wire,https://www.businesswire.com/news/home/20260126431484/en/GCM-Grosvenor-Taps-Model-ML-to-Accelerate-Investment-Workflow-Automation,2026-01-26
+Model ML,FT Partners,Bank,Case study,Model ML,https://modelml.com/articles/how-ft-partners-is-transforming-deal-work-with-model-ml,2026-09-03
+Model ML,Actis,Private equity,Case study,Model ML,https://modelml.com/articles/actis-and-model-ml-a-blueprint-for-private-equity-innovation-and-automation,2025-04-05
+Model ML,TresVista,Other financial,Case study,Model ML,https://modelml.com/articles/how-tresvista-scaled-ai-adoption-while-cutting-costs-with-model-ml,2026-08-19
+Model ML,Equirus Group,Bank,Company post,Model ML,https://modelml.com/articles/equirus-group-selects-model-ml-to-automate-banking-workflows,2026-06-15
+Model ML,Three Hills Capital Partners,Private equity,Company post,Model ML,https://modelml.com/articles/model-ml-and-three-hills-to-lead-workshop-at-ai-pathfinder-s-private-equity-ai-strategy-day,2025-08-27
+Model ML,Gaingels,Venture capital,Case study,Model ML,https://modelml.com/articles/how-a-leading-vc-firm-accelerated-deal-diligence-with-model-ml,2025-04-18
+Model ML,Growth Capital Partners,Private equity,Company post,Model ML,https://modelml.com/articles/how-growth-capital-partners-uses-model-ml-for-deal-sourcing,2025-04-22
+Multiplier,Mercator Partners,Hedge fund,Company post,Multiplier blog,https://www.multiplier.ai/blog/announcing-our-6m-seed,2026-08-10
+Multiplier,Verso Partners,Hedge fund,Press release,Business Wire,https://www.businesswire.com/news/home/20260826206248/en/Multiplier-Raises-%246M-Seed-Financing-to-Build-AI-for-Asset-Managers,2026-08-26
+Onwish,Goldman Sachs,Bank,Logo,Onwish website,https://www.onwish.ai/,
+Onwish,Morgan Stanley,Bank,Logo,Onwish website,https://www.onwish.ai/,
+Onwish,Hillhouse Investment,Private equity,Logo,Onwish website,https://www.onwish.ai/,
+OpenBB,Causeway Capital Management,Asset manager,Case study,OpenBB website (Buy-Side page),https://openbb.co/buy-side,
+Pascal AI Labs,ICICI Prudential Asset Management,Asset manager,Press release,PTI (press release),https://www.ptinews.com/story/business/pascal-ai-collaborates-with-icici-prudential-amc-for-ai-initiatives/3658770,2026-05-12
+Pascal AI Labs,Kotak Mahindra Asset Management,Asset manager,Customer announcement,PR Newswire (Kotak Mahindra AMC),https://www.prnewswire.com/in/news-releases/kotak-mahindra-amc-deploys-pascal-ais-agentic-research-platform-to-enhance-institutional-investment-research-302683663.html,2026-02-10
+Pebble Finance,Plynk (Fidelity),Broker/Exchange,Customer announcement,Plynk (press release via Business Wire),https://www.plynkinvest.com/press/yearinreview,2025-12-09
+Permutable,Macquarie,Bank,Logo,Permutable website,https://permutable.ai/,
+Permutable,Vontobel,Bank,Logo,Permutable website,https://permutable.ai/,
+Permutable,ISI Markets,Broker/Exchange,Logo,Permutable website,https://permutable.ai/,
+Permutable,Cross Options,Other financial,Logo,Permutable website,https://permutable.ai/,
+Permutable,Hertshten Group,Other financial,Logo,Permutable website,https://permutable.ai/,
+Playbook,SCS Financial,Asset manager,Case study,Powder website,https://www.powderfi.com/case-study-scsfinancial,
+Playbook,IEQ Capital,Asset manager,News,WealthManagement.com,https://www.wealthmanagement.com/financial-technology/wealthtech-startup-powder-raises-5m-in-seed-funding,2024-07-23
+Playbook,Catalytic Wealth,Asset manager,News,WealthManagement.com,https://www.wealthmanagement.com/financial-technology/wealthtech-startup-powder-raises-5m-in-seed-funding,2024-07-23
+Playbook,OnePoint BFG Wealth Partners,Asset manager,Case study,Powder website,https://www.powderfi.com/case-study-onepoint,
+Playbook,First Foundation Advisors,Asset manager,Case study,Powder website,https://www.powderfi.com/case-study-firstfoundation,
+Playbook,Chicago Partners,Asset manager,Case study,Powder website,https://www.powderfi.com/case-study-chicagopartners,
+Playbook,EPIQ Capital,Asset manager,News,WealthManagement.com,https://www.wealthmanagement.com/financial-technology/wealthtech-startup-powder-raises-5m-in-seed-funding,2024-07-23
+Playbook,Sunpointe Investments,Asset manager,Case study,Powder website,https://www.powderfi.com/case-study-sunpointe,
+Playbook,Ducere Wealth Management,Asset manager,Testimonial,Powder website,https://www.powderfi.com/,
+Playbook,GC Wealth,Asset manager,Testimonial,Powder website,https://www.powderfi.com/,
+Primer,Allianz Global Investors,Asset manager,Company post,Welcome to the Jungle (company profile),https://app.welcometothejungle.com/companies/Primer-1,
+Primer,Bridgepoint,Private equity,Company post,Welcome to the Jungle (company profile),https://app.welcometothejungle.com/companies/Primer-1,
+ProSights,H.I.G. Capital,Private equity,Testimonial,ProSights website,https://www.prosights.co/,2026-10-13
+ProSights,Apax Partners,Private equity,Testimonial,ProSights website,https://www.prosights.co/,2026-10-13
+ProSights,Clearlake Capital,Private equity,Logo,"ProSights website (Wayback snapshot, Jan 2026)",https://web.archive.org/web/20260117122911/https://www.prosights.co/,2026-01-17
+ProSights,L Catterton,Private equity,Logo,"ProSights website (Wayback snapshot, Jan 2026)",https://web.archive.org/web/20260117122911/https://www.prosights.co/,2026-01-17
+ProSights,Vista Equity Partners,Private equity,Logo,ProSights website,https://www.prosights.co/,2026-10-13
+Quantly,Causeway Capital Management,Asset manager,Testimonial,Quantly website,https://www.quantly-ai.com/,
+Reflexivity,Millennium Management,Hedge fund,News,Bloomberg,https://www.bloomberg.com/news/articles/2024-10-28/druckenmiller-coffey-peterffy-backing-ai-market-research-firm-toggle-ai,2024-10-28
+Reflexivity,ExodusPoint Capital Management,Hedge fund,News,Bloomberg,https://www.bloomberg.com/news/articles/2024-10-28/druckenmiller-coffey-peterffy-backing-ai-market-research-firm-toggle-ai,2024-10-28
+Reflexivity,Interactive Brokers,Broker/Exchange,Customer announcement,Interactive Brokers (newsroom),https://www.interactivebrokers.com/en/general/about/mediaRelations/7-16-25.php,2025-07-16
+Reflexivity,Akbank,Bank,Company post,Reflexivity press page,https://reflexivity.com/en/press?page=2,2025-06-30
+Reflexivity,Soros Fund Management,Other financial,News,Bloomberg,https://www.bloomberg.com/news/articles/2024-10-28/druckenmiller-coffey-peterffy-backing-ai-market-research-firm-toggle-ai,2024-10-28
+Reflexivity,Duquesne Family Office,Other financial,News,Bloomberg,https://www.bloomberg.com/news/articles/2024-10-28/druckenmiller-coffey-peterffy-backing-ai-market-research-firm-toggle-ai,2024-10-28
+Reflexivity,Lombard Odier,Bank,News,Bloomberg,https://www.bloomberg.com/news/articles/2024-10-28/druckenmiller-coffey-peterffy-backing-ai-market-research-firm-toggle-ai,2024-10-28
+Reflexivity,Viking Global Investors,Hedge fund,Logo,Reflexivity Series B pitch deck (startupfundraising.com),https://startupfundraising.com/library/articles/reflexivity-pitch-deck-teardown,2024
+Reflexivity,Dymon Asia Capital,Hedge fund,Logo,Reflexivity Series B pitch deck (startupfundraising.com),https://startupfundraising.com/library/articles/reflexivity-pitch-deck-teardown,2024
+Reflexivity,Kirkoswald Asset Management,Hedge fund,Logo,Reflexivity Series B pitch deck (startupfundraising.com),https://startupfundraising.com/library/articles/reflexivity-pitch-deck-teardown,2024
+Reflexivity,Castle Hook Partners,Hedge fund,Logo,Reflexivity Series B pitch deck (startupfundraising.com),https://startupfundraising.com/library/articles/reflexivity-pitch-deck-teardown,2024
+Reflexivity,CapTrader,Broker/Exchange,Customer announcement,CapTrader (press release PDF),https://www.captrader.com/wp-content/uploads/2023/03/CapTrader-Pressemitteilung-Toggle-Kooperation.pdf,2023-03-02
+Rogo,J.P. Morgan,Bank,News,The Wall Street Journal,https://www.wsj.com/finance/banking/wall-streets-favorite-ai-startup-sets-its-sights-on-wealth-management-61b8b5d1,2026-09-10
+Rogo,Bank of America,Bank,News,The Wall Street Journal,https://www.wsj.com/finance/banking/wall-streets-favorite-ai-startup-sets-its-sights-on-wealth-management-61b8b5d1,2026-09-10
+Rogo,Wells Fargo,Bank,News,Bloomberg,https://www.bloomberg.com/news/features/2026-04-29/junior-bankers-sick-of-grunt-work-build-2-billion-ai-tool-to-do-the-job,2026-04-29
+Rogo,Barclays,Bank,News,Bloomberg,https://www.bloomberg.com/news/articles/2026-08-26/ai-startup-that-upends-junior-bankers-work-sets-up-in-singapore,2026-08-26
+Rogo,Tiger Global,Hedge fund,News,Financial Times,https://www.ft.com/content/045dac3f-eb78-469d-a3ef-3495aefa6e8f,2025-04-30
+Rogo,GIC,Pension/Endowment,News,Bloomberg,https://www.bloomberg.com/news/features/2026-04-29/junior-bankers-sick-of-grunt-work-build-2-billion-ai-tool-to-do-the-job,2026-04-29
+Rogo,BNP Paribas,Bank,News,The Information,https://www.theinformation.com/newsletters/ai-agenda/rogo-hebbia-revenue-rises-claude-finance-threat-looms,2026-09-03
+Rogo,Nomura,Bank,News,Bloomberg,https://www.bloomberg.com/news/articles/2026-08-26/ai-startup-that-upends-junior-bankers-work-sets-up-in-singapore,2026-08-26
+Rogo,Daiwa Securities,Bank,News,Bloomberg,https://www.bloomberg.com/news/articles/2026-08-26/ai-startup-that-upends-junior-bankers-work-sets-up-in-singapore,2026-08-26
+Rogo,Lazard,Bank,News,Bloomberg,https://www.bloomberg.com/news/features/2026-04-29/junior-bankers-sick-of-grunt-work-build-2-billion-ai-tool-to-do-the-job,2026-04-29
+Rogo,Rothschild & Co,Bank,Press release,PR Newswire (Rogo),https://www.prnewswire.com/news-releases/rogo-raises-160m-series-d-to-scale-the-agentic-platform-for-finance-302756546.html,2026-04-29
+Rogo,Jefferies,Bank,Customer announcement,Jefferies (Leadership Spotlight),https://www.jefferies.com/insights/leadership-spotlight/gabriel-stengel-on-building-the-ai-platform-for-investment-banking/,2026-06-04
+Rogo,Moelis & Company,Bank,News,Bloomberg,https://www.bloomberg.com/news/features/2026-04-29/junior-bankers-sick-of-grunt-work-build-2-billion-ai-tool-to-do-the-job,2026-04-29
+Rogo,GTCR,Private equity,News,Financial Times,https://www.ft.com/content/045dac3f-eb78-469d-a3ef-3495aefa6e8f,2025-04-30
+Rogo,Siris Capital,Private equity,Company post,Rogo blog,https://rogo.com/blog/rogo-announces-50m-series-b,2025-04-30
+Rogo,Truist Securities,Bank,Customer announcement,Truist (Truist Ventures insights),https://www.truist.com/who-we-are/truist-ventures/insights/why-we-invested-in-rogo,
+Rogo,Raymond James,Bank,Company post,Rogo blog,https://rogo.com/blog/rogo-announces-50m-series-b,2025-04-30
+Rogo,Baird,Bank,Case study,Rogo website,https://rogo.com/customers/baird-investment-banking,
+Rogo,Canaccord Genuity,Bank,Logo,Rogo website,https://rogo.com/customers,
+Rogo,Leerink Partners,Bank,Logo,Rogo website,https://rogo.com/customers,
+Rogo,H.C. Wainwright,Bank,Logo,Rogo website,https://rogo.com/customers,
+Rogo,MTS Health Partners,Bank,Logo,Rogo website,https://rogo.com/customers,
+Rogo,Arma Partners,Other financial,Logo,Rogo website,https://rogo.com/customers,
+Rogo,Harbor View Advisors,Bank,Case study,Rogo website,https://rogo.com/customers/harbor-view,
+Rogo,Taureau Group,Bank,Case study,Rogo website,https://rogo.com/customers/taureau,
+Rogo,Lucerne Capital Management,Hedge fund,Testimonial,Rogo website (Wayback Machine),https://web.archive.org/web/20240216161448/https://www.rogodata.com/,2024-02-16
+Rogo,Schonfeld Strategic Advisors,Hedge fund,Testimonial,Rogo website (Wayback Machine),https://web.archive.org/web/20250501131254/https://rogo.ai/,2025-05-01
+Rowspace,Apollo,Private equity,Testimonial,AI Engineer (YouTube),https://www.youtube.com/watch?v=BOWYujhIQuo,2026-10-16
+Samaya AI,Morgan Stanley,Bank,News,Fortune,https://fortune.com/2025/05/14/samaya-ai-startup-financial-services-raises-43-5-million-vc-funding/,2025-05-14
+Scend,Avance Investment Management,Private equity,Logo,Scend website,https://www.scend.ai/,
+Scend,ParkerGale,Private equity,Logo,Scend website,https://www.scend.ai/,
+Scend,Roo Capital,Venture capital,Logo,Scend,https://www.scend.ai/,
+SigTech,Brevan Howard,Hedge fund,News,Neudata (news),https://www.neudata.co/alternative-data-news/sigtech-expands-into-us-market-with-new-senior-hires,2021-06-02
+SigTech,AllianceBernstein,Asset manager,News,Neudata (news),https://www.neudata.co/alternative-data-news/sigtech-expands-into-us-market-with-new-senior-hires,2021-06-02
+SigTech,GAM Investments,Asset manager,News,Neudata (news),https://www.neudata.co/alternative-data-news/sigtech-expands-into-us-market-with-new-senior-hires,2021-06-02
+SigTech,MasterLink Securities,Broker/Exchange,News,Hedgeweek,https://www.hedgeweek.com/masterlink-securities-chooses-sigtech-quant-trading-platform/,2021-06-14
+SigTech,North Asset Management,Hedge fund,News,Hedgeweek,https://hedgeweek.com/news/hedge-fund-manager-north-asset-management-selects-sigtechs-quant-platform-launch,2021-07-06
+Tenzing MEMO,Cove Street Capital,Asset manager,Testimonial,Tenzing MEMO website,https://www.tenzingmemo.com/,
+Tenzing MEMO,Andvari Associates,Asset manager,Testimonial,Tenzing MEMO website,https://www.tenzingmemo.com/,
+Tenzing MEMO,Khaner Capital Management,Asset manager,Testimonial,Tenzing MEMO website,https://www.tenzingmemo.com/,
+Tenzing MEMO,Evexia Wealth,Asset manager,Testimonial,Tenzing MEMO website,https://www.tenzingmemo.com/,
+Tenzing MEMO,Hawkshaw Research,Other financial,Testimonial,Tenzing MEMO website,https://www.tenzingmemo.com/,
+Tenzing MEMO,Aquitania Capital Management,Asset manager,Testimonial,Tenzing MEMO website,https://www.tenzingmemo.com/,
+Terminal X,Millennium Management,Hedge fund,News,Hankyung (Korea Economic Daily),https://www.hankyung.com/article/202609045313i,2026-09-07
+Terminal X,NH Investment & Securities,Broker/Exchange,Customer announcement,NH Investment & Securities announcement (reported by Maeil Business),https://www.mk.co.kr/news/stock/11390414,2025-08-11
+ToltIQ,H.I.G. Capital,Private equity,Press release,ToltIQ (GlobeNewswire),https://www.globenewswire.com/news-release/2026/03/06/3251318/0/en/update-toltiq-selected-by-h-i-g-capital-for-firm-wide-due-diligence-deployment.html,2026-03-06
+ToltIQ,Fortress Investment Group,Asset manager,Company post,ToltIQ newsroom (Series A release),https://toltiq.com/newsroom/diligentiq-raises-12-million-in-series-a-funding-round-led-by-fintop-capital-to-accelerate-ai-powered-due-diligence-in-private-markets,2025-02-18
+ToltIQ,HarbourVest Partners,Private equity,Company post,ToltIQ newsroom (Series A release),https://toltiq.com/newsroom/diligentiq-raises-12-million-in-series-a-funding-round-led-by-fintop-capital-to-accelerate-ai-powered-due-diligence-in-private-markets,2025-02-18
+ToltIQ,Investcorp,Private equity,Customer announcement,Investcorp,https://www.investcorp.com/investcorps-strategic-capital-group-announces-partnership-with-diligentiq/,2024-09-24
+ToltIQ,Coller Capital,Private equity,Logo,ToltIQ website,https://toltiq.com/,
+ToltIQ,Kainos Capital,Private equity,Logo,ToltIQ website,https://toltiq.com/,
+ToltIQ,PPC Enterprises,Private equity,Company post,ToltIQ newsroom (Series A release),https://toltiq.com/newsroom/diligentiq-raises-12-million-in-series-a-funding-round-led-by-fintop-capital-to-accelerate-ai-powered-due-diligence-in-private-markets,2025-02-18
+ToltIQ,Perceptive Advisors,Hedge fund,Logo,ToltIQ website (Wayback Machine),https://web.archive.org/web/20260403063817/https://toltiq.com/,2026-04-03
+Tornado AI,Polpo Capital Management,Hedge fund,Testimonial,Tornado website,https://ai.tornado.com/,
+Tornado AI,Linmar Capital,Hedge fund,Testimonial,Tornado website,https://ai.tornado.com/,
+Tracelight,Puma Growth Partners,Private equity,Logo,Tracelight website,https://tracelight.ai/,
+Tracelight,Arma Partners,Other financial,Logo,Tracelight website,https://tracelight.ai/,
+Tracelight,Vistra,Other financial,Logo,Tracelight website,https://tracelight.ai/,
+Unique AI,Standard Chartered,Bank,Case study,Unique AI,https://www.unique.ai/en/blog/standard-chartered-partners-with-unique-ai-to-power-investment-intelligence,2026-07-02
+Unique AI,BNP Paribas Wealth Management,Bank,Customer announcement,BNP Paribas Wealth Management,https://wealthmanagement.bnpparibas/en/insights/news/launch-of-generative-ai-use-cases-at-bnp-paribas-wm.html,
+Unique AI,Pictet Group,Bank,News,Neue Zürcher Zeitung,https://www.nzz.ch/wirtschaft/ki-bei-banken-willige-gratis-assistenten-aber-auch-neue-risiken-ld.1775051,2024-01-31
+Unique AI,Julius Baer,Bank,Logo,Unique AI website,https://www.unique.ai/,
+Unique AI,Partners Group,Private equity,Company post,Unique AI,https://www.unique.ai/en/blog/unique-secures-usd-30-million-series-a-to-pioneer-agentic-ai-workforce-in-financial-services-2,2025-02-27
+Unique AI,LGT Private Banking,Bank,Case study,Unique AI,https://www.unique.ai/lgt-case-study,
+Unique AI,Union Bancaire Privée (UBP),Bank,Company post,Unique AI,https://www.unique.ai/en/blog/unique-secures-usd-30-million-series-a-to-pioneer-agentic-ai-workforce-in-financial-services-2,2025-02-27
+Unique AI,Capstone Investment Advisors,Hedge fund,Logo,Unique AI website,https://www.unique.ai/,
+Unique AI,SIX Group,Broker/Exchange,News,ICTjournal,https://www.ictjournal.ch/news/2024-11-22/six-mise-sur-financegpt,2024-11-22
+Unique AI,Metzler (B. Metzler seel. Sohn & Co.),Bank,Customer announcement,Bankhaus Metzler,https://www.metzler.com/de/articles/2401-unique-metzler,2025-01-22
+Velvet,Amiral Ventures,Venture capital,Testimonial,Velvet website (archived Aug 2025),https://web.archive.org/web/20250804113209/https://www.velvetfs.com/,2025-08-04
+Velvet,Aurelius Ventures,Venture capital,Testimonial,Velvet website (archived Aug 2025),https://web.archive.org/web/20250804113209/https://www.velvetfs.com/,2025-08-04
+Velvet,The Veteran Fund,Venture capital,Testimonial,Velvet website (archived Aug 2025),https://web.archive.org/web/20250804113209/https://www.velvetfs.com/,2025-08-04
+Velvet,MoDa Partners,Venture capital,Testimonial,Velvet website (archived Aug 2025),https://web.archive.org/web/20250804113209/https://www.velvetfs.com/,2025-08-04
+Village,Alua Capital Management,Hedge fund,Logo,Village website,https://village.dev/sales,
+Village,Epicenter Capital,Asset manager,Logo,Village website,https://village.dev/sales,
+Village,Neo,Venture capital,Logo,Village website,https://village.dev/sales,
+Wokelo,Guggenheim Partners,Bank,News,GeekWire,https://www.geekwire.com/2023/ai-meets-ma-how-these-former-management-consultants-are-upending-due-diligence/,2023-11-09
+Wokelo,Berkshire Partners,Private equity,Logo,"Wokelo website (Wayback snapshot, Feb 2026)",https://web.archive.org/web/20260216160624/https://www.wokelo.ai/,2026-02-16
+Wokelo,B Capital,Venture capital,Logo,Wokelo website,https://www.wokelo.ai/,
+Wokelo,Premji Invest,Other financial,Logo,Wokelo website,https://www.wokelo.ai/,
+Wokelo,Seven Seven Six,Venture capital,News,GeekWire,https://www.geekwire.com/2023/ai-meets-ma-how-these-former-management-consultants-are-upending-due-diligence/,2023-11-09
+Wokelo,Seven Two Partners,Other financial,Case study,Wokelo website,https://www.wokelo.ai/blog/how-seven-two-partners-unlocked-hidden-portfolio-insights-with-wokelo-securing-a-50b-fof-client-renewal,
+Wokelo,Cowles Ventures,Venture capital,Case study,Wokelo website,https://www.wokelo.ai/blog/how-wokelo-empowers-lean-family-office-cowles-ventures-with-3x-faster-diligence-deeper-portfolio-insights,
+Wokelo,Untapped Capital,Venture capital,News,GeekWire,https://www.geekwire.com/2023/ai-meets-ma-how-these-former-management-consultants-are-upending-due-diligence/,2023-11-09
+Wokelo,Sage Collective,Private equity,News,GeekWire,https://www.geekwire.com/2023/ai-meets-ma-how-these-former-management-consultants-are-upending-due-diligence/,2023-11-09
+Wokelo,Snocap,Venture capital,News,GeekWire,https://www.geekwire.com/2023/ai-meets-ma-how-these-former-management-consultants-are-upending-due-diligence/,2023-11-09
+73 Strings,Blackstone,Private equity,Case study,73 Strings website,https://www.73strings.com/insights/case-study/blackstone-valuation-efficiency/,
+73 Strings,Hamilton Lane,Asset manager,Customer announcement,Hamilton Lane,https://www.hamiltonlane.com/en-us/insight/valuation-technology,2025-05-06
+73 Strings,Bridgepoint,Private equity,News,Alternatives Watch,https://www.alternativeswatch.com/2026/09/24/73-strings-acquires-callisto-private-markets-ai-automation/,2026-09-24
+73 Strings,Eurazeo,Private equity,Press release,73 Strings (Business Wire),https://www.businesswire.com/news/home/20230712170673/en/,2023-07-12
+73 Strings,Wendel Group,Private equity,News,Alternatives Watch,https://www.alternativeswatch.com/2026/09/24/73-strings-acquires-callisto-private-markets-ai-automation/,2026-09-24
+73 Strings,Investec,Bank,News,Alternatives Watch,https://www.alternativeswatch.com/2026/09/24/73-strings-acquires-callisto-private-markets-ai-automation/,2026-09-24
+73 Strings,Groupe Bruxelles Lambert (GBL),Other financial,Logo,73 Strings website,https://www.73strings.com/,
+73 Strings,Sofina,Private equity,Press release,73 Strings (Business Wire),https://www.businesswire.com/news/home/20230712170673/en/,2023-07-12
+73 Strings,Berkshire Partners,Private equity,Logo,73 Strings website,https://www.73strings.com/,
+73 Strings,Balderton Capital,Venture capital,Logo,73 Strings website,https://www.73strings.com/,
+Aisot Technologies,Private Client Bank,Bank,Company post,Aisot Technologies blog,https://aisot.com/blog/private-client-bank-and-aisot-a-blueprint-for-using-ai-in-wealth-management,2025-11-04
+Aisot Technologies,6 Monks,Asset manager,Press release,Finextra (press release),https://www.finextra.com/pressarticle/104506/6-monks-and-aisot-technologies-partner-for-ai-driven-investment-fund,2025-02-26
+Aisot Technologies,M. P. Korolainen Oy,Other financial,Case study,Aisot Technologies blog,https://aisot.com/blog/introducing-aisot-client-m.p.-korolainen-oy,2023-11-29
+AllMind,RBC,Bank,Case study,AllMind website,https://allmind.ai/research/press-rbc-allmindai-May-2025,2025-05-01
+AllMind,Sagard,Asset manager,Logo,AllMind website,https://allmind.ai/,
+AllMind,Armistice Capital,Hedge fund,Logo,AllMind website,https://allmind.ai/,
+AllMind,Algonquin Capital,Hedge fund,Logo,AllMind website,https://allmind.ai/,
+AllMind,Bellwether Investment Management,Asset manager,Logo,AllMind website,https://allmind.ai/,
+AllMind,Ridgewood Capital Asset Management,Asset manager,Logo,AllMind website,https://allmind.ai/,
+AllMind,Verecan Asset Management,Asset manager,Logo,AllMind website,https://allmind.ai/,
+AlphaPai,UBS,Bank,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,Macquarie,Bank,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,CICC,Bank,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,AIA,Insurance,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,China Life,Insurance,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,National Council for Social Security Fund,Pension/Endowment,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,China Asset Management (ChinaAMC),Asset manager,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,Harvest Fund Management,Asset manager,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,ICBC Credit Suisse Asset Management,Asset manager,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,Ubiquant,Hedge fund,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,Lingjun Investment,Hedge fund,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,Wealspring Asset Management,Hedge fund,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+AlphaPai,Commando Capital,Hedge fund,Logo,Rabyte Technology website,https://www.rabyte.cn/en/,
+Arvo,Rallyday Partners,Private equity,Case study,Arvo website,https://www.arvohq.com/blog/rallyday,
+Capsa AI,Deutsche Beteiligungs AG,Private equity,Logo,Capsa AI website,https://capsa.ai/,
+Capsa AI,Bregal Unternehmerkapital,Private equity,Logo,Capsa AI website,https://capsa.ai/,
+Capsa AI,Alchemy Partners,Private equity,Logo,Capsa AI website,https://capsa.ai/,
+Capsa AI,Quadriga Capital,Private equity,Testimonial,Capsa AI website,https://capsa.ai/,
+Capsa AI,Hannover Finanz,Private equity,Testimonial,Capsa AI website,https://capsa.ai/,
+Capsa AI,Genui,Private equity,Logo,Capsa AI website,https://capsa.ai/,
+Capsa AI,Capital D,Private equity,Testimonial,Capsa AI website,https://capsa.ai/,
+Capsa AI,Limerston Capital,Private equity,Logo,Capsa AI website,https://capsa.ai/,
+Capsa AI,NOVUM Capital,Private equity,Logo,Capsa AI website,https://capsa.ai/,
+Capsa AI,BBA Capital Partners,Private equity,Case study,Capsa AI,https://capsa.ai/news/bba-capital-partners-achieves-10-20-efficiency-gains-with-capsa-ai,2025-02-13
+Claira,Citi,Bank,Press release,Business Wire,https://www.businesswire.com/news/home/20220629005288/en/Claira-Receives-Strategic-Investment-Led-by-Citi-SPRINT-to-Accelerate-Digital-Transformation-with-Next-Gen-Document-Intelligence-Technology,2022-06-29
+Claira,Houlihan Lokey,Bank,Company post,Claira profile on Built In,https://builtin.com/company/claira-inc-0,
+Claira,BC Partners,Private equity,Press release,Allvue (Business Wire),https://www.businesswire.com/news/home/20260127301191/en/BC-Partners-Expands-Collaboration-With-Allvue-With-New-AI-Document-IQ-Solution,2026-01-27
+Claira,MetLife,Insurance,Company post,Claira profile on Built In,https://builtin.com/company/claira-inc-0,
+DiligenceSquared,CVC,Private equity,Logo,DiligenceSquared website,https://www.diligencesquared.com/clients,
+DiligenceSquared,Partners Group,Private equity,Logo,DiligenceSquared website,https://www.diligencesquared.com/clients,
+DiligenceSquared,New Mountain Capital,Private equity,Logo,DiligenceSquared website,https://www.diligencesquared.com/clients,
+DiligenceSquared,Motive Partners,Private equity,Logo,DiligenceSquared website,https://www.diligencesquared.com/clients,
+DiligenceSquared,Verdane,Private equity,Logo,DiligenceSquared website,https://www.diligencesquared.com/clients,
+DiligenceSquared,Axcel,Private equity,Company post,DiligenceSquared,https://www.diligencesquared.com/blog/nti-diroots-market-due-diligence,2026-06-18
+DiligenceSquared,Polaris Private Equity,Private equity,Company post,DiligenceSquared,https://www.diligencesquared.com/blog/polaris-tefcold-market-due-diligence,2026-08-11
+DiligenceSquared,FSN Capital,Private equity,Logo,DiligenceSquared website,https://www.diligencesquared.com/clients,
+DiligenceSquared,Sprints Capital,Venture capital,Logo,DiligenceSquared website,https://www.diligencesquared.com/clients,
+EquiLibre Technologies,Tower Research Capital,Other financial,Customer announcement,Tower Research Capital (its repost of the Bloomberg article),https://tower-research.com/ex-deepmind-trio-bring-algos-ai-poker-prowess-to-tower-research/,2024-05-28
+Fifth Dimension,Madison International Realty,Private equity,News,EU-Startups,https://www.eu-startups.com/2026/05/londons-fifth-dimension-raises-e22-million-to-scale-ai-powered-decision-intelligence-for-real-assets/,2026-05-11
+Fifth Dimension,Peachtree Group,Asset manager,News,EU-Startups,https://www.eu-startups.com/2026/05/londons-fifth-dimension-raises-e22-million-to-scale-ai-powered-decision-intelligence-for-real-assets/,2026-05-11
+Fifth Dimension,Proplend,Other financial,Case study,Fifth Dimension,https://www.fifthdimensionai.com/case-studies/how-proplend-cut-its-property-loan-analysis-time-by-80,2026-02-26
+Finn,Tantallon Capital,Hedge fund,Testimonial,Finn website,https://heyfinn.co/,
+InferEdge,Temasek,Pension/Endowment,Logo,InferEdge website,https://www.inferedge.com/,
+InferEdge,Mahindra Manulife Mutual Fund,Asset manager,Logo,InferEdge website,https://www.inferedge.com/,
+InferEdge,Avendus,Other financial,Logo,InferEdge website,https://www.inferedge.com/,
+InferEdge,Dezerv,Asset manager,Logo,InferEdge website,https://www.inferedge.com/,
+InferEdge,Shriram Wealth,Asset manager,Logo,InferEdge website,https://www.inferedge.com/,
+Mosaic,Apollo,Private equity,Logo,Mosaic website,https://www.mosaic.pe/,
+Mosaic,Warburg Pincus,Private equity,Press release,Mosaic (PR Newswire),https://www.prnewswire.com/news-releases/mosaic-raises-18m-series-a-to-build-ai-driven-operating-system-for-deal-makers-302749548.html,2026-04-22
+Mosaic,CVC,Private equity,Press release,Mosaic (PR Newswire),https://www.prnewswire.com/news-releases/mosaic-raises-18m-series-a-to-build-ai-driven-operating-system-for-deal-makers-302749548.html,2026-04-22
+Mosaic,Evercore,Bank,Press release,Mosaic (PR Newswire),https://www.prnewswire.com/news-releases/mosaic-expands-platform-to-serve-investment-banks-announces-strategic-partnership-with-evercore-302469399.html,2025-05-30
+Mosaic,Bridgepoint,Private equity,Press release,Mosaic (PR Newswire),https://www.prnewswire.com/news-releases/mosaic-raises-18m-series-a-to-build-ai-driven-operating-system-for-deal-makers-302749548.html,2026-04-22
+Mosaic,New Mountain Capital,Private equity,Press release,Mosaic (PR Newswire),https://www.prnewswire.com/news-releases/mosaic-raises-18m-series-a-to-build-ai-driven-operating-system-for-deal-makers-302749548.html,2026-04-22
+Mosaic,Onex,Private equity,Logo,Mosaic website,https://www.mosaic.pe/,
+Mosaic,Investcorp,Private equity,Logo,Mosaic website,https://www.mosaic.pe/,
+Mosaic,The Riverside Company,Private equity,Case study,Mosaic website,https://www.mosaic.pe/news-blog-posts/how-riverside-standardizes-early-stage-underwriting-with-mosaic,2026-09-18
+Needl.ai,GrayArch Partners,Venture capital,Logo,Needl.ai website,https://needl.ai/,
+Quartr,Janus Henderson,Asset manager,Logo,Quartr website,https://quartr.com/customers,
+Quartr,Stifel,Bank,Logo,Quartr website,https://quartr.com/customers,
+Quartr,SEB,Bank,Press release,Quartr,https://quartr.com/newsroom/press-release/quartr-seb,2023-05-17
+Quartr,Nordea,Bank,Logo,Quartr website,https://quartr.com/customers,
+Quartr,Danske Bank,Bank,Logo,Quartr website,https://quartr.com/customers,
+Quartr,GAM Investments,Asset manager,Case study,Quartr website,https://quartr.com/customers/how-gam-investments-supercharges-its-research-productivity-with-quartr-pro,2025-07-09
+Quartr,Toss Securities,Broker/Exchange,Logo,Quartr website,https://quartr.com/customers,
+Quartr,Avanza,Broker/Exchange,Press release,PR Newswire,https://www.prnewswire.com/news-releases/quartr-signs-breakthrough-deal-with-swedens-largest-online-broker-avanza-301719017.html,2023-01-11
+Quartr,Nordnet,Broker/Exchange,Press release,PR Newswire,https://www.prnewswire.com/news-releases/quartr-signs-a-deal-with-nordnet-the-leading-online-broker-in-the-nordic-region-301739171.html,2023-02-06
+Quartr,Pareto Securities,Bank,Press release,Cision,"https://news.cision.com/quartr/r/quartr-partners-up-with-pareto-securities--one-of-the-leading-nordic-investment-banks,c3794763",2023-06-28
+Quartr,Protean Funds Scandinavia,Hedge fund,Testimonial,Quartr website,https://quartr.com/use-cases/hedge-funds,
+Tetrix,Next Legacy,Venture capital,News,CityBiz,https://www.citybiz.co/article/864608/tetrix-raises-15-million-series-a-to-expand-ai-platform-for-private-markets/,2026-06-23
+Tetrix,Solamere Capital,Private equity,Testimonial,Tetrix website,https://www.tetrix.co/,
+Tetrix,Point Olema Capital Partners,Asset manager,Testimonial,Tetrix website,https://www.tetrix.co/,
+Tetrix,W3 Family Office,Other financial,Testimonial,Tetrix website,https://www.tetrix.co/,
+Transient.AI,Nasdaq,Broker/Exchange,Company post,Transient.AI newsroom,https://www.transient.ai/press/transient-secures-investment-from-nasdaq-ventures,2026-09-15
+Trove AI,Shamrock Capital,Private equity,Press release,Trove AI (GlobeNewswire),https://www.globenewswire.com/news-release/2025/10/14/3166423/0/en/trove-ai-raises-7-1m-led-by-menlo-ventures-as-demand-for-its-private-equity-agents-takes-off.html,2025-10-14
+Trove AI,Alpine Investors,Private equity,Logo,Trove AI website,https://www.trove.ai/,
+Trove AI,Haveli Investments,Private equity,Logo,Trove AI website,https://www.trove.ai/,
+Trove AI,NewView Capital,Venture capital,News,AI Street,https://www.ai-street.co/p/citi-s-ai-outlook-for-wall-street,2025-10-16
+Vantager,Three Bridge Wealth Advisors,Asset manager,News,The Hedge Fund Journal,https://thehedgefundjournal.com/vantager-ai-investment-operational-legal-due-diligence/,2025-08-04
+Vantager,Thema,Venture capital,News,Funds Europe,https://funds-europe.com/lps-targeted-with-world-first-ai-powered-diligence-platform/,2025-07-16
+Zarna,TELEO Capital,Private equity,Testimonial,Zarna website,https://www.zarnaai.com/,
