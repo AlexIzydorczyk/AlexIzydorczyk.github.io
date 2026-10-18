@@ -61,16 +61,17 @@ In the four per-item files, `company` must match the company's name in the main 
   with an "Any … customer/partner" choice. Use the same spelling for a firm across companies
   (`J.P. Morgan`, not `JPMorgan`) so it shows up once.
 - `ai_for_hedge_funds_founders.csv`: one row per notable founder background
-  (`company,founder,firm,role,years,source`), shown as "ex-Firm" tags. `founder` must match a name in the
-  company's `founders` cell exactly. In the expanded row, a tagged founder opens to show the role, years and source.
+  (`company,founder,firm,role,years,source`), shown as "ex-Firm" tags (in the row, two at most, or one if the
+  pair is long, then "+N"). `founder` must match a name in the company's `founders` cell exactly. In the
+  expanded row, a tagged founder opens to show the role, years and source.
   - Keep the bar very high: top hedge funds and trading firms, bulge-bracket banks, or breakout companies.
     Substantive roles count even with partial dates; internships and summer stints don't.
   - Founder backgrounds are grouped using `legend.founder_firms` in the page front matter (each group
     also gets an "Any …" choice); a firm missing from that list still appears, under "Other".
 - `ai_for_hedge_funds_media.csv`: podcasts, conference talks and videos about a company
   (`company,date,type,title,show,people,url`; `type` is `Podcast`, `Talk` or `Video`; `people` lists notable
-  speakers, e.g. a customer on stage with the founder). Shown as a "Media" list in the expanded row, with a
-  small count next to the company name.
+  speakers, e.g. a customer on stage with the founder). Shown as a "Media" list in the expanded row, and
+  counted under the company name.
 
 Category definitions live in the page front matter (`legend.category`) and show when hovering a category.
 
@@ -90,14 +91,19 @@ Category definitions live in the page front matter (`legend.category`) and show 
   `status`, `category`, `customer`, `customer-type`, `partner`, `partner-type`, `investor`, `founder`
   (a firm, or `any`), `founder-group`, `sort` (`company|category|founders|round|raised` + `-asc|-desc`).
   "Copy link to this view" copies it; each expanded row has "Copy link" for that company.
-- Each row shows counts of news links, named customers and key partners. A green date marks a round
-  announced in the 30 days before the site was built ("Updated …" above the table). Companies whose
-  favicon is missing get a tile with their initial instead.
+- On wider screens every row is two lines, so all rows are the same height: the main fact in each column,
+  then a detail. Under the company name: its status note and f/k/a, or else counts of news links, named
+  customers, key partners and media. Founders: the first two names (one if they're long) and "+N", then the
+  ex-Firm tags. Latest round: the round and its date, then the number of rounds and the valuation. Text that
+  doesn't fit is cut with "…" or left out (the tooltip and the expanded row have everything); below 961px
+  rows become cards that wrap. Only Consumer and Both companies show a focus icon.
+- A green date marks a round announced in the 30 days before the site was built ("Updated …" under the
+  title). Companies whose favicon is missing get a tile with their initial instead.
 
 Each company has a shareable link, e.g. `/ai-for-hedge-funds.html#hebbia` opens that row.
 
-The numbers beside the intro (companies, active, acquired, documented funding, last updated; above the
-intro on narrow screens) are computed from the data when the site builds (`_includes/tracker-stats.html`).
+The date under the title is when the site was built. The count above the table adds up the shown companies'
+"Total raised" ("228 companies · ≈ $3.7B raised") and follows the filters, like the status tab counts.
 Links to the page show `assets/images/ai-for-hedge-funds-card.png` as their preview image (set by `image:`
 in the page front matter); it says "200+ startups", so it only needs redoing if the categories shown on it
 change.
@@ -121,5 +127,7 @@ change.
   `tracker_link_click` (`company`, `link_type`, `link_domain`, `link_url`), `tracker_share` (`link_type`, plus
   `company` for a company link) and `tracker_browse`. `company`, `link_type`, `filter_type` and `filter_value` are
   registered as custom dimensions in GA so reports can use them.
+  Links shared in posts should carry `utm_source` / `utm_medium` / `utm_campaign` tags. The tracker only rewrites its
+  own parameters in the address, so the tags stay for GA to read (they're left out of "Copy link to this view").
 
 Preview locally with `BUNDLE_PATH=~/.cache/podgorica-bundle bundle exec jekyll serve --livereload -d .context/site`.

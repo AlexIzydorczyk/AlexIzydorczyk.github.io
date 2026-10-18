@@ -38,6 +38,13 @@
     function plural(n) {
       return n + (n === 1 ? ' company' : ' companies');
     }
+    // Millions of US dollars, written like the "Total raised" column (_includes/tracker-money.html): $3.7B, $350M, $4.5M, $500K.
+    function money(m) {
+      if (m >= 1000) return '$' + Math.round(m / 100) / 10 + 'B';
+      if (m >= 10) return '$' + Math.round(m) + 'M';
+      if (m >= 1) return '$' + Math.round(m * 10) / 10 + 'M';
+      return '$' + Math.round(m * 1000) + 'K';
+    }
     // GA4 events (gtag is only on production builds): searches, filters, companies opened, links followed from
     // company rows and copied links. GA's enhanced measurement also logs outbound clicks; tracker_link_click
     // adds the company and the kind of link.
@@ -63,6 +70,7 @@
       group.customerList = pairs(group.dataset.customers);
       group.partnerList = pairs(group.dataset.partners);
       group.relations = []; // "c:Name", "ct:Bank", "p:Name", "pt:AI lab"
+      group.raised = Number(group.querySelector('td.col-raised').dataset.sort) || 0; // thousands of US dollars
     });
 
     // Everything a pick can be. Customers and partners are grouped by kind of firm (unknown kinds go in
@@ -249,10 +257,14 @@
     function applyFilters() {
       var filters = currentFilters();
       var shown = 0;
+      var raised = 0;
       groups.forEach(function (group) {
         var match = matches(group, filters);
         group.hidden = !match;
-        if (match) shown++;
+        if (match) {
+          shown++;
+          raised += group.raised;
+        }
       });
       updateOptions(categorySelect, 'category', filters);
       // The focus buttons are icons only; their tooltips carry the label and the live count.
@@ -264,9 +276,11 @@
       statusButtons.forEach(function (button) {
         button.querySelector('[data-n]').textContent = countWhere(withFilter(filters, 'status', button.dataset.status));
       });
-      count.textContent = shown === groups.length
+      // How many companies are shown, and what they've raised between them (the sum of their "Total raised")
+      count.textContent = (shown === groups.length
         ? groups.length + ' companies'
-        : shown + ' of ' + groups.length + ' companies';
+        : shown + ' of ' + groups.length + ' companies') +
+        (raised > 0 ? ' · ≈ ' + money(raised / 1000) + ' raised' : '');
       empty.hidden = shown > 0;
       categorySelect.classList.toggle('is-active', filters.category !== '*');
       relationTags.forEach(function (tag) {
@@ -587,9 +601,18 @@
       var type = /^[cp]t:/.test(v);
       return [p.kind + (type ? '-type' : ''), v.slice(type ? 3 : 2)];
     }
+    // The tracker only rewrites its own parameters. Anything else in the address (utm_* campaign tags, click IDs)
+    // stays put so Google Analytics can read it, but is left out of "Copy link to this view".
+    var OWN_PARAMS = ['q', 'focus', 'status', 'category', 'sort'].concat(PICK_PARAMS.map(function (p) { return p[0]; }));
+    function viewParams() {
+      var params = new URLSearchParams(location.search);
+      Array.from(new Set(params.keys())).forEach(function (k) { if (OWN_PARAMS.indexOf(k) === -1) params.delete(k); });
+      return params.toString();
+    }
     function writeUrl() {
       if (!window.history || !history.replaceState) return;
-      var params = new URLSearchParams();
+      var params = new URLSearchParams(location.search);
+      OWN_PARAMS.forEach(function (k) { params.delete(k); });
       if (search.value.trim()) params.set('q', search.value.trim());
       if (activeFocus !== '*') params.set('focus', activeFocus);
       if (activeStatus !== '*') params.set('status', activeStatus);
@@ -915,7 +938,8 @@
     });
     clearButton.addEventListener('click', resetFilters);
     shareButton.addEventListener('click', function () {
-      copyText(location.href.split('#')[0], shareButton, 'Link copied');
+      var qs = viewParams();
+      copyText(location.origin + location.pathname + (qs ? '?' + qs : ''), shareButton, 'Link copied');
       track('tracker_share', { link_type: 'view' });
     });
     focusButtons.forEach(function (button) {

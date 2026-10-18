@@ -68,12 +68,11 @@
 {%- for item in legend.status %}
 {%- assign n = rows | where: "status", item.name | size %}
 {%- if n > 0 %}
-<button type="button" aria-pressed="false" data-status="{{ item.name | escape }}"><span aria-hidden="true">{{ item.emoji }}</span> {{ item.name | escape }} <span class="tracker-status-n" data-n>{{ n }}</span></button>
+<button type="button" aria-pressed="false" data-status="{{ item.name | escape }}">{{ item.name | escape }} <span class="tracker-status-n" data-n>{{ n }}</span></button>
 {%- endif %}
 {%- endfor %}
 </div>
-<p class="tracker-status"><span class="tracker-count" data-tracker-count aria-live="polite"></span><button type="button" class="tracker-clear" data-tracker-share hidden>Copy link to this view</button><button type="button" class="tracker-clear" data-tracker-clear hidden>Clear filters</button></p>
-<p class="tracker-hint">Click a company for its description, customers, partners, investors, and news. Click a customer or partner to see where it comes from.</p>
+<p class="tracker-status"><span class="tracker-count" data-tracker-count aria-live="polite" title="Raised: the sum of the Total raised column for the companies shown, in approximate US dollars (rounds without a disclosed amount aren't counted)"></span><button type="button" class="tracker-clear" data-tracker-share hidden>Copy link to this view</button><button type="button" class="tracker-clear" data-tracker-clear hidden>Clear filters</button></p>
 </div>
 <table class="tracker-table">
 <thead>
@@ -116,27 +115,65 @@
 <tbody id="{{ slug }}" data-name="{{ row.company | escape }}" data-category="{{ category_name | escape }}" data-focus="{{ focus_name | escape }}" data-status="{{ status_name | escape }}" data-founders="{{ bg_firms | join: '|' | escape }}" data-investors="{{ investors | join: '|' | strip | escape }}" data-customers="{% for c in customers %}{{ c.customer | escape }}~{{ c.customer_type | escape }}|{% endfor %}" data-partners="{% for p in partners %}{{ p.partner | escape }}~{{ p.partner_type | escape }}|{% endfor %}">
 <tr class="tracker-row">
 <td class="col-rank"></td>
-<td class="col-company"><div class="tracker-company{% if fka != "" %} has-fka{% endif %}">
+<td class="col-company"><div class="tracker-company">
 {%- assign initial = row.company | strip | slice: 0 | upcase %}
 {%- if domain != "" %}<img class="tracker-logo" src="https://www.google.com/s2/favicons?domain={{ domain }}&amp;sz=64" alt="" width="20" height="20" loading="lazy" data-initial="{{ initial | escape }}">{% else %}<span class="tracker-logo tracker-monogram" aria-hidden="true">{{ initial | escape }}</span>{% endif -%}
-<span class="tracker-name">{% if website != "" %}<a href="{{ website }}" target="_blank" rel="noopener">{{ row.company | escape }}</a>{% else %}{{ row.company | escape }}{% endif %}
+{%- comment %}
+  Two lines per row, so every row is the same height: the name (and status badge), then the status note and
+  f/k/a, or else the counts. Anything too long is cut with "…"; the full text is in the tooltip and the expanded row.
+{% endcomment %}
+{%- assign company_name = row.company | strip %}
+<span class="tracker-name"><span class="tracker-name-text"{% if company_name.size > 18 %} title="{{ company_name | escape }}"{% endif %}>{% if website != "" %}<a href="{{ website }}" target="_blank" rel="noopener">{{ row.company | escape }}</a>{% else %}{{ row.company | escape }}{% endif %}</span>
 {%- if status and status.badge != false %} <span class="tracker-badge">{{ status.emoji }} {{ status.name }}</span>{% elsif status == nil and status_name != "" %} <span class="tracker-badge">{{ status_name | escape }}</span>{% endif -%}
+</span>
+{%- assign note = row.comment | strip %}
+{%- capture sub %}
+{%- if note != "" %}<span class="tracker-note" title="{{ note | markdownify | strip_html | strip | escape }}">{{ note | markdownify | remove: "<p>" | remove: "</p>" | strip | replace: "<a href=", new_tab_link }}</span>{% endif -%}
+{%- if fka != "" %}<span class="tracker-fka" title="Formerly known as {{ fka | escape }}">f/k/a {{ fka | escape }}</span>{% endif -%}
+{%- if note == "" %}
 {%- if news.size > 0 %} <span class="tracker-news-count" title="{{ news.size }} news {% if news.size == 1 %}link{% else %}links{% endif %}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.5h9v9h-8a1 1 0 0 1-1-1zM11.5 6h2v5.5a1 1 0 0 1-2 0M4.5 6h5M4.5 8.5h5M4.5 11h3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ news.size }}</span>{% endif -%}
 {%- if customers.size > 0 %} <span class="tracker-news-count" title="{{ customers.size }} named {% if customers.size == 1 %}customer{% else %}customers{% endif %}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 7.2a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2zM2 13.2c0-2.3 1.8-4 4-4s4 1.7 4 4M10.8 7.1a1.8 1.8 0 1 0 0-3.6M11.7 9.4c1.4.4 2.3 1.9 2.3 3.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ customers.size }}</span>{% endif -%}
 {%- if partners.size > 0 %} <span class="tracker-news-count" title="{{ partners.size }} key {% if partners.size == 1 %}partner{% else %}partners{% endif %}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5 9.5 6.5M7 4.5l1.3-1.3a2.6 2.6 0 0 1 3.6 3.6L10.5 8.2M9 11.5l-1.3 1.3a2.6 2.6 0 0 1-3.6-3.6L5.5 7.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ partners.size }}</span>{% endif -%}
 {%- if media.size > 0 %} <span class="tracker-news-count" title="{{ media.size }} {% if media.size == 1 %}podcast, talk or video{% else %}podcasts, talks and videos{% endif %}"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6.9 6.1v3.8L10 8z" fill="currentColor"/></svg>{{ media.size }}</span>{% endif -%}
-</span>
-{%- if fka != "" %}<span class="tracker-fka" title="Formerly known as {{ fka | escape }}">f/k/a {{ fka | escape }}</span>{% endif -%}
-{%- assign note = row.comment | strip %}{% if note != "" %}<span class="tracker-note" title="{{ note | markdownify | strip_html | strip | escape }}">{{ note | markdownify | remove: "<p>" | remove: "</p>" | strip | replace: "<a href=", new_tab_link }}</span>{% endif -%}
+{%- endif %}
+{%- endcapture %}
+{%- assign sub = sub | strip %}
+{%- if sub != "" %}<span class="tracker-sub">{{ sub }}</span>{% endif -%}
 </div></td>
 <td class="col-category" data-sort="{{ category_name | escape }}"><div class="tracker-category">{% if category %}<span class="tracker-pill" title="{{ category.description | escape }}">{{ category.emoji }} {{ category.name }}</span>{% elsif category_name != "" %}<span class="tracker-pill">{{ category_name | escape }}</span>{% endif %}
-{%- if focus_name != "" %}<span class="tracker-focus-mini" role="img" aria-label="Focus: {{ focus_name | escape }}" title="{{ focus_name | escape }}{% if focus %}: {{ focus.description | escape }}{% endif %}">{% if focus_name == "Both" %}<span class="tracker-focus-icon is-institutional"></span><span class="tracker-focus-icon is-consumer"></span>{% else %}<span class="tracker-focus-icon is-{{ focus_name | slugify }}"></span>{% endif %}</span>{% endif %}</div></td>
-<td class="col-founders" data-label="Founders">{{ row.founders | markdownify | remove: "<p>" | remove: "</p>" | strip | replace: "<a href=", new_tab_link }}
-{%- if bg_firms.size > 0 %}<span class="tracker-pedigrees">{% for firm in bg_firms limit: 2 %}{% assign who = backgrounds | where: "firm", firm | map: "founder" | join: ", " %}<span class="tracker-pedigree" title="{{ who | escape }}">ex-{{ firm | escape }}</span>{% endfor %}
-{%- if bg_firms.size > 2 %}{% capture more_firms %}{% for firm in bg_firms offset: 2 %}ex-{{ firm }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}<span class="tracker-pedigree is-more" title="{{ more_firms | escape }}">+{{ bg_firms.size | minus: 2 }}</span>{% endif %}</span>{% endif %}</td>
+{%- comment %} Most companies are Institutional, so only Consumer and Both get an icon. {% endcomment %}
+{%- if focus_name != "" and focus_name != "Institutional" %}<span class="tracker-focus-mini" role="img" aria-label="Focus: {{ focus_name | escape }}" title="{{ focus_name | escape }}{% if focus %}: {{ focus.description | escape }}{% endif %}">{% if focus_name == "Both" %}<span class="tracker-focus-icon is-institutional"></span><span class="tracker-focus-icon is-consumer"></span>{% else %}<span class="tracker-focus-icon is-{{ focus_name | slugify }}"></span>{% endif %}</span>{% endif %}</div></td>
+{%- comment %}
+  Founders on one line: the first two names if they fit (about 40 characters), else the first, then "+N".
+  Between 961px and 1100px wide only the first name shows (.tracker-founder-2 and the .is-narrow count).
+  Every founder is listed in the expanded row.
+{% endcomment %}
+{%- assign f_items = row.founders | strip | split: ", " %}
+{%- assign f_plain = row.founders | markdownify | strip_html | strip %}
+{%- assign f_shown = f_items.size %}
+{%- if f_shown > 2 %}{% assign f_shown = 2 %}{% endif %}
+{%- if f_shown == 2 %}
+{%- assign f_one = f_items[0] | markdownify | strip_html | strip %}{% assign f_two = f_items[1] | markdownify | strip_html | strip %}
+{%- assign f_len = f_one.size | plus: f_two.size | plus: 2 %}{% if f_items.size > 2 %}{% assign f_len = f_len | plus: 3 %}{% endif %}
+{%- if f_len > 40 %}{% assign f_shown = 1 %}{% endif %}
+{%- endif %}
+<td class="col-founders" data-label="Founders" data-sort="{{ f_plain | escape }}">
+{%- if f_items.size > 0 %}<span class="tracker-founder-names"{% if f_items.size > 1 %} title="{{ f_plain | escape }}"{% endif %}><span class="tracker-founder-list">
+{%- for item in f_items limit: f_shown %}{% assign f_html = item | markdownify | remove: "<p>" | remove: "</p>" | strip | replace: "<a href=", new_tab_link %}
+{%- if forloop.index == 2 %}<span class="tracker-founder-2">, {{ f_html }}</span>{% else %}{{ f_html }}{% endif %}
+{%- endfor %}</span>
+{%- if f_items.size > f_shown %}<span class="tracker-founder-more{% if f_shown == 2 %} is-wide{% endif %}">+{{ f_items.size | minus: f_shown }}</span>{% endif %}
+{%- if f_shown == 2 %}<span class="tracker-founder-more is-narrow">+{{ f_items.size | minus: 1 }}</span>{% endif %}</span>{% endif %}
+{%- comment %} At most two ex-firm tags, one if the pair is long (they share one line), then "+N". {% endcomment %}
+{%- if bg_firms.size > 0 %}
+{%- assign t_shown = bg_firms.size %}{% if t_shown > 2 %}{% assign t_shown = 2 %}{% endif %}
+{%- if t_shown == 2 %}{% assign t_one = bg_firms[0] %}{% assign t_two = bg_firms[1] %}{% assign t_len = t_one.size | plus: t_two.size | plus: 6 %}
+{%- assign t_max = 34 %}{% if bg_firms.size > 2 %}{% assign t_max = 29 %}{% endif %}{% if t_len > t_max %}{% assign t_shown = 1 %}{% endif %}{% endif %}
+<span class="tracker-pedigrees">{% for firm in bg_firms limit: t_shown %}{% assign who = backgrounds | where: "firm", firm | map: "founder" | join: ", " %}<span class="tracker-pedigree" title="{{ who | escape }}">ex-{{ firm | escape }}</span>{% endfor %}
+{%- if bg_firms.size > t_shown %}{% capture more_firms %}{% for firm in bg_firms offset: t_shown %}ex-{{ firm }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}<span class="tracker-pedigree is-more" title="{{ more_firms | escape }}">+{{ bg_firms.size | minus: t_shown }}</span>{% endif %}</span>{% endif %}</td>
 {%- assign latest = news | where: "type", "Funding" | first %}
 {%- assign n_rounds = news | where: "type", "Funding" | size %}
-<td class="col-round" data-label="Latest round" data-sort="{{ latest.date | strip }}">{% if latest %}{% assign lround = latest.round | strip %}{% assign lamount = latest.amount | strip %}{% assign ldate = latest.date | strip %}<a class="tracker-round" href="{{ latest.url }}" target="_blank" rel="noopener" title="{{ latest.title | escape }}">{{ lround | default: "Funding" | escape }}{% if lamount != "" %} · {{ lamount | escape }}{% endif %}</a>{% assign fresh = false %}{% if ldate.size == 10 %}{% assign age = site.time | date: "%s" | minus: 0 %}{% assign then = ldate | date: "%s" | minus: 0 %}{% assign age = age | minus: then %}{% if age >= 0 and age <= 2592000 %}{% assign fresh = true %}{% endif %}{% endif %}{% if ldate != "" %}<span class="tracker-round-date{% if fresh %} is-fresh{% endif %}"{% if fresh %} title="Announced in the 30 days before this page was last updated"{% endif %}>{% include tracker-date.html date=ldate %}</span>{% endif %}{% if n_rounds > 1 %}<span class="tracker-round-count">{{ n_rounds }} rounds</span>{% endif %}{% endif %}{% assign valuation = row.valuation | strip %}{% if valuation != "" %}{% assign vsource = row.valuation_source | strip %}<a class="tracker-valuation" href="{{ row.valuation_url }}" target="_blank" rel="noopener" title="{{ row.valuation_basis | strip | capitalize | default: "Reported" }} valuation{% if vsource != "" %} ({{ vsource | escape }}{% if row.valuation_date != "" %}, {{ row.valuation_date | strip }}{% endif %}){% endif %}">{{ valuation | escape }} valuation</a>{% endif %}</td>
+<td class="col-round" data-label="Latest round" data-sort="{{ latest.date | strip }}">{% if latest %}{% assign lround = latest.round | strip %}{% assign lamount = latest.amount | strip %}{% assign ldate = latest.date | strip %}<span class="tracker-round-line"><a class="tracker-round" href="{{ latest.url }}" target="_blank" rel="noopener" title="{{ latest.title | escape }}">{{ lround | default: "Funding" | escape }}{% if lamount != "" %} · {{ lamount | escape }}{% endif %}</a>{% assign fresh = false %}{% if ldate.size == 10 %}{% assign age = site.time | date: "%s" | minus: 0 %}{% assign then = ldate | date: "%s" | minus: 0 %}{% assign age = age | minus: then %}{% if age >= 0 and age <= 2592000 %}{% assign fresh = true %}{% endif %}{% endif %}{% if ldate != "" %}<span class="tracker-round-date{% if fresh %} is-fresh{% endif %}"{% if fresh %} title="Announced in the 30 days before this page was last updated"{% endif %}>{% include tracker-date.html date=ldate %}</span>{% endif %}</span>{% endif %}{% assign valuation = row.valuation | strip %}{% if n_rounds > 1 or valuation != "" %}<span class="tracker-round-sub">{% if n_rounds > 1 %}<span class="tracker-round-count">{{ n_rounds }} rounds</span>{% endif %}{% if valuation != "" %}{% assign vsource = row.valuation_source | strip %}<a class="tracker-valuation" href="{{ row.valuation_url }}" target="_blank" rel="noopener" title="{{ row.valuation_basis | strip | capitalize | default: "Reported" }} valuation{% if vsource != "" %} ({{ vsource | escape }}{% if row.valuation_date != "" %}, {{ row.valuation_date | strip }}{% endif %}){% endif %}">{{ valuation | escape }} valuation</a>{% endif %}</span>{% endif %}</td>
 {%- comment %} Documented funding: the sum of the listed rounds' amounts in millions of USD (rough exchange rates). {% endcomment %}
 {%- assign raised = 0.0 %}{% assign n_open = 0 %}
 {%- assign funding_rows = news | where: "type", "Funding" %}

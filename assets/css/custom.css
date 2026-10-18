@@ -48,15 +48,19 @@ section.wide-content {
 }
 
 .wide-content > h1 {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-size: 34px;
     letter-spacing: -0.01em;
 }
 
 .wide-content .page-meta {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     font-size: 13px;
     color: #8b939d;
+}
+
+.page-meta-sep {
+    margin: 0 7px;
 }
 
 /* "Suggest a company or correction" reads as an action */
@@ -72,58 +76,22 @@ section.wide-content {
     transition: border-color 0.15s, background 0.15s;
 }
 
-.wide-content .page-meta-button:hover {
+.wide-content .page-meta-button:hover,
+.wide-content .page-meta-button:focus {
     text-decoration: none;
+    font-weight: 500; /* don't let the theme's bold-on-hover widen the pill */
     background: #f3f7fc;
     border-color: #1f6fb2;
 }
 
-/* Tracker page: the numbers at a glance, under the title */
-.tracker-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 40px;
-    margin: 0 0 28px;
-    padding: 14px 0;
-    border-top: 1px solid #e6e8eb;
-    border-bottom: 1px solid #e6e8eb;
-}
-
-.tracker-stats > div {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end; /* numbers line up at the top even when a label wraps */
-}
-
-.tracker-stats dt {
-    margin: 2px 0 0;
-    font-size: 12px;
-    font-weight: 400;
-    color: #8b939d;
-}
-
-.tracker-stats dd {
+/* Tracker page: one short paragraph between the title and the table */
+.wide-content > .page-intro {
     margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: #1f2328;
-    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    line-height: 1.65;
 }
 
 @media screen and (max-width: 720px) {
-    /* Three tidy columns on phones */
-    .tracker-stats {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px 16px;
-    }
-
-    .tracker-stats dd {
-        font-size: 18px;
-    }
-
     .wide-content .page-meta-button {
         margin-left: 0;
     }
@@ -325,8 +293,12 @@ section:not(.wide-content) h4 {
     transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-section a.project-card:hover {
+/* The theme bolds every hovered link (a:hover { font-weight: bold }), which re-wrapped the card's text;
+   keep the weight so hovering only highlights the border and shadow. */
+section a.project-card:hover,
+section a.project-card:focus {
     text-decoration: none;
+    font-weight: normal;
     border-color: #c8d2dd;
     box-shadow: 0 4px 14px rgba(16, 24, 40, 0.08);
 }
@@ -405,7 +377,9 @@ section:not(.wide-content) li:last-child {
     filter: grayscale(100%);
 }
 
-.site-bar-home:hover {
+.site-bar-home:hover,
+.site-bar-home:focus {
+    font-weight: 600; /* same weight as at rest, so the header doesn't shift */
     color: #1f6fb2;
     text-decoration: none;
 }
@@ -420,60 +394,13 @@ section:not(.wide-content) li:last-child {
     color: #6b7280;
 }
 
-.site-bar-links a:hover {
+.site-bar-links a:hover,
+.site-bar-links a:focus {
+    font-weight: normal;
     color: #1f2328;
 }
 
-/* Tracker page header: the intro on the left, the numbers on the right */
-.page-head {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px;
-    gap: 56px;
-    align-items: start;
-    margin: 0 0 36px;
-}
-
-.page-intro > p {
-    max-width: 720px;
-    font-size: 15px;
-    line-height: 1.65;
-}
-
-.page-intro > p:last-child {
-    margin-bottom: 0;
-}
-
-.page-head .tracker-stats {
-    flex-direction: column;
-    gap: 16px;
-    margin: 4px 0 0;
-    padding: 2px 0 2px 28px;
-    border: 0;
-    border-left: 1px solid #e6e8eb;
-}
-
-@media screen and (max-width: 960px) {
-    .page-head {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 22px;
-    }
-
-    .page-head .tracker-stats {
-        order: -1;
-        flex-direction: row;
-        gap: 12px 36px;
-        padding: 14px 0;
-        border-left: 0;
-        border-top: 1px solid #e6e8eb;
-        border-bottom: 1px solid #e6e8eb;
-    }
-}
-
 @media screen and (max-width: 720px) {
-    .page-head .tracker-stats {
-        gap: 12px 16px;
-    }
-
     .site-bar {
         margin-bottom: 24px;
     }
