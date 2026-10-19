@@ -6,6 +6,23 @@
 (function () {
   var dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
+  // GA4 events (gtag is only on production builds): searches, filters, companies opened, links followed from
+  // company rows, copied links and subscribe clicks. GA's enhanced measurement also logs outbound clicks;
+  // tracker_link_click adds the company and the kind of link.
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  // "Subscribe to Magis for updates" under the page title (outside the table), as its own event so GA can
+  // count it as a key event.
+  document.querySelectorAll('a[data-subscribe]').forEach(function (a) {
+    function trackSubscribe(e) {
+      if (e.type === 'click' || e.button === 1) track('tracker_subscribe_click');
+    }
+    a.addEventListener('click', trackSubscribe);
+    a.addEventListener('auxclick', trackSubscribe);
+  });
+
   document.querySelectorAll('[data-tracker]').forEach(function (tracker) {
     var table = tracker.querySelector('table');
     var groups = Array.prototype.slice.call(table.tBodies);
@@ -44,12 +61,6 @@
       if (m >= 10) return '$' + Math.round(m) + 'M';
       if (m >= 1) return '$' + Math.round(m * 10) / 10 + 'M';
       return '$' + Math.round(m * 1000) + 'K';
-    }
-    // GA4 events (gtag is only on production builds): searches, filters, companies opened, links followed from
-    // company rows and copied links. GA's enhanced measurement also logs outbound clicks; tracker_link_click
-    // adds the company and the kind of link.
-    function track(name, params) {
-      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
     }
 
     // Search the summary row plus the searchable parts of the details (description, customers,

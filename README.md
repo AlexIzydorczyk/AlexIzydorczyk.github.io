@@ -102,7 +102,10 @@ Category definitions live in the page front matter (`legend.category`) and show 
 
 Each company has a shareable link, e.g. `/ai-for-hedge-funds.html#hebbia` opens that row.
 
-The date under the title is when the site was built. The count above the table adds up the shown companies'
+The date under the title is when the site was built. Next to it, "Subscribe to Magis for updates" opens Magis's
+subscribe page in a new tab (`subscribe_url` in the page front matter). Its utm tags
+(`utm_source=alexizydorczyk.com&utm_medium=referral&utm_campaign=ai-hf-tracker`) mark the signup as coming from the
+tracker. The count above the table adds up the shown companies'
 "Total raised" ("228 companies · ≈ $3.7B raised") and follows the filters, like the status tab counts.
 Links to the page show `assets/images/ai-for-hedge-funds-card.png` as their preview image (set by `image:`
 in the page front matter); it says "200+ startups", so it only needs redoing if the categories shown on it
@@ -125,7 +128,8 @@ change.
   The tracker also sends its own events from `assets/js/startup-table.js`: `view_search_results` (`search_term`,
   once typing pauses), `tracker_filter` (`filter_type`, `filter_value`), `tracker_company_open` (`company`),
   `tracker_link_click` (`company`, `link_type`, `link_domain`, `link_url`), `tracker_share` (`link_type`, plus
-  `company` for a company link) and `tracker_browse`. `company`, `link_type`, `filter_type` and `filter_value` are
+  `company` for a company link), `tracker_browse` and `tracker_subscribe_click` (the "Subscribe to Magis for
+  updates" button). `company`, `link_type`, `filter_type` and `filter_value` are
   registered as custom dimensions in GA so reports can use them.
   Links shared in posts should carry `utm_source` / `utm_medium` / `utm_campaign` tags. The tracker only rewrites its
   own parameters in the address, so the tags stay for GA to read (they're left out of "Copy link to this view").

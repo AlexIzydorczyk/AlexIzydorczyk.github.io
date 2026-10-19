@@ -53,7 +53,13 @@ section.wide-content {
     letter-spacing: -0.01em;
 }
 
+/* The byline, then its buttons; whatever doesn't fit starts a new line at the left edge */
 .wide-content .page-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    max-width: none;
     margin-bottom: 16px;
     font-size: 13px;
     color: #8b939d;
@@ -63,10 +69,11 @@ section.wide-content {
     margin: 0 7px;
 }
 
-/* "Suggest a company or correction" reads as an action */
+/* "Subscribe to Magis for updates" and "Suggest a company or correction" read as actions */
 .wide-content .page-meta-button {
-    display: inline-block;
-    margin: 4px 0 0 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: 2px 11px;
     font-weight: 500;
     color: #1f6fb2;
@@ -84,17 +91,17 @@ section.wide-content {
     border-color: #1f6fb2;
 }
 
+.page-meta-button svg {
+    flex: none;
+    width: 14px;
+    height: 14px;
+}
+
 /* Tracker page: one short paragraph between the title and the table */
 .wide-content > .page-intro {
     margin: 0;
     font-size: 15px;
     line-height: 1.65;
-}
-
-@media screen and (max-width: 720px) {
-    .wide-content .page-meta-button {
-        margin-left: 0;
-    }
 }
 
 .wide-footer {

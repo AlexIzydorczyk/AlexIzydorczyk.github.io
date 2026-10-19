@@ -4,6 +4,8 @@ title: AI for Hedge Funds Startup Tracker
 description: "A maintained list of startups building AI for hedge funds and other investment firms, with their customers, partners, funding, investors and founders."
 image: /assets/images/ai-for-hedge-funds-card.png
 suggest_url: https://forms.gle/7xvmKY2EBwYtq3hx8
+# Magis's subscribe page, tagged so signups that start on the tracker can be told apart.
+subscribe_url: https://magis.substack.com/subscribe?utm_source=alexizydorczyk.com&utm_medium=referral&utm_campaign=ai-hf-tracker
 # Rows live in _data/ai_for_hedge_funds.csv; news, customers, partners and founder backgrounds have their own CSVs in _data/.
 # The category, focus, status and source_type values are matched against the names below.
 legend:
@@ -96,7 +98,7 @@ legend:
 
 # AI for Hedge Funds Startup Tracker
 
-<p class="page-meta">Maintained by Alex Izydorczyk<span class="page-meta-sep" aria-hidden="true">·</span>Updated <span class="tracker-updated">{{ site.time | date: "%b %-d, %Y" }}</span> <a class="page-meta-button" href="{{ page.suggest_url }}">Suggest a company or correction</a></p>
+<p class="page-meta"><span>Maintained by Alex Izydorczyk<span class="page-meta-sep" aria-hidden="true">·</span>Updated <span class="tracker-updated">{{ site.time | date: "%b %-d, %Y" }}</span></span> <a class="page-meta-button" href="{{ page.subscribe_url }}" target="_blank" rel="noopener" data-subscribe><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m2.5 4.5 5.5 4 5.5-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Subscribe to Magis for updates</a> <a class="page-meta-button" href="{{ page.suggest_url }}">Suggest a company or correction</a></p>
 
 This page tracks startups in the _AI for Hedge Funds_ space. These are startups whose primary customers are alternative asset managers (hedge funds, private equity, venture capital, etc.) and who are using LLMs in a primary capacity. I originally published this on Magis, my blog, [here](https://magis.substack.com/p/genai-for-hedge-funds-startups).
 {: .page-intro}
