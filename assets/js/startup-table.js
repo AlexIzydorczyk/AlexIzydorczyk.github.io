@@ -435,7 +435,8 @@
         // First (and chosen by default): the plain text search, so Enter keeps what was typed.
         addOption(el('span', 'tracker-kind is-text', 'Text'), 'Search all text for “' + search.value.trim() + '”',
           plural(countWhere(filters)), function () { closeSuggest(); });
-        rankMatches(q, entries, filters).slice(0, 8).forEach(function (m) {
+        // Picking a suggestion clears the typed text, so each one shows what the pick leaves without it.
+        rankMatches(q, entries, withFilter(filters, 'terms', [])).slice(0, 8).forEach(function (m) {
           addOption(kindTag(m.entry.kind), m.entry.label, plural(m.n), function () { addPick(m.entry); });
         });
         groups.filter(function (g) { return (g.dataset.name || '').toLowerCase().indexOf(q) !== -1; }).slice(0, 3).forEach(function (g) {
