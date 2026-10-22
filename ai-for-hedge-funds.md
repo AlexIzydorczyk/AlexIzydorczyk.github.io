@@ -75,7 +75,7 @@ legend:
     - group: Banks & investment firms
       firms: [Andreessen Horowitz, Apollo, Bain Capital, Bank of America, Barclays, BlackRock, Blackstone, Capital Group, Carlyle, Centerview, Citi, Credit Suisse, Deutsche Bank, Evercore, Goldman Sachs, Insight Partners, J.P. Morgan, KKR, Lazard, Merrill Lynch, Moelis, Morgan Stanley, PIMCO, PJT, Qatalyst, Sequoia Capital, SoftBank Vision Fund, TPG, UBS, Warburg Pincus]
     - group: Tech companies
-      firms: [Airbnb, Anthropic, Coinbase, Databricks, ElevenLabs, Glean, Google Brain, Google DeepMind, Instacart, Meta AI, Notion, OpenAI, Palantir, Plaid, Ramp, Reka AI, Robinhood, Scale AI, Scalapay, Snowflake, SpaceX, Stripe, Tools for Humanity, Uber]
+      firms: [Airbnb, Anthropic, Coinbase, Databricks, ElevenLabs, Glean, Google Brain, Google DeepMind, Instacart, Meta AI, Notion, Nubank, OpenAI, Palantir, Plaid, Ramp, Reka AI, Robinhood, Scale AI, Scalapay, Snowflake, SpaceX, Stripe, Tools for Humanity, Uber]
   # Where a customer or partner claim comes from (source_type in the customers/partners CSVs).
   source_type:
     - name: Customer announcement
