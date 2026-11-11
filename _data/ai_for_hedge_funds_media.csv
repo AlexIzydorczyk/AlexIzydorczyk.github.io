@@ -1,4 +1,5 @@
 company,date,type,title,show,people,url
+73 Strings,2026-05-07,Podcast,73 Strings' Yann Magnan - unlocking valuation intelligence in private markets,Alt Goes Mainstream,Yann Magnan,https://podcasts.apple.com/us/podcast/73-strings-yann-magnan-unlocking-valuation-intelligence/id1556172088?i=1000766613948
 Aiera,2020-09-26,Video,"Aiera CEO on company's machine learning platform, benefits of AI investing",CNBC,Ken Sena,https://www.youtube.com/watch?v=g417h5xv0OU
 Aiera,2024-08-22,Talk,Using AI To Transform The Financial Services with PNC & Aiera,Ai4 2024,"Christopher Gannatti (WisdomTree), Saima Shafiq (PNC), Ken Sena",https://www.youtube.com/watch?v=sVbxdp9I2aM
 AlphaSense,2024-12-31,Podcast,Jack Kokko - Building AlphaSense,Invest Like the Best,Jack Kokko,https://podcasts.apple.com/us/podcast/jack-kokko-building-alphasense/id1154105909?i=1000682215850
@@ -17,7 +18,8 @@ Brightwave,2025-04-09,Talk,"Trust, but Verify: Knowledge Agents for Finance Work
 Canary Data,2026-07-10,Podcast,Canary CEO/Ex-Tiger Global PM: How Bad AI Is Leaving Alpha on the Table,Invest with AI (Fundamental Edge),Joe O'Donnell,https://podcasts.apple.com/us/podcast/canary-ceo-ex-tiger-global-pm-how-bad-ai-is-leaving/id1896918892?i=1000776284886
 Carbon Arc,2022-05-19,Podcast,The Kirk McKeown Episode,The Alternative Data Podcast,Kirk McKeown,https://podcasts.apple.com/us/podcast/the-kirk-mckeown-episode/id1539909575?i=1000562485175
 Carbon Arc,2024-04-01,Podcast,Ep 9: The Evolution and Future of Data-Driven Intelligence with Kirk McKeown,The Hedgineer Podcast,Kirk McKeown,https://podcasts.apple.com/us/podcast/ep-9-the-evolution-and-future-of-data/id1674929284?i=1000651094588
-Compound,2026-10-14,Talk,Towards Autonomous Analysts in Finance,AI Engineer NYC 2026 (livestream),Yijia Liang,https://www.youtube.com/watch?v=jiUC6IUMdvc&t=7179s
+Carbon Arc,2026-11-06,Podcast,AI Agents and the Future of Alt Data,Invest with AI (Fundamental Edge),"Kirk McKeown, Brett Caughran (Fundamental Edge)",https://podcasts.apple.com/us/podcast/ai-agents-and-the-future-of-alt-data/id1896918892?i=1000800306207
+Compound,2026-10-14,Talk,Why We Rebuilt Microsoft Office From Scratch for AI Agents,AI Engineer NYC 2026,Yijia Liang,https://www.youtube.com/watch?v=v0UkV5qS9E4
 Daloopa,2025-08-12,Podcast,AI in Finance: Eliminating Hallucination & Scaling Workflows w/ Daloopa CEO Thomas Li,The Hedgineer Podcast,Thomas Li,https://podcasts.apple.com/us/podcast/ai-in-finance-eliminating-hallucination-scaling-workflows/id1674929284?i=1000721684484
 Daloopa,2026-04-07,Podcast,Season 2 Finale: Open-Sourcing the Investor Library with Daloopa CEO Thomas Li,The Hedgineer Podcast,Thomas Li,https://podcasts.apple.com/us/podcast/season-2-finale-open-sourcing-the-investor-library/id1674929284?i=1000760043901
 Daloopa,2026-08-07,Podcast,Daloopa CEO Thomas Li: The Magic Isn’t in the Model,Invest with AI (Fundamental Edge),Thomas Li,https://podcasts.apple.com/us/podcast/daloopa-ceo-thomas-li-the-magic-isnt-in-the-model/id1896918892?i=1000780921766
@@ -33,16 +35,18 @@ Implied,2026-06-19,Podcast,Implied CEO on the Limits and Capabilities of AI for 
 Intelligent Alpha,2026-08-14,Podcast,Intelligent Alpha CEO: Letting AI Run the Portfolio,Invest with AI (Fundamental Edge),Doug Clinton,https://podcasts.apple.com/us/podcast/intelligent-alpha-ceo-letting-ai-run-the-portfolio/id1896918892?i=1000783351125
 Kavout,2024-07-15,Podcast,Feifei Li: AI in Investment Research,Enterprising Investor (CFA Institute),Feifei Li,https://podcasts.apple.com/us/podcast/feifei-li-ai-in-investment-research/id1735516283?i=1000662319626
 Kepler,2026-07-29,Talk,How Kepler Built Verifiable AI for Financial Services,AI Engineer,Vinoo Ganesh,https://www.youtube.com/watch?v=Tt2kX2sgQio
-Kepler,2026-10-13,Talk,AI and the Future of Fundamental Investing,AI Engineer NYC 2026 (livestream),"Jack Woodruff (Candlestick Capital founder), Vinoo Ganesh",https://www.youtube.com/watch?v=akEqiXFo3GM&t=19744s
+Kepler,2026-10-13,Talk,Why AI Won't Replace Stock Pickers,AI Engineer NYC 2026,"Jack Woodruff (Candlestick Capital founder), Vinoo Ganesh",https://www.youtube.com/watch?v=y2dyD6slKxE
 Kepler,2026-10-25,Talk,Do Not Let Models Invent Numbers,AI Engineer NYC 2026,Vinoo Ganesh,https://www.youtube.com/watch?v=dZgA6btnb_s
 LinqAlpha,2026-10-25,Talk,Why Frontier Models Fail as Buy-Side Analysts,AI Engineer NYC 2026,"Janie Gu (Google DeepMind), Suyeol Yun",https://www.youtube.com/watch?v=aVbRSIQO2dE
 Model ML,2025-07-31,Podcast,The Finance Startup Bringing Agentic AI to Wall Street,Y Combinator,"Chaz Englander, Arnie Englander",https://www.youtube.com/watch?v=lqokpIme47A
 Model ML,2026-09-03,Video,Inside FT Partners’ Firmwide Rollout of Model ML,Model ML (YouTube),"Steve McLaughlin (FT Partners), Chaz Englander",https://www.youtube.com/watch?v=gAJ-adnmecw
 Mosaic,2025-01-09,Video,Mosaic is Upending Wall Street,New York Post (NYNext),Ian Gutwinski,https://nypost.com/video/mosaic-is-upending-wall-street/
 Moshi,2026-10-20,Talk,The Investor's Edge Lives in Their Head,AI Engineer NYC 2026,Anekha Sokhal,https://www.youtube.com/watch?v=UHbODjuviAU
+Moshi,2026-10-22,Podcast,"The Recommendation Engine for Commodity Traders — Anekha Sokhal, Moshi",Latent Space,Anekha Sokhal,https://podcasts.apple.com/us/podcast/the-recommendation-engine-for-commodity-traders/id1674008350?i=1000797625771
 OpenBB,2022-06-22,Podcast,OpenBB: Python's Open-source Investment Platform,Talk Python To Me,James Maslek,https://talkpython.fm/episodes/show/370/openbb-pythons-open-source-investment-platform
 OpenBB,2025-08-26,Podcast,From Viral Reddit Tool to Enterprise AI: The OpenBB Story,The Hedgineer Podcast,Didier Lopes,https://podcasts.apple.com/us/podcast/from-viral-reddit-tool-to-enterprise-ai-the-openbb/id1674929284?i=1000723617792
 Primer,2026-10-09,Podcast,Where Will Investors Find Alpha in the Age of AI?,Invest with AI (Fundamental Edge),Alistair Smallwood,https://podcasts.apple.com/us/podcast/where-will-investors-find-alpha-in-the-age-of/id1896918892?i=1000794509435
+Qualitate,2026-10-30,Podcast,Can AI Replace Traditional Expert Networks? The Future of Primary Research with Qualitate,Invest with AI (Fundamental Edge),"Sagar Kadakia, Brett Caughran (Fundamental Edge), Khe Hy (Invest with AI)",https://podcasts.apple.com/us/podcast/can-ai-replace-traditional-expert-networks-the-future/id1896918892?i=1000798919461
 Reflexivity,2025-07-25,Video,"AI Can Replace Junior Analysts, Reflexivity CEO Says",Bloomberg Open Interest,Jan Szilagyi,https://www.bloomberg.com/news/videos/2025-07-25/ai-can-replace-junior-analysts-reflexivity-ceo-video
 Reflexivity,2026-03-13,Video,Reflexivity CEO: The gap between a question and an answer shrinks with AI,CNBC,Jan Szilagyi,https://www.cnbc.com/video/2026/03/13/reflexivity-ceo-the-gap-between-a-question-and-an-answer-shrinks-with-ai.html
 Reflexivity,2026-04-15,Podcast,How the World’s Biggest Macro Hedge Funds Are Using AI,Forward Guidance (Blockworks),Jan Szilagyi,https://podcasts.apple.com/us/podcast/how-the-worlds-biggest-macro-hedge-funds-are-using-ai/id1592743188?i=1000761480711
@@ -53,6 +57,7 @@ Rowspace,2026-02-25,Video,Sequoia’s Lin Is Optimistic About AI’s Impact,Bloo
 Rowspace,2026-02-25,Video,Michael Manapat of Rowspace explains leveraging proprietary asset-manager data for AI-powered decisions,TBPN,Michael Manapat,https://www.youtube.com/watch?v=zaQDCRMWvNA&t=10467s
 Rowspace,2026-10-16,Talk,AI Agents Cut 3-Day Portfolio Builds to Minutes,AI Engineer NYC 2026,"Jack McDonald (Apollo / Redding Ridge), Michael Manapat",https://www.youtube.com/watch?v=BOWYujhIQuo
 Samaya AI,2026-04-01,Podcast,How AI is reshaping Wall Street,Pioneers of AI (Masters of Scale),Maithra Raghu,https://podcasts.apple.com/us/podcast/how-ai-is-reshaping-wall-street/id1763085968?i=1000758615520
+Samaya AI,2026-11-09,Talk,Can AI Agents Beat Wall Street at Predicting Earnings?,AI Engineer NYC 2026,Ashwin Paranjape,https://www.youtube.com/watch?v=SE6POOEjh4I
 SigTech,2021-12-20,Podcast,The SigTech Episode,The Alternative Data Podcast,Vera Shulgina,https://podcasts.apple.com/us/podcast/the-sigtech-episode/id1539909575?i=1000545471839
 SigTech,2023-12-11,Podcast,Bin Ren – text2quant (S7E2),Flirting with Models,Bin Ren,https://podcasts.apple.com/us/podcast/bin-ren-text2quant-s7e2/id1402620531?i=1000638193832
 SigTech,2025-03-04,Video,SigTech CEO Bin Ren on AI and Finance,Bloomberg (Bloomberg Invest),Bin Ren,https://www.bloomberg.com/news/videos/2025-03-04/sigtech-ceo-bin-ren-on-ai-and-finance-video
