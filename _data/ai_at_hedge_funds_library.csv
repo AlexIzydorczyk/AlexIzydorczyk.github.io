@@ -1,4 +1,5 @@
 fund,date,type,title,show,url
+AQR,2026-04-24,Article,Scaling Point-in-Time Language Models: Enabling Economic Evaluation of Embeddings,arXiv,https://arxiv.org/abs/2607.11889
 Balyasny,2024-03-04,Podcast,"Ep 7: AI, Innovation, and Insights with Carson Boneck",The Hedgineer Podcast,https://podcasts.apple.com/us/podcast/ep-7-ai-innovation-and-insights-with-carson-boneck/id1674929284?i=1000647978611
 Balyasny,2024-04-11,Video,How Balyasny is Leveraging Artificial Intelligence to Drive Efficiency at Scale,Balyasny Asset Management,https://www.youtube.com/watch?v=47chGuyUggk
 Balyasny,2024-04-23,Podcast,Balyasny’s Use of Generative AI in Investing,Tech Disruptors (Bloomberg Intelligence),https://podcasts.apple.com/us/podcast/balyasnys-use-of-generative-ai-in-investing/id1621165150?i=1000653327785
@@ -13,42 +14,58 @@ Balyasny,2026-09-17,Case study,Working at the frontier: How Balyasny Asset Manag
 Balyasny,2026-10-08,Case study,Balyasny Asset Management Deploys Gemini Models for Agentic Financial Research,Google Cloud,https://www.googlecloudpresscorner.com/2026-10-08-Balyasny-Asset-Management-Deploys-Gemini-Models-for-Agentic-Financial-Research
 Bridgewater,2023-07-03,Podcast,"Bridgewater's Greg Jensen on AI, Inflation and What Markets Are Getting Wrong",Odd Lots,https://podcasts.apple.com/us/podcast/bridgewaters-greg-jensen-on-ai-inflation-and-what/id1056200096?i=1000619106027
 Bridgewater,2024-04-22,Talk,Generative AI Journeys - Fireside Chat with Bridgewater Associates,AWS Generative AI Journeys,https://www.youtube.com/watch?v=-kPb8AN-8Mg
+Bridgewater,2024-12-04,Talk,Beyond productivity: Using generative AI to grow in financial services,AWS re:Invent 2024,https://www.youtube.com/watch?v=G8b8LrfXSik&t=360s
 Bridgewater,2025-05-20,Talk,"Bridgewater's Head of AI, Jas Sekhon, on Building an AI-First Company",Ray on the Road – NYC 2025,https://www.youtube.com/watch?v=WVT0Gksw56w
+Bridgewater,2025-10-22,Talk,Leading through innovation with generative AI,AWS Financial Services Symposium 2025,https://www.youtube.com/watch?v=ARugq9dsJfM&t=460s
 Bridgewater,2025-11-10,Article,AIA Forecaster: Technical Report,arXiv (Bridgewater AIA Labs),https://arxiv.org/abs/2511.07678
 Bridgewater,2026-06-30,Article,Learning to Replicate Expert Judgment in Financial Tasks,Bridgewater AIA Labs,https://www.bridgewater.com/aia-labs/learning-to-replicate-expert-judgment-in-financial-tasks
 Bridgewater,2026-07-20,Article,Provable Generalization Bounds for RLVR at the Billion-Parameter Scale,Bridgewater AIA Labs,https://www.bridgewater.com/aia-labs/provable-generalization-bounds-for-rlvr-at-the-billion-parameter-scale
 Bridgewater,2026-07-24,Talk,How Bridgewater Built an AI Analyst That Does Hours of Expert Research in Minutes,LangChain Interrupt 2026,https://www.youtube.com/watch?v=lXZb21CfeIY
+Bridgewater,2026-08-03,Article,Noisy Data Breaks RLVR,Bridgewater AIA Labs,https://www.bridgewater.com/aia-labs/noisy-data-breaks-rlvr
 Bridgewater,2026-08-27,Article,Putting Task Expertise into RL to Achieves State-of-the-Art on Text-to-SQL,Bridgewater AIA Labs,https://www.bridgewater.com/aia-labs/putting-task-expertise-into-rl-to-achieves-state-of-the-art-on-text-to-sql
 Bridgewater,2026-09-11,Podcast,Why Bridgewater's CIO Says AI's Human Extinction Risk Is Real,Odd Lots,https://podcasts.apple.com/us/podcast/why-bridgewaters-cio-says-ais-human-extinction-risk-is-real/id1056200096?i=1000789010725
 Bridgewater,2026-10-13,Talk,How Bridgewater Turned 100 Million Documents Into an Edge,AI Engineer NYC 2026,https://www.youtube.com/watch?v=CLve4Nx_RwI
 Bridgewater,2026-10-13,Talk,Can Your AI Analyst Keep a Secret?,AI Engineer NYC 2026,https://www.youtube.com/watch?v=u_jvuCjuvEk
+Bridgewater,2026-11-06,Talk,AI Across the Investment Lifecycle,Bloomberg Enterprise Data & Tech Summit 2026,https://www.youtube.com/watch?v=7fLSLg4PEmI
 Capital Fund Management,2024-12-03,Case study,Investing in Performance: Fine-tune small models with LLM insights - a CFM case study,Hugging Face,https://huggingface.co/blog/cfm-case-study
 Citadel,2023-03-07,Interview,"Citadel Negotiating Enterprise-Wide ChatGPT License, Ken Griffin Says",Bloomberg,https://www.bloomberg.com/news/articles/2023-03-07/griffin-says-trying-to-negotiate-enterprise-wide-chatgpt-license
 Citadel,2025-05-06,Talk,Algorithms to Outcomes: AI's Impact in Finance,Milken Institute Global Conference 2025,https://www.youtube.com/watch?v=KVMm3LxrtBE&t=230s
 Citadel,2025-10-15,Talk,Umesh Subramanian at Enterprise Data + Tech Summit,Bloomberg Enterprise Data & Tech Summit NY 2025,https://www.citadel.com/wp-content/uploads/2025/10/Umesh-Subramanian-at-Enterprise-Data-Tech-Summit.pdf
 Citadel,2025-12-03,Interview,"Citadel debuts new AI tool for equities investors, CTO Subramanian says",Reuters,https://www.reuters.com/business/citadel-debuts-new-ai-tool-equities-investors-cto-subramanian-says-2025-12-03/
+Citadel,2026-09-24,Article,Putting AI Agents to Work: Ideas from the NXT Offsite’s AI Hackathon,Citadel,https://www.citadel.com/careers/career-perspectives/nxt-offsites-ai-hackathon/
+Citadel,2026-11-06,Talk,AI Across the Investment Lifecycle,Bloomberg Enterprise Data & Tech Summit 2026,https://www.youtube.com/watch?v=7fLSLg4PEmI
+Citadel Securities,2024-12-10,Talk,Demystify Financial Textual Data with LLMs,NeurIPS 2024 Expo,https://slideslive.com/39031407/demystify-financial-textual-data-with-llms
 Citadel Securities,2026-10-14,Talk,Your Company Has No Model of Itself. Agents Can Build One,AI Engineer NYC 2026,https://www.youtube.com/watch?v=jDwc0aXTAFg
 Coatue,2026-02-12,Article,Our Partnership with Anthropic: Enterprise Intelligence has Liftoff,Coatue,https://www.coatue.com/blog/press/our-partnership-with-anthropic-enterprise-intelligence-has-liftoff
 Coatue,2026-10-13,Talk,AI Agents Will Upend Investing Even More Than Coding,AI Engineer NYC 2026,https://www.youtube.com/watch?v=AYFcmnQrZCg
 D. E. Shaw,2025-07-15,Talk,Claude for Financial Services Keynote,Anthropic Claude for Financial Services 2025,https://www.youtube.com/watch?v=50AhIyybR0M&t=1929s
 D. E. Shaw,2026-08-01,Talk,Panel: Agentic AI in Capital Markets,Agentic AI Summit 2026,https://www.youtube.com/watch?v=NtWNpxhREl8&t=772s
 DRW,2024-06-12,Article,"AI: Not completely new to financial markets but continuously exciting, says Wachi Bandara, DRW’s Head of AI",DRW,https://www.drw.com/updates/insights/ai-not-completely-new-to-financial-markets-continuously-exciting
+G-Research,2025-12,Article,The Three Horsemen,G-Research Technology Innovation Group,https://g-research-innovation.github.io/lean4-llm/blog3_three_horsemen
 High-Flyer,2023-05-24,Interview,Deepseek: From Hedge Fund to Frontier Model Maker,ChinaTalk (translation of 36Kr Waves interview),https://www.chinatalk.media/p/deepseek-from-hedge-fund-to-frontier
+High-Flyer,2023-06-27,Article,HAI-LLM: An Efficient and Lightweight Training Tool for Large Models,High-Flyer blog (Chinese),https://www.high-flyer.cn/blog/hai-llm/
+High-Flyer,2023-07-06,Article,"CC_Cleaner: A Smooth, Efficient and Extensible Data-Cleaning Pipeline",High-Flyer blog (Chinese),https://www.high-flyer.cn/blog/cc_cleaner/
+High-Flyer,2024-03-19,Talk,Harmony in Diversity: Decoupled Values Alignment of Large Language Models,NVIDIA GTC 2024,https://www.nvidia.com/en-us/on-demand/session/gtc24-s62251/
 High-Flyer,2024-08-26,Article,Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning,arXiv (SC24),https://arxiv.org/abs/2408.14158
 Hudson River Trading,2023-12,Talk,Machine Learning and Optimization for Automated Trading at HRT,NeurIPS 2023 Expo,https://slideslive.com/39015411/machine-learning-and-optimization-for-automated-trading-at-hrt
 Hudson River Trading,2025-03-18,Talk,AI for Safe and Efficient Trading in Electronic Markets,NVIDIA GTC 2025,https://www.nvidia.com/en-us/on-demand/session/gtc25-s72692/
 Hudson River Trading,2025-07-13,Talk,Foundation Models for Automated Trading,ICML 2025 Expo,https://slideslive.com/39043823/foundation-models-for-automated-trading
 Hudson River Trading,2026-03-03,Video,Bloomberg Invest: Hudson River Trading's Iain Dunning on AI Upskilling,Bloomberg Invest 2026,https://www.youtube.com/watch?v=n5MKYRVxNBE
 Hudson River Trading,2026-06-05,Podcast,Inside Hudson River Trading's Blistering Token Burn,Odd Lots,https://podcasts.apple.com/us/podcast/inside-hudson-river-tradings-blistering-token-burn/id1056200096?i=1000771291430
+Hudson River Trading,2026-07-06,Talk,Scaling Deep Learning in Financial Markets,ICML 2026 Expo,https://slideslive.com/39083466/scaling-deep-learning-in-financial-markets
 IMC,2026-10,Article,How IMC is adopting AI at scale,IMC Trading,https://www.imc.com/in/articles/how-imc-is-adopting-ai-at-scale
 Jane Street,2025-03-28,Talk,AI Engineering at Jane Street,AI Engineer Summit 2025,https://www.youtube.com/watch?v=0ML7ZLMdcl4
 Jane Street,2026-02-05,Article,I design with Claude more than Figma now,Jane Street Blog,https://blog.janestreet.com/i-design-with-claude-code-more-than-figma-now-index/
+Jane Street,2026-04-22,Article,Using group theory to explore the space of positional encodings for attention,Jane Street Blog,https://blog.janestreet.com/using-group-theory-to-explore-positional-encodings-attention/
 Jane Street,2026-05-14,Talk,Now more than ever: building reliable software in the age of agents,Antithesis Bug Bash 2026,https://www.youtube.com/watch?v=rUYP4C29yCw
+Jane Street,2026-06-07,Article,Formal methods and the future of programming,Jane Street Blog,https://blog.janestreet.com/formal-methods-at-jane-street-index/
 Jane Street,2026-09-14,Article,A study of sequence weighting at scale,Jane Street Blog,https://blog.janestreet.com/a-study-of-sequence-weighting-at-scale/
 Jane Street,2026-09-23,Podcast,Learning Goals and the Goals of Learning: Teaching in the Age of AI with Aaron Bauer,Signals and Threads,https://podcasts.apple.com/us/podcast/learning-goals-and-the-goals-of-learning-teaching-in/id1528917129?i=1000791310776
 Jane Street,2026-09-30,Article,Mitigating memorization in LLMs,Jane Street Blog,https://blog.janestreet.com/mitigating-memorization-in-llms/
 Jane Street,2026-10-16,Podcast,The Changing Craft of Programming with John Crepezzi,Signals and Threads,https://podcasts.apple.com/us/podcast/the-changing-craft-of-programming-with-john-crepezzi/id1528917129?i=1000796702839
+Jane Street,2026-10-19,Article,LEAPS: Long-context Evaluation of Adaptive Pattern Learning and State Tracking,arXiv,https://arxiv.org/abs/2610.25919
 Jane Street,2026-11-02,Article,Our software engineering interviews are changing (a little),Jane Street Blog,https://blog.janestreet.com/software-engineering-interviews-are-changing-a-little/
+Jump Trading,2026-07-06,Talk,Multi-Agent System Design and Evaluation for Quantitative Finance,ICML 2026 Expo,https://slideslive.com/39083452/multiagent-system-design-and-evaluation-for-quantitative-finance
 Jump Trading,2026-09-22,Interview,Jump Trading's Lucas Baker on AI Agents,AI Street,https://www.ai-street.co/p/jump-tradings-lucas-baker-on-ai-agents
 Jump Trading,2026-10-06,Case study,How Jump Trading is scaling quant research with ChatGPT,OpenAI,https://openai.com/index/jump-trading/
 LMR Partners,2026-09,Article,AI at LMR,LMR Partners,https://www.lmrpartners.com/ai
@@ -60,7 +77,10 @@ Man Group,2025-12-18,Interview,Inside Man Group's AlphaGPT,AI Street,https://www
 Man Group,2026-02-11,Article,A Trend Following Deep Dive: AlphaTrend and Agentic Research Workflows,Man Group,https://www.man.com/insights/alphatrend-agentic-research-workflows
 Man Group,2026-05-21,Talk,Building signals that trade themselves,Code with Claude London 2026,https://www.youtube.com/watch?v=EOg4gY0Yln0
 Man Group,2026-07-09,Podcast,One of the World's Largest Hedge Funds on Its 86x Growth in Token Spending,Odd Lots,https://podcasts.apple.com/us/podcast/one-of-the-worlds-largest-hedge-funds-on-its-86x/id1056200096?i=1000776089738
+Man Group,2026-10-07,Interview,Man Group Accelerates AI Transformation,Markets Media,https://www.marketsmedia.com/man-group-accelerates-ai-transformation/
+Man Group,2026-11-06,Talk,AI Across the Investment Lifecycle,Bloomberg Enterprise Data & Tech Summit 2026,https://www.youtube.com/watch?v=7fLSLg4PEmI
 Millennium,2026-02-19,Article,mChats with Gideon Mann,Millennium,https://www.mlp.com/life-at-millennium/mchats-with-gideon-mann/
+Millennium,2026-03,Article,Decoding the Market’s Pulse: Context-Enriched Agentic Retrieval Augmented Generation for Predicting Post-Earnings Price Shocks,EACL 2026,https://aclanthology.org/2026.eacl-long.141/
 Millennium,2026-06-29,Article,Q&A with Vlad Torgovnik: Millennium's AI Lab,Millennium,https://www.mlp.com/life-at-millennium/qa-with-vlad-torgovnik-millenniums-ai-lab/
 Millennium,2026-08-06,Case study,Millennium and Anthropic are building a digital risk analyst with Claude,Anthropic,https://claude.com/blog/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude
 Millennium,2026-08-29,Talk,Which AI startups actually land enterprise contracts?,AI Engineer World's Fair 2026,https://www.youtube.com/watch?v=7A65O-0lvKE
@@ -72,10 +92,13 @@ Optiver,2026-06-26,Talk,The Agentic Lakehouse: Optiver's AI Data Stack,Databrick
 Optiver,2026-07-08,Article,Beyond AI Models: Databricks and Optiver on the Future of Enterprise AI,Optiver,https://www.optiver.com/insights/technology-blog/beyond-ai-models-databricks-and-optiver-on-the-future-of-enterprise-ai/
 Optiver,2026-10-27,Talk,How a Trading Firm Ships New AI Models the Same Day,AI Engineer NYC 2026,https://www.youtube.com/watch?v=aGIUg8zKI8A
 Schonfeld,2025-04-15,Podcast,"Schonfeld CTO, Tom DeBow - Technology and AI's Impact on Modern Hedge Funds",Wharton FinTech Podcast,https://podcasts.apple.com/us/podcast/schonfeld-cto-tom-debow-technology-and-ais-impact-on/id1042827113?i=1000703614892
+Schonfeld,2026-03,Article,Quantifying Narratives: Applications of Large Language Models for Fed Sentiment Drift Modeling,The Journal of FinTech,https://doi.org/10.1142/S270510992650001X
 Schonfeld,2026-03-16,Article,"Q&A with Hannah Jiang, Senior Software Engineer at Schonfeld",Schonfeld,https://www.schonfeld.com/insights/qa-with-hannah-jiang-senior-software-engineer-at-schonfeld/
 Schonfeld,2026-05-12,Article,Inside Schonfeld's FE AI Lab,Schonfeld,https://www.schonfeld.com/insights/inside-schonfelds-fe-ai-lab/
 Susquehanna,2026-08-01,Talk,Panel: Agentic AI in Capital Markets,Agentic AI Summit 2026,https://www.youtube.com/watch?v=NtWNpxhREl8
 Tower Research,2026-01-06,Article,Tower Explores the Future of AI Agents at Columbia University's Mathematics of Finance Seminar,Tower Research Capital,https://tower-research.com/tower-explores-the-future-of-ai-agents-at-columbia-universitys-mathematics-of-finance-seminar/
+Tower Research,2026-05-26,Article,AI in Capital Markets: A Practical Perspective from Tower’s Ramit,Tower Research Capital,https://tower-research.com/ai-in-capital-markets-a-practical-perspective-from-towers-ramit/
+Two Sigma,2024-06,Article,Automating the Generation of a Functional Semantic Types Ontology with Foundational Models,NAACL 2024 (Industry Track),https://aclanthology.org/2024.naacl-industry.21/
 Two Sigma,2024-06-25,Talk,"Quant Leads at Two Sigma, Freestone Grove on AI Reality in Investing",Bloomberg Invest 2024,https://www.youtube.com/watch?v=PbV6JMcfvQU
 Two Sigma,2025-01-09,Talk,Fireside Chat with Mike Schuster and Ciamac Moallemi,Columbia Business School Digital Innovation Conference,https://www.youtube.com/watch?v=_-0k4zygsew
 Two Sigma,2025-05-20,Talk,Two Sigma's Head of AI Core on Practical AI Applications in Finance,Ray on the Road – NYC 2025,https://www.youtube.com/watch?v=QffW9HVcT18
@@ -87,7 +110,10 @@ Two Sigma,2026-08-01,Talk,Panel: Agentic AI in Capital Markets,Agentic AI Summit
 Two Sigma,2026-09-03,Talk,Tethered: Our Agents Are Us,AI Engineer World's Fair 2026,https://www.youtube.com/watch?v=wCIYViPd4SU
 Two Sigma,2026-10-13,Talk,What a $900M Bank Error Teaches Us About AI Agents,AI Engineer NYC 2026,https://www.youtube.com/watch?v=iniryju23Sk
 Ubiquant,2025-02-20,Article,Logic-RL: Unleashing LLM Reasoning with Rule-Based Reinforcement Learning,arXiv,https://arxiv.org/abs/2502.14768
+Ubiquant,2025-12-16,Article,Universal Reasoning Model,arXiv,https://arxiv.org/abs/2512.14693
 Ubiquant,2026-03-17,Article,IQuest-Coder-V1 Technical Report,arXiv (IQuest Lab),https://arxiv.org/abs/2603.16733
+Ubiquant,2026-10-22,Article,IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems,arXiv,https://arxiv.org/abs/2610.30949
+Viking Global,2025-10-17,Interview,‘VikingGPT’ Helps Hedge Fund Giant Wrestle With Trade Ideas,Bloomberg,https://www.bloomberg.com/news/articles/2025-10-17/-vikinggpt-helps-hedge-fund-giant-wrestle-with-trade-ideas
 Walleye,2024-03-19,Talk,Generative AI Applied to Quantitative Finance,NVIDIA GTC 2024,https://www.nvidia.com/en-us/on-demand/session/gtc24-s62889/
 Walleye,2025-05-14,Podcast,"The $10B Hedge Fund CEO Who's Betting Big on AI | Will England, Walleye Capital",AI & I (Every),https://podcasts.apple.com/us/podcast/the-%2410b-hedge-fund-ceo-whos-betting-big-on-ai/id1719789201?i=1000713445037
 WorldQuant,2025-05-06,Talk,Algorithms to Outcomes: AI's Impact in Finance,Milken Institute Global Conference 2025,https://www.youtube.com/watch?v=KVMm3LxrtBE
