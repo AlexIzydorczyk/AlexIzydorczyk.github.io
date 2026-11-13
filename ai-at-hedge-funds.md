@@ -1,7 +1,7 @@
 ---
 layout: wide
 title: How Hedge Funds Use AI
-description: "A library of podcasts, talks and technical posts in which the largest hedge funds and trading firms describe how they use LLMs and AI agents."
+description: "A library of podcasts, talks, posts and press reports on how hedge funds and trading firms use LLMs and AI agents."
 suggest_url: https://forms.gle/7xvmKY2EBwYtq3hx8
 # Magis's subscribe page, tagged so signups that start on this page can be told apart.
 subscribe_url: https://magis.substack.com/subscribe?utm_source=alexizydorczyk.com&utm_medium=referral&utm_campaign=ai-hf-library
@@ -52,7 +52,7 @@ legend:
       icon: '<path d="M6.5 9.5 9.5 6.5M7 4.5l1.3-1.3a2.6 2.6 0 0 1 3.6 3.6L10.5 8.2M9 11.5l-1.3 1.3a2.6 2.6 0 0 1-3.6-3.6L5.5 7.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>'
     - name: Interview
       plural: Interviews
-      description: "Written press interviews in which firm leaders describe the AI work in detail"
+      description: "Press interviews and reports with concrete detail on the firm's AI work"
       icon: '<path d="M6.5 3.75C4.6 4.4 3.25 6 3.25 8.4v3.85h3.5V8.75H4.9M12.75 3.75c-1.9.65-3.25 2.25-3.25 4.65v3.85H13V8.75h-1.85" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>'
 ---
 
@@ -60,7 +60,7 @@ legend:
 
 <p class="page-meta"><span>Maintained by Alex Izydorczyk<span class="page-meta-sep" aria-hidden="true">·</span>Updated <span class="tracker-updated">{{ site.time | date: "%b %-d, %Y" }}</span></span> <a class="page-meta-button" href="{{ page.subscribe_url }}" target="_blank" rel="noopener" data-subscribe><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m2.5 4.5 5.5 4 5.5-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Subscribe to Magis for updates</a> <a class="page-meta-button" href="{{ page.suggest_url }}">Suggest a talk, podcast or post</a></p>
 
-This page is a library of what the largest hedge funds and trading firms have said in public about how they use LLMs and AI agents: podcasts, recorded talks, and technical posts, including case studies written with their AI vendors. Every item features the firm's own people talking about AI inside the firm, not AI as an investment theme. For the startups selling AI to these firms, see the [AI for Hedge Funds Startup Tracker]({% link ai-for-hedge-funds.md %}).
+This page is a library of concrete accounts of how hedge funds and trading firms use LLMs and AI agents: podcasts, recorded talks, the firms' own posts, case studies written with their AI vendors, and press reports. Every item is about AI inside the firm, not AI as an investment theme. For the startups selling AI to these firms, see the [AI for Hedge Funds Startup Tracker]({% link ai-for-hedge-funds.md %}).
 {: .page-intro}
 
 {% include fund-library.html funds=site.data.ai_at_hedge_funds items=site.data.ai_at_hedge_funds_library %}

@@ -113,8 +113,8 @@ change.
 
 ## How Hedge Funds Use AI
 
-`ai-at-hedge-funds.md` is a library of what the largest hedge funds and trading firms have said in public about how
-they use LLMs and AI agents. It lists only the items themselves, with no commentary on the funds. It's rendered by
+`ai-at-hedge-funds.md` is a library of concrete accounts of how hedge funds and trading firms use LLMs and AI
+agents. It lists only the items themselves, with no commentary on the funds. It's rendered by
 `_includes/fund-library.html` (with `assets/js/fund-library.js` and `assets/css/fund-library.css`, on top of the
 tracker's `tracker.css`) from two CSVs in `_data/`:
 
@@ -124,12 +124,15 @@ tracker's `tracker.css`) from two CSVs in `_data/`:
 - `ai_at_hedge_funds_library.csv`: one row per item (`fund,date,type,title,show,url`).
   - `fund` must match a fund's name exactly. `date` is `YYYY-MM-DD` (or `YYYY-MM`).
   - `type` is `Podcast`, `Talk`, `Video`, `Article` (the firm's own technical post or paper), `Case study` (written
-    with a vendor such as OpenAI, Anthropic or AWS) or `Interview` (a substantive written press interview).
+    with a vendor such as OpenAI, Anthropic or AWS) or `Interview` (a press interview or report with concrete detail).
   - `show` is the podcast, the conference and year, or the publisher.
-  - The bar: the firm's own people, substantively about how the firm uses LLMs, generative AI or agents (tools,
-    teams, models, the infrastructure for them). Not classic machine learning or data science, not AI as an
-    investment theme, not general investor or CEO interviews in which AI is one topic among several (even a long
-    segment), not short marketing or recruiting clips. No Business Insider, Yahoo Finance or aggregator copies.
+  - The bar: a tangible LLM story about a named fund (any established hedge fund or trading firm, roughly $1B+):
+    what it built or deployed with LLMs, generative AI or agents, who uses it for what, ideally with scale or
+    results. From the firm's own people, a vendor case study, or a press report with concrete specifics. Not
+    research papers, benchmarks or model releases that aren't about the firm's own use, not classic machine learning
+    or non-LLM models, not compute on its own, not outlook or AI as an investment theme, not general investor or CEO
+    interviews in which AI is one topic among several (even a long segment), not hire announcements, one-line quotes
+    or marketing and recruiting clips. No Business Insider, Yahoo Finance or aggregator copies.
 
 The page has two views: "By fund" (the table; expand a row for its library) and "All items" (everything, newest
 first, by year). The search box, strategy dropdown and format tabs filter both, and the address follows them:
