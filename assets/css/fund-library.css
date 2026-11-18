@@ -1,0 +1,257 @@
+/* How Hedge Funds Use AI (_includes/fund-library.html). Builds on tracker.css; only what differs is here. */
+
+/* Formats beyond the tracker's podcast / talk / video colours */
+.tracker-news-type.is-article { color: #8a4b08; background: #fdf1df; }
+.tracker-news-type.is-case-study { color: #1c5cab; background: #e7f0fb; }
+.tracker-news-type.is-interview { color: #0f6e4c; background: #ddf3eb; }
+
+.library-search {
+    flex: 1 1 320px;
+    max-width: 560px;
+}
+
+/* A format with nothing under the current search reads as empty */
+.tracker-statuses button.is-empty {
+    color: var(--t-muted);
+}
+
+/* Columns: fixed widths so long titles are cut instead of widening the table; Latest takes what's left.
+   Cards (960px and below) are full width. */
+@media screen and (min-width: 961px) {
+    .library-table .col-fund {
+        width: 24%;
+    }
+
+    .library-table .col-strategy {
+        width: 17%;
+    }
+
+    .library-table .col-items {
+        width: 17%;
+    }
+}
+
+.library-n {
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--t-text-2);
+}
+
+.library-n b {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--t-text);
+    font-variant-numeric: tabular-nums;
+}
+
+.library-formats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 9px;
+    margin-top: 4px;
+    line-height: 18px;
+}
+
+.library-format {
+    cursor: help;
+    transition: opacity 0.15s;
+}
+
+.library-format.is-dim {
+    opacity: 0.35;
+}
+
+.library-latest-title {
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.tracker .library-latest-title a {
+    font-weight: 500;
+    color: var(--t-text);
+}
+
+.tracker .library-latest-title a:hover {
+    color: var(--t-accent);
+}
+
+.library-latest-sub {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--t-muted);
+}
+
+.library-latest-sub .tracker-news-type {
+    margin-right: 6px;
+    padding: 0 6px;
+    font-size: 10.5px;
+    line-height: 16px;
+}
+
+@media screen and (min-width: 961px) {
+    .library-latest-title,
+    .library-latest-sub {
+        height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .library-latest-sub {
+        height: 18px;
+    }
+
+    .library-formats {
+        height: 18px;
+        overflow: hidden;
+    }
+}
+
+/* Expanded fund: its library */
+.library-items li {
+    padding: 4px 0;
+}
+
+.library-items.is-collapsed li:nth-child(n + 9) {
+    display: none;
+}
+
+/* All items: a reading list grouped by year */
+.library-feed {
+    max-width: 1000px;
+}
+
+.wide-content .library-year {
+    margin: 22px 0 4px;
+    padding-bottom: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--t-text);
+    border-bottom: 2px solid var(--t-text);
+}
+
+.wide-content .library-year:first-child {
+    margin-top: 4px;
+}
+
+.library-feed-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.library-entry {
+    display: grid;
+    grid-template-columns: 64px 92px minmax(0, 1fr);
+    column-gap: 10px;
+    align-items: baseline;
+    padding: 11px 0 10px;
+    border-bottom: 1px solid var(--t-border);
+}
+
+.library-entry .tracker-news-type {
+    justify-self: start;
+    margin: 0;
+}
+
+.library-entry-body {
+    min-width: 0;
+}
+
+.tracker a.library-entry-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--t-text);
+}
+
+.tracker a.library-entry-title:hover {
+    color: var(--t-accent);
+}
+
+.library-entry-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 0;
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--t-muted);
+}
+
+.tracker a.library-entry-fund {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--t-text);
+}
+
+.tracker a.library-entry-fund:hover {
+    color: var(--t-accent);
+}
+
+.library-entry-fund .tracker-logo {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.library-entry-meta .tracker-news-source {
+    margin-left: 6px;
+    white-space: normal;
+}
+
+@media screen and (max-width: 720px) {
+    .library-search {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .library-entry {
+        grid-template-columns: auto minmax(0, 1fr);
+        row-gap: 4px;
+    }
+
+    .library-entry-body {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Tablets and phones: each fund is a card (tracker.css); the facts line up under the name */
+@media screen and (max-width: 960px) {
+    .library-table .col-strategy,
+    .library-table .col-items,
+    .library-table .col-latest {
+        padding-left: 30px;
+    }
+
+    .library-table td.col-items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0 8px;
+    }
+
+    .library-n {
+        display: inline;
+        margin-top: 0;
+    }
+
+    .library-formats {
+        display: inline-flex;
+        margin-top: 0;
+    }
+
+    .library-table .col-items::before,
+    .library-table .col-latest::before {
+        content: attr(data-label) "\00a0\00a0";
+        font-size: 12px;
+        color: var(--t-muted);
+    }
+}

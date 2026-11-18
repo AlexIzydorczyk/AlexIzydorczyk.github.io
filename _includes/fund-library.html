@@ -1,0 +1,146 @@
+{%- comment -%}
+  How hedge funds use AI: a sortable table of funds (expand a row for the fund's library)
+  and a Library view listing every podcast, talk and post across funds, newest first.
+  Usage: {% include fund-library.html funds=site.data.ai_at_hedge_funds items=site.data.ai_at_hedge_funds_library %}
+  Strategy emoji and descriptions and the format labels come from page.legend (front matter).
+  Items are matched to funds on the exact fund name.
+  Shares the look of the startup tracker (tracker.css); fund-library.css adds what's specific to this page.
+{%- endcomment -%}
+{%- assign funds = include.funds | where_exp: "row", "row.fund" | sort_natural: "fund" -%}
+{%- assign items = include.items | where_exp: "item", "item.fund" | sort: "date" | reverse -%}
+{%- assign legend = page.legend -%}
+{%- capture external_icon %}<svg class="tracker-ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6.5 9.5M11 9.5V13H3V5h3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endcapture -%}
+{%- assign asset_version = site.time | date: "%s" %}
+<link rel="stylesheet" href="{{ '/assets/css/tracker.css' | relative_url }}?v={{ asset_version }}">
+<link rel="stylesheet" href="{{ '/assets/css/fund-library.css' | relative_url }}?v={{ asset_version }}">
+<div class="tracker fund-library" data-library>
+<div class="tracker-toolbar" data-tracker-toolbar hidden>
+<label class="tracker-search library-search">
+<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.75" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10.5 10.5 3.25 3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+<input type="search" placeholder="Search funds, titles, shows…" aria-label="Search funds and their library" autocomplete="off" data-library-search>
+<kbd class="tracker-kbd" aria-hidden="true">/</kbd>
+</label>
+<div class="tracker-segment" role="group" aria-label="View">
+<button type="button" aria-pressed="true" data-view="funds">By fund</button>
+<button type="button" aria-pressed="false" data-view="library">All items</button>
+</div>
+<label class="tracker-select">
+<span class="visually-hidden">Strategy</span>
+<select data-library-strategy>
+<option value="*">All strategies ({{ funds.size }})</option>
+{%- for s in legend.strategy %}
+{%- assign n = funds | where: "strategy", s.name | size %}
+{%- if n > 0 %}
+<option value="{{ s.name | escape }}">{{ s.emoji }} {{ s.name | escape }} ({{ n }})</option>
+{%- endif %}
+{%- endfor %}
+</select>
+</label>
+</div>
+<div class="tracker-meta" data-tracker-meta hidden>
+{%- comment %} Format tabs; fund-library.js keeps each count in step with the search and strategy. {% endcomment %}
+<div class="tracker-statuses" role="group" aria-label="Filter by format">
+<button type="button" aria-pressed="true" data-format="*">All formats <span class="tracker-status-n" data-n>{{ items.size }}</span></button>
+{%- for f in legend.format %}
+{%- assign n = items | where: "type", f.name | size %}
+{%- if n > 0 %}
+<button type="button" aria-pressed="false" data-format="{{ f.name | escape }}" title="{{ f.description | escape }}">{{ f.plural | escape }} <span class="tracker-status-n" data-n>{{ n }}</span></button>
+{%- endif %}
+{%- endfor %}
+</div>
+<p class="tracker-status"><span class="tracker-count" data-library-count aria-live="polite"></span><button type="button" class="tracker-clear" data-library-share hidden>Copy link to this view</button><button type="button" class="tracker-clear" data-library-clear hidden>Clear filters</button></p>
+</div>
+
+<table class="tracker-table library-table" data-library-funds>
+<thead>
+<tr>
+<th class="col-rank" scope="col"><span class="visually-hidden">Rank</span></th>
+<th class="col-fund" scope="col" aria-sort="ascending"><button type="button" data-sort>Fund</button></th>
+<th class="col-strategy" scope="col"><button type="button" data-sort>Strategy</button></th>
+<th class="col-items" scope="col"><button type="button" data-sort data-sort-first="descending" title="Podcasts, talks, videos and posts in the library. Sort most first.">Library</button></th>
+<th class="col-latest" scope="col"><button type="button" data-sort data-sort-first="descending" title="The newest item in the fund's library. Sort newest first.">Latest</button></th>
+<th class="col-toggle" scope="col"><span class="visually-hidden">Details</span></th>
+</tr>
+</thead>
+{%- for row in funds %}
+{%- assign slug = row.fund | slugify %}
+{%- assign website = row.website | strip %}
+{%- assign domain = website | remove_first: "https://" | remove_first: "http://" | split: "/" | first | remove_first: "www." %}
+{%- assign linkedin = row.linkedin | strip %}
+{%- assign x_company = row.x_company | strip | remove_first: "@" %}
+{%- assign strategy_name = row.strategy | strip %}
+{%- assign strategy = legend.strategy | where: "name", strategy_name | first %}
+{%- assign fitems = items | where: "fund", row.fund %}
+<tbody id="{{ slug }}" data-name="{{ row.fund | escape }}" data-strategy="{{ strategy_name | escape }}" data-formats="{{ fitems | map: 'type' | join: '|' | escape }}">
+<tr class="tracker-row">
+<td class="col-rank"></td>
+<td class="col-fund" data-sort="{{ row.fund | escape }}"><div class="tracker-company">
+{%- assign initial = row.fund | strip | slice: 0 | upcase %}
+{%- if domain != "" %}<img class="tracker-logo" src="https://www.google.com/s2/favicons?domain={{ domain }}&amp;sz=64" alt="" width="20" height="20" loading="lazy" data-initial="{{ initial | escape }}">{% else %}<span class="tracker-logo tracker-monogram" aria-hidden="true">{{ initial | escape }}</span>{% endif -%}
+{%- assign fund_name = row.fund | strip %}
+<span class="tracker-name"><span class="tracker-name-text"{% if fund_name.size > 22 %} title="{{ fund_name | escape }}"{% endif %}>{% if website != "" %}<a href="{{ website }}" target="_blank" rel="noopener">{{ row.fund | escape }}</a>{% else %}{{ row.fund | escape }}{% endif %}</span></span>
+</div></td>
+<td class="col-strategy" data-sort="{{ strategy_name | escape }}">{% if strategy %}<span class="tracker-pill" title="{{ strategy.description | escape }}">{{ strategy.emoji }} {{ strategy.name }}</span>{% elsif strategy_name != "" %}<span class="tracker-pill">{{ strategy_name | escape }}</span>{% endif %}</td>
+<td class="col-items" data-label="Library" data-sort="{{ fitems.size }}" data-sort-type="number">
+{%- if fitems.size > 0 %}<span class="library-n"><b>{{ fitems.size }}</b> {% if fitems.size == 1 %}item{% else %}items{% endif %}</span><span class="library-formats">
+{%- for f in legend.format %}{% assign n = fitems | where: "type", f.name | size %}{% if n > 0 %}<span class="tracker-news-count library-format is-{{ f.name | slugify }}" title="{{ n }} {% if n == 1 %}{{ f.name | downcase }}{% else %}{{ f.plural | downcase }}{% endif %}" data-format="{{ f.name | escape }}"><svg viewBox="0 0 16 16" aria-hidden="true">{{ f.icon }}</svg>{{ n }}</span>{% endif %}{% endfor %}</span>{% endif %}</td>
+{%- assign latest = fitems | first %}
+<td class="col-latest" data-label="Latest" data-sort="{{ latest.date | strip }}">{% if latest %}{% assign ltype = latest.type | strip %}<span class="library-latest-title"><a href="{{ latest.url }}" target="_blank" rel="noopener" title="{{ latest.title | escape }}">{{ latest.title | escape }}</a></span><span class="library-latest-sub"><span class="tracker-news-type is-{{ ltype | slugify }}">{{ ltype | escape }}</span>{% include tracker-date.html date=latest.date %}{% assign lshow = latest.show | strip %}{% if lshow != "" %} · {{ lshow | escape }}{% endif %}</span>{% endif %}</td>
+<td class="col-toggle"><button type="button" class="tracker-toggle" aria-expanded="false" aria-controls="{{ slug }}-details" aria-label="Details for {{ row.fund | escape }}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+</tr>
+<tr class="tracker-details" id="{{ slug }}-details" hidden>
+<td colspan="6"><div class="tracker-panel">
+<dl class="tracker-sheet">
+<div class="tracker-sheet-row"><dt>Library</dt><dd>
+<ul class="tracker-media library-items">
+{%- for item in fitems %}
+{%- assign itype = item.type | strip %}{% assign show = item.show | strip %}
+<li data-format="{{ itype | escape }}" data-searchable><span class="tracker-news-date">{% include tracker-date.html date=item.date %}</span><span class="tracker-news-type is-{{ itype | slugify }}">{{ itype | escape }}</span><span class="tracker-news-body"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title | escape }}</a> <span class="tracker-news-source">{{ show | escape }}</span></span></li>
+{%- endfor %}
+</ul>
+{%- if fitems.size > 8 %}
+<button type="button" class="tracker-more" data-library-more hidden>Show all {{ fitems.size }}</button>
+{%- endif %}
+</dd></div>
+<div class="tracker-sheet-row"><dt>Links</dt><dd class="tracker-links">
+{%- if website != "" %}<a href="{{ website }}" target="_blank" rel="noopener">{{ domain }}{{ external_icon }}</a>{% endif %}
+{%- if linkedin != "" %}<a href="{{ linkedin }}" target="_blank" rel="noopener"><span class="tracker-icon is-linkedin" aria-hidden="true"></span>LinkedIn</a>{% endif %}
+{%- if x_company != "" %}<a href="https://x.com/{{ x_company }}" target="_blank" rel="noopener"><span class="tracker-icon is-x" aria-hidden="true"></span>@{{ x_company }}</a>{% endif %}
+<button type="button" class="tracker-copy" data-copy-link="{{ slug }}" title="Copy a link that opens this fund"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5 9.5 6.5M7 4.5l1.3-1.3a2.6 2.6 0 0 1 3.6 3.6L10.5 8.2M9 11.5l-1.3 1.3a2.6 2.6 0 0 1-3.6-3.6L5.5 7.8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Copy link</button>
+</dd></div>
+</dl>
+<p class="tracker-panel-links"><a href="#{{ slug }}">Link to {{ row.fund | escape }}</a>{% if page.suggest_url %} · <a href="{{ page.suggest_url }}" target="_blank" rel="noopener">Suggest an edit</a>{% endif %}</p>
+</div></td>
+</tr>
+</tbody>
+{%- endfor %}
+</table>
+
+{%- comment %} All items, newest first, with a heading per year (fund-library.js hides years with nothing shown). {% endcomment %}
+<div class="library-feed" data-library-feed hidden>
+{%- assign year = "" %}
+{%- for item in items %}
+{%- assign iyear = item.date | strip | slice: 0, 4 %}
+{%- if iyear != year %}{% unless forloop.first %}</ol>{% endunless %}
+<h2 class="library-year" data-year="{{ iyear }}">{{ iyear }}</h2>
+<ol class="library-feed-list">
+{%- assign year = iyear %}{% endif %}
+{%- assign fund = funds | where: "fund", item.fund | first %}
+{%- assign fslug = item.fund | slugify %}
+{%- assign fsite = fund.website | strip %}
+{%- assign fdomain = fsite | remove_first: "https://" | remove_first: "http://" | split: "/" | first | remove_first: "www." %}
+{%- assign itype = item.type | strip %}{% assign show = item.show | strip %}
+<li class="library-entry" data-name="{{ item.fund | escape }}" data-strategy="{{ fund.strategy | strip | escape }}" data-format="{{ itype | escape }}" data-year="{{ iyear }}">
+<span class="tracker-news-date">{% include tracker-date.html date=item.date %}</span>
+<span class="tracker-news-type is-{{ itype | slugify }}">{{ itype | escape }}</span>
+<div class="library-entry-body">
+<a class="library-entry-title" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title | escape }}</a>
+<span class="library-entry-meta"><a class="library-entry-fund" href="#{{ fslug }}" title="Open {{ item.fund | escape }}">{% if fdomain != "" %}<img class="tracker-logo" src="https://www.google.com/s2/favicons?domain={{ fdomain }}&amp;sz=64" alt="" width="16" height="16" loading="lazy" data-initial="{{ item.fund | slice: 0 | upcase | escape }}">{% endif %}{{ item.fund | escape }}</a>{% if show != "" %}<span class="tracker-news-source">{{ show | escape }}</span>{% endif %}</span>
+</div>
+</li>
+{%- if forloop.last %}</ol>{% endif %}
+{%- endfor %}
+</div>
+<p class="tracker-empty" data-library-empty hidden>Nothing matches your search. <button type="button" data-library-reset>Clear filters</button></p>
+</div>
+<script src="{{ '/assets/js/fund-library.js' | relative_url }}?v={{ asset_version }}" defer></script>

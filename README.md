@@ -111,6 +111,37 @@ Links to the page show `assets/images/ai-for-hedge-funds-card.png` as their prev
 in the page front matter); it says "200+ startups", so it only needs redoing if the categories shown on it
 change.
 
+## How Hedge Funds Use AI
+
+`ai-at-hedge-funds.md` is a library of concrete accounts of how hedge funds and trading firms use LLMs and AI
+agents. It lists only the items themselves, with no commentary on the funds. It's rendered by
+`_includes/fund-library.html` (with `assets/js/fund-library.js` and `assets/css/fund-library.css`, on top of the
+tracker's `tracker.css`) from two CSVs in `_data/`:
+
+- `ai_at_hedge_funds.csv`: one row per fund that has at least one item (`fund,strategy,website,linkedin,x_company`).
+  `strategy` must match a `name` in the page's `legend.strategy` front matter: `Multi-strategy`, `Quant`, `Macro`,
+  `Fundamental equity`, `Credit & event-driven` or `Trading firm`.
+- `ai_at_hedge_funds_library.csv`: one row per item (`fund,date,type,title,show,url`).
+  - `fund` must match a fund's name exactly. `date` is `YYYY-MM-DD` (or `YYYY-MM`).
+  - `type` is `Podcast`, `Talk`, `Video`, `Article` (the firm's own technical post or paper), `Case study` (written
+    with a vendor such as OpenAI, Anthropic or AWS) or `Interview` (a press interview or report with concrete detail).
+  - `show` is the podcast, the conference and year, or the publisher.
+  - The bar: a tangible LLM story about a named fund (any established hedge fund or trading firm, roughly $1B+):
+    what it built or deployed with LLMs, generative AI or agents, who uses it for what, ideally with scale or
+    results. From the firm's own people, a vendor case study, or a press report with concrete specifics. Not
+    research papers, benchmarks or model releases that aren't about the firm's own use, not classic machine learning
+    or non-LLM models, not compute on its own, not outlook or AI as an investment theme, not general investor or CEO
+    interviews in which AI is one topic among several (even a long segment), not hire announcements, one-line quotes
+    or marketing and recruiting clips. No Business Insider, Yahoo Finance or aggregator copies.
+
+The page has two views: "By fund" (the table; expand a row for its library) and "All items" (everything, newest
+first, by year). The search box, strategy dropdown and format tabs filter both, and the address follows them:
+`/ai-at-hedge-funds.html?view=library&strategy=Quant&type=Podcast&q=agents` (parameters `view`, `q`, `strategy`,
+`type`, `sort` as `fund|strategy|items|latest` + `-asc|-desc`; the default is the most items first). `#balyasny`
+opens that fund. GA events: `library_filter`, `library_fund_open`, `library_link_click`, `library_share`,
+`library_subscribe_click` and `view_search_results`, with the same parameter names as the tracker's (`company` is
+the fund).
+
 ## Rest of the site
 
 - `index.md` uses `_layouts/default.html` (the theme's sidebar layout). The tracker card under Projects
