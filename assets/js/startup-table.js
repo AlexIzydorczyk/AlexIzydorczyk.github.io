@@ -601,6 +601,7 @@
     // Shareable views: ?q=...&status=Active&category=...&partner=FactSet&investor=...&sort=raised-desc
     var PICK_PARAMS = [['customer', 'customer', 'c:'], ['customer-type', 'customer', 'ct:'], ['partner', 'partner', 'p:'],
       ['partner-type', 'partner', 'pt:'], ['investor', 'investor', ''], ['founder', 'founder', ''], ['founder-group', 'founder', 'g:']];
+    var DEFAULT_SORT = 'raised-desc';
     var currentSort = '';
     // A pick as [URL parameter, value], e.g. ['partner', 'FactSet'], ['founder-group', 'Tech companies'], ['founder', 'any']
     function pickParam(p) {
@@ -659,12 +660,14 @@
           if (entry && !isPicked(entry)) picks.push({ kind: entry.kind, value: entry.value, label: entry.label });
         });
       });
-      var sort = params.get('sort');
-      if (sort) {
-        var m = sort.match(/^(\w+)-(asc|desc)$/);
-        var th = m && table.querySelector('thead th.col-' + m[1]);
-        if (th && th.querySelector('button[data-sort]')) sortBy(th.querySelector('button[data-sort]'), m[2] === 'asc' ? 'ascending' : 'descending');
+      // Default order is "Total raised", largest first (DEFAULT_SORT); ?sort= picks another column.
+      var m = (params.get('sort') || '').match(/^(\w+)-(asc|desc)$/);
+      var th = m && table.querySelector('thead th.col-' + m[1]);
+      if (!th || !th.querySelector('button[data-sort]')) {
+        m = DEFAULT_SORT.match(/^(\w+)-(asc|desc)$/);
+        th = table.querySelector('thead th.col-' + m[1]);
       }
+      sortBy(th.querySelector('button[data-sort]'), m[2] === 'asc' ? 'ascending' : 'descending');
     }
     function copyText(text, button, done) {
       var original = button.dataset.label || button.textContent;
@@ -708,7 +711,8 @@
       var current = th.getAttribute('aria-sort');
       var dir = forced || (current ? (current === 'ascending' ? 'descending' : 'ascending') : (button.dataset.sortFirst || 'ascending'));
       var name = (th.className.match(/col-(\w+)/) || [])[1];
-      currentSort = name === 'company' && dir === 'ascending' ? '' : name + '-' + (dir === 'ascending' ? 'asc' : 'desc');
+      currentSort = name + '-' + (dir === 'ascending' ? 'asc' : 'desc');
+      if (currentSort === DEFAULT_SORT) currentSort = '';
       var sign = dir === 'ascending' ? 1 : -1;
       sortButtons.forEach(function (b) { b.closest('th').removeAttribute('aria-sort'); });
       th.setAttribute('aria-sort', dir);
